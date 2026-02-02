@@ -8,7 +8,7 @@ The GNU Octave graphical user interface (GUI).
 
 ### Tutorials
 
-+   [Videos](Video_tutorials.html "Video tutorials")
++   [Videos](videos.md "Video tutorials")
 +   [Using Octave](using.md "Using Octave") - A short introduction.
 +   [Octave Basics](Octave_Basics.html "Octave Basics") - A short reference card to get started.
 +   [Recap of the hierarchy of each plot element](Recap_of_the_hierarchy_of_each_plot_element.html "Recap of the hierarchy of each plot element") - Some advanced plotting tutorial.
