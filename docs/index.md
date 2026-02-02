@@ -23,7 +23,7 @@ Installation instructions for:
 
 Get installers and sources from [https://www.octave.org/download](https://www.octave.org/download).
 
-[![Info icon.svg](wiki/images/thumb/a/ae/Info_icon.svg/26px-Info_icon.svg.png)](File%253AInfo_icon.svg.html)
+![Info icon.svg](../assets/info/26px-Info_icon.svg.png)
 
 **GNU Octave 10.3.0** is the current stable release.
 
