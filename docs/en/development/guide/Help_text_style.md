@@ -128,16 +128,17 @@ Besides this environment there is also the alternative `deftypenx` for alternati
 #### Formulas
 
 Do not use the example environment to insert formulas, consider using `@verbatim` instead.
-
+<!--
 <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f2fff2; border: solid 1px #bfffbf;"><tbody><tr><td><pre>@verbatim
            E[Z(i,k) ]
 IRL(k) =  ------------
               V(i)
 @end verbatim
 </pre></td></tr></tbody></table>
-
+-->
 However, this will never print as a nice looking mathematical formula that TeX is known for. It is possible to have Tex formulas but then they won't be displayed on HTML or Info (Octave help) so the following can be done:
 
+<!--
 <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f2fff2; border: solid 1px #bfffbf;"><tbody><tr><td><pre>@tex
 \def\frac#1#2{{\begingroup#1\endgroup\over#2}}
 $$ IRL(k) = \frac{E[Z(i,k)]}{V(i)} $$
@@ -150,7 +151,7 @@ IRL(k) =  ------------
 @end verbatim
 @end ifnottex
 </pre></td></tr></tbody></table>
-
+-->
 #### Plain-tex missing macros
 
 When compared to LaTeX, plain TeX is missing some very useful macros for including mathematical notation. The following is a list of their definitions which can be added on a as needed basis:

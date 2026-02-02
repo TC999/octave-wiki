@@ -23,7 +23,7 @@
 
 从 [https://www.octave.org/download](https://www.octave.org/download) 获取安装程序和源代码。
 
-![信息图标.svg](../../assets/info/26px-Info_icon.svg.png)
+![信息图标.svg](../assets/info/26px-Info_icon.svg.png)
 
 **GNU Octave 10.3.0** 是当前的稳定版本。
 

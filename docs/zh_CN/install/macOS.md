@@ -4,7 +4,7 @@
 
 然而，使用 [Homebrew 包管理器](https://brew.sh/)，可以轻松在 macOS 上安装和更新 Octave，支持所有最新的 Apple Silicon 架构（M1 及更新版本）。
 
-[![信息图标](wiki/images/thumb/a/ae/Info_icon.svg/26px-Info_icon.svg.png)](File%253AInfo_icon.svg.html)
+![信息图标](../../assets/info/26px-Info_icon.svg.png)
 
 **GNU Octave 10.3.0** 是当前的稳定版本。
 

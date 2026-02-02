@@ -1,6 +1,6 @@
 # Debian 系统
 
-+   *本文介绍了在 Debian 及基于 Debian 的发行版（如 Ubuntu）上[安装](Category%253AInstallation.html "分类:安装")和[构建](Building.html "构建") GNU Octave 的方法。*
++   *本文介绍了在 Debian 及基于 Debian 的发行版（如 Ubuntu）上[安装](Category%253AInstallation.html "分类:安装")和[构建](../development/build/building.md "构建") GNU Octave 的方法。*
 
 ## 目录
 
@@ -45,9 +45,9 @@ sudo apt-get install octave
 
 ## 从源码构建 Octave
 
-*有关通用构建说明，请参阅 [构建](Building.html "构建").*
+*有关通用构建说明，请参阅 [构建](../development/build/building.md "构建").*
 
-唯一棘手的部分是安装 Octave 的构建依赖项。一旦解决了这个问题，就可以轻松遵循[通用构建说明](Building.html "构建")。有关一些 Debian 和 Ubuntu 特定的配置选项，请参阅[下文](#配置)。
+唯一棘手的部分是安装 Octave 的构建依赖项。一旦解决了这个问题，就可以轻松遵循[通用构建说明](../development/build/building.md "构建")。有关一些 Debian 和 Ubuntu 特定的配置选项，请参阅[下文](#配置)。
 
 ### 安装依赖项
 
@@ -65,7 +65,7 @@ sudo apt-get install octave
 
 #### 正确方法
 
-正确的方法是安装 [构建](Building.html#Dependencies "构建") wiki 页面上列出的所有依赖项。可以手动搜索相应的包：
+正确的方法是安装 [构建](../development/build/building.md#Dependencies "构建") wiki 页面上列出的所有依赖项。可以手动搜索相应的包：
 
 +   [https://packages.debian.org](https://packages.debian.org)
 +   [https://packages.ubuntu.com](https://packages.ubuntu.com)
@@ -146,7 +146,7 @@ sudo apt-get install gcc g++ gfortran make libopenblas-dev liblapack-dev libpcre
 
   
 
-[![Warning icon.svg](wiki/images/thumb/2/24/Warning_icon.svg/26px-Warning_icon.svg.png)](File%253AWarning_icon.svg.html)
+![Warning icon.svg](../../assets/warning/26px-Warning_icon.svg.png)
 
 +   The Debian repositoriy has several libraries for dealing with HDF data files. The recommended is `libhdf5-serial-dev`. However, the [msh package](https://octave.sourceforge.io/msh/index.html) requires [gmsh](http://www.geuz.org/gmsh/) which is incompatible with it.
 +   The GraphicsMagick++ library (libgraphicsmagick++1-dev) on the Debian repositories was compiled with quantum 8 which limits reading images to 8 bit. The solution is to recompile [GraphicsMagick](GraphicsMagick.html "GraphicsMagick") with quantum 16 or 32 before building Octave.
@@ -199,6 +199,6 @@ On recent Debian and Ubuntu releases whose Sundials version (in `libsundials-dev
 
 [分类](Special%253ACategories.html "特殊:分类")：
 
-+   [构建](Category%253ABuilding.html "分类:构建")
++   [构建](Category%253A../development/build/building.md "分类:构建")
 +   [安装](Category%253AInstallation.html "分类:安装")
 +   [GNU/Linux](Category%253AGNU/Linux.html "分类:GNU/Linux")

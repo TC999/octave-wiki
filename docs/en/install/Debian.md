@@ -1,6 +1,6 @@
 # Debian Systems
 
-+   *This article addresses the [installation](Category%253AInstallation.html "Category:Installation") and [Building](Building.html "Building") of GNU Octave on Debian, and Debian-based distributions such as Ubuntu.*
++   *This article addresses the [installation](Category%253AInstallation.html "Category:Installation") and [Building](../development/build/building.md "Building") of GNU Octave on Debian, and Debian-based distributions such as Ubuntu.*
 
 ## Contents
 
@@ -45,9 +45,9 @@ sudo apt-get install octave
 
 ## Building Octave from source
 
-*For general build instructions, see [Building](Building.html "Building").*
+*For general build instructions, see [Building](../development/build/building.md "Building").*
 
-The *only* tricky part is to install the Octave build dependencies. Once that is solved, one can easily follow the [general build instructions](Building.html "Building"). See [below](#Configuration) for some Debian and Ubuntu specific configuration options.
+The *only* tricky part is to install the Octave build dependencies. Once that is solved, one can easily follow the [general build instructions](../development/build/building.md "Building"). See [below](#Configuration) for some Debian and Ubuntu specific configuration options.
 
 ### Install dependencies
 
@@ -65,7 +65,7 @@ The easy way to install *most* of the necessary dependencies is to `sudo apt-get
 
 #### The right way
 
-The right way is to install all the dependencies listed on the [Building](Building.html#Dependencies "Building") wiki page. One can either search for the respective packages manually on
+The right way is to install all the dependencies listed on the [Building](../development/build/building.md#Dependencies "Building") wiki page. One can either search for the respective packages manually on
 
 +   [https://packages.debian.org](https://packages.debian.org)
 +   [https://packages.ubuntu.com](https://packages.ubuntu.com)
@@ -146,7 +146,7 @@ sudo apt-get install gcc g++ gfortran make libopenblas-dev liblapack-dev libpcre
 
   
 
-[![Warning icon.svg](wiki/images/thumb/2/24/Warning_icon.svg/26px-Warning_icon.svg.png)](File%253AWarning_icon.svg.html)
+![Warning icon.svg](../../assets/warning/26px-Warning_icon.svg.png)
 
 +   The Debian repositoriy has several libraries for dealing with HDF data files. The recommended is `libhdf5-serial-dev`. However, the [msh package](https://octave.sourceforge.io/msh/index.html) requires [gmsh](http://www.geuz.org/gmsh/) which is incompatible with it.
 +   The GraphicsMagick++ library (libgraphicsmagick++1-dev) on the Debian repositories was compiled with quantum 8 which limits reading images to 8 bit. The solution is to recompile [GraphicsMagick](GraphicsMagick.html "GraphicsMagick") with quantum 16 or 32 before building Octave.
@@ -197,10 +197,8 @@ On recent Debian and Ubuntu releases whose Sundials version (in `libsundials-dev
 
 +   [MXE](MXE.html "MXE") -- a more customized Octave build including many self-compiled tools.
 
-Retrieved from "[https://wiki.octave.org/wiki/index.php?title=Octave\_for\_Debian\_systems&oldid=15499](https://wiki.octave.org/wiki/index.php?title=Octave_for_Debian_systems&oldid=15499)"
-
 [Categories](Special%253ACategories.html "Special:Categories"):
 
-+   [Building](Category%253ABuilding.html "Category:Building")
++   [Building](Category%253A../development/build/building.md "Category:Building")
 +   [Installation](Category%253AInstallation.html "Category:Installation")
 +   [GNU/Linux](Category%253AGNU/Linux.html "Category:GNU/Linux")
