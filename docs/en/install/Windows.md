@@ -2,7 +2,7 @@
 
 *This article is about using pre-built installers of Octave for Windows; for instructions about building it, see [Windows Installer](Windows_Installer.html "Windows Installer").*
 
-> ![Info icon](../assets/info/26px-Info_icon.svg.png)
+> ![Info icon](../../assets/info/26px-Info_icon.svg.png)
 >
 > Windows installers are available for the latest version of **Octave (10.3.0, released on September 23, 2025)** from [https://ftpmirror.gnu.org/gnu/octave/windows/](https://ftpmirror.gnu.org/gnu/octave/windows/).
 
