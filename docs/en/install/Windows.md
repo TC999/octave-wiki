@@ -8,21 +8,21 @@
 
 Users are encouraged to use the latest version unless a specific feature or requirement that warrants using an older version of the software. Version specific instructions and installation notes are provided below.
 
-**Note:** As of version 8.3.0, **The Octave project no longer distributes binaries for 32-bit versions of Windows**. An alternative source for 32-bit Windows binaries of Octave is using [MSYS2](Octave_for_Microsoft_Windows.html#GNU_Octave_in_MSYS2 "Octave for Microsoft Windows").
+**Note:** As of version 8.3.0, **The Octave project no longer distributes binaries for 32-bit versions of Windows**. An alternative source for 32-bit Windows binaries of Octave is using [MSYS2](#GNU_Octave_in_MSYS2 "Octave for Microsoft Windows").
 
 **Note:** As of version 4.4.1, **Octave no longer supports Windows XP**. There may be some workarounds to get Octave installed and running in command line mode (see Bug [#54662](https://savannah.gnu.org/bugs/?54662)), but maintainers cannot provide support and troubleshooting for this beyond what has already been documented.
 
 ## Contents
 
-+   [1 Installers for Microsoft Windows](Octave_for_Microsoft_Windows.html#Installers_for_Microsoft_Windows)
-    +   [1.1 Octave Packages](Octave_for_Microsoft_Windows.html#Octave_Packages)
-        +   [1.1.1 Pre-installed Packages](Octave_for_Microsoft_Windows.html#Pre-installed_Packages)
-        +   [1.1.2 Package Installation and Update](Octave_for_Microsoft_Windows.html#Package_Installation_and_Update)
-+   [2 GNU Octave in MSYS2](Octave_for_Microsoft_Windows.html#GNU_Octave_in_MSYS2)
-+   [3 GNU Octave on cygwin](Octave_for_Microsoft_Windows.html#GNU_Octave_on_cygwin)
-    +   [3.1 Notes for cygwin](Octave_for_Microsoft_Windows.html#Notes_for_cygwin)
-+   [4 General info](Octave_for_Microsoft_Windows.html#General_info)
-+   [5 See also](Octave_for_Microsoft_Windows.html#See_also)
++   [1 Installers for Microsoft Windows](#Installers_for_Microsoft_Windows)
+    +   [1.1 Octave Packages](#Octave_Packages)
+        +   [1.1.1 Pre-installed Packages](#Pre-installed_Packages)
+        +   [1.1.2 Package Installation and Update](#Package_Installation_and_Update)
++   [2 GNU Octave in MSYS2](#GNU_Octave_in_MSYS2)
++   [3 GNU Octave on cygwin](#GNU_Octave_on_cygwin)
+    +   [3.1 Notes for cygwin](#Notes_for_cygwin)
++   [4 General info](#General_info)
++   [5 See also](#See_also)
 
 # Installers for Microsoft Windows
 
@@ -46,9 +46,9 @@ Like many software programs, Octave uses *packages* to optionally extend and mod
 
 Octave maintains a system-wide (or *global*) package list, and a user-specific (or *local*) package list. By default in Windows 10 and 11, local packages are located at C:\\Users\\%USERNAME%\\octave\\. (The \\octave folder will be created during the first package install\\update if it is not already present.) The global packages are stored in %OCTAVE\_HOME%\\mingw64\\share\\octave\\packages\\, and are available to all users on the machine. Specific locations on your system can be found by typing the following commands at the Octave command line:
 
-```
-   >> pkg local_list
-   >> pkg global_list
+```bash
+  >> pkg local_list
+  >> pkg global_list
 ```
 
 Octave versions for Windows prior to 6.1.0 defaulted to always making changes to global packages unless the user specified otherwise. The default is now to follow the same behavior on all platforms, and for all package updates and installations to apply to local or global package locations according to whether or not the user is running with Administrative privileges (on Windows, this is usually accomplished by running as an Administrator privileged account, or starting Octave with the "Run as Administrator" option). Alternatively, some pkg command options can force octave to try to use either the local or global packages.
@@ -57,7 +57,7 @@ Octave versions for Windows prior to 6.1.0 defaulted to always making changes to
 
 A selection of pre-built, [Octave Forge](Octave_Forge.html "Octave Forge") packages is included with all versions of the official Windows release. If you followed the installation directions above, you can display a list of packages by typing the command below at the Octave command prompt:
 
-```
+```bash
   >> pkg list
 ```
 
@@ -124,7 +124,7 @@ Note that the included packages shown above are stored in the default *global pa
 
 If Octave was installed from a zip or 7z archive and you did not run the post-install.bat file, you may not see any packages listed. In that case you need to run:
 
-```
+```bash
   >> pkg rebuild
 ```
 
@@ -136,29 +136,29 @@ That will force octave to look for both *local* and *global* packages in the set
 
 All packages can be updated to the latest version by running:
 
-```
+```bash
   >> pkg update
 ```
 
 Other packages can be installed by running:
 
-```
+```bash
   >> pkg install -forge <package_name>
 ```
 
 To install a new or updated package version manually, the package file can be downloaded from the [Octave Forge website](https://octave.sourceforge.io/packages.php) to the working directory and can be installed using:
 
-```
+```bash
   >> pkg install package_file_name.tar.gz
 ```
 
 Note that all of the commands above will perform *local* or *global* package installs according to the user's Administrator access level. E.g., if an update is found for a global package with a non-elevated user account, the updated version will be installed to the *local* package location, leaving the old version intact in the *global* package location. This behavior can be changed by calling the install command with the \-global option. As of Octave 7.1.0 the \-global option also works with the pkg update command. For example:
 
-```
+```bash
   >> pkg install -forge -global <package_name>
 ```
 
-```
+```bash
   >> pkg update -global
 ```
 

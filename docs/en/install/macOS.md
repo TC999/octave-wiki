@@ -10,13 +10,13 @@ However, using the [Homebrew package manager](https://brew.sh/), one can simply 
 
 ## Contents
 
-+   [1 Homebrew](Octave_for_macOS.html#Homebrew)
-+   [2 Create a launcher app with the Script Editor](Octave_for_macOS.html#Create_a_launcher_app_with_the_Script_Editor)
-+   [3 Alternative Package Managers](Octave_for_macOS.html#Alternative_Package_Managers)
-    +   [3.1 Anaconda](Octave_for_macOS.html#Anaconda)
-    +   [3.2 MacPorts](Octave_for_macOS.html#MacPorts)
-+   [4 See also](Octave_for_macOS.html#See_also)
-+   [5 Footnotes](Octave_for_macOS.html#Footnotes)
++   [1 Homebrew](#Homebrew)
++   [2 Create a launcher app with the Script Editor](#Create_a_launcher_app_with_the_Script_Editor)
++   [3 Alternative Package Managers](#Alternative_Package_Managers)
+    +   [3.1 Anaconda](#Anaconda)
+    +   [3.2 MacPorts](#MacPorts)
++   [4 See also](#See_also)
++   [5 Footnotes](#Footnotes)
 
 ## Homebrew
 
@@ -142,8 +142,6 @@ In the [Terminal App](https://support.apple.com/guide/terminal/welcome/mac) type
 +   [Octave for macOS (outdated)](Octave_for_macOS_\(outdated\).html "Octave for macOS (outdated)") contains old installation instructions.
 
 ## Footnotes
-
-Retrieved from "[https://wiki.octave.org/wiki/index.php?title=Octave\_for\_macOS&oldid=14913](https://wiki.octave.org/wiki/index.php?title=Octave_for_macOS&oldid=14913)"
 
 [Categories](Special%253ACategories.html "Special:Categories"):
 

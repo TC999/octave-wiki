@@ -2,11 +2,11 @@
 
 ## Contents
 
-+   [1 Operating system](Category%253AInstallation.html#Operating_system)
-    +   [1.1 Commercial](Category%253AInstallation.html#Commercial)
-    +   [1.2 GNU/Linux](Category%253AInstallation.html#GNU/Linux)
-    +   [1.3 Other Unix systems](Category%253AInstallation.html#Other_Unix_systems)
-+   [2 Other](Category%253AInstallation.html#Other)
++   [1 Operating system](#Operating_system)
+    +   [1.1 Commercial](#Commercial)
+    +   [1.2 GNU/Linux](#GNU/Linux)
+    +   [1.3 Other Unix systems](#Other_Unix_systems)
++   [2 Other](#Other)
 
 ## Operating system
 
@@ -25,41 +25,41 @@
 
 +   **Distributions**
 
-+   [![Debian](../../assets/os/Debian.svg.png)](Octave_for_Debian_systems.html "Debian")
++   [![Debian](../../assets/os/Debian.svg.png)](Debian.md "Debian")
     
-    [Debian](Octave_for_Debian_systems.html "Octave for Debian systems")
+    [Debian](Debian.md "Octave for Debian systems")
     
-+   [![Ubuntu](../../assets/os/Ubuntu.svg.png)](Octave_for_Debian_systems.html "Ubuntu")
++   [![Ubuntu](../../assets/os/Ubuntu.svg.png)](Debian.md "Ubuntu")
     
-    [Ubuntu](Octave_for_Debian_systems.html "Octave for Debian systems")
+    [Ubuntu](Debian.md "Octave for Debian systems")
     
 +   Archlinux-vert-dark.svg
     
-    [Arch Linux](Octave_for_Arch_Linux.html "Octave for Arch Linux")
+    [Arch Linux](ArchLinux.md "Octave for Arch Linux")
     
-+   [![Slackware](../../assets/os/Slackware.svg.png)](Octave_for_Slackware.html "Slackware")
++   [![Slackware](../../assets/os/Slackware.svg.png)](Slackware.md "Slackware")
     
-    [Slackware](Octave_for_Slackware.html "Octave for Slackware")
+    [Slackware](Slackware.md "Octave for Slackware")
     
 +   [![Gentoo](../../assets/os/Gentoo.svg.png)](linux.md#Gentoo "Gentoo")
     
     [Gentoo](linux.md#Gentoo "Octave for GNU/Linux")
     
-+   [![Fedora](../../assets/os/Fedora.svg.png)](Octave_for_Red_Hat_Linux_systems.html "Fedora")
++   [![Fedora](../../assets/os/Fedora.svg.png)](RedHat.md "Fedora")
     
-    [Fedora](Octave_for_Red_Hat_Linux_systems.html "Octave for Red Hat Linux systems")
+    [Fedora](RedHat.md "Octave for Red Hat Linux systems")
     
-+   [![openSUSE](../../assets/os/OpenSUSE.svg.png)](Octave_for_openSUSE.html "openSUSE")
++   [![openSUSE](../../assets/os/OpenSUSE.svg.png)](OpenSUSE.md "openSUSE")
     
-    [openSUSE](Octave_for_openSUSE.html "Octave for openSUSE")
+    [openSUSE](OpenSUSE.md "Octave for openSUSE")
     
-+   [![CentOS](../../assets/os/CentOS.svg.png)](Octave_for_Red_Hat_Linux_systems.html "CentOS")
++   [![CentOS](../../assets/os/CentOS.svg.png)](RedHat.md "CentOS")
     
-    [CentOS](Octave_for_Red_Hat_Linux_systems.html "Octave for Red Hat Linux systems")
+    [CentOS](RedHat.md "Octave for Red Hat Linux systems")
     
-+   [![RHEL](../../assets/os/Linux.svg.png)](Octave_for_Red_Hat_Linux_systems.html "RHEL")
++   [![RHEL](../../assets/os/Linux.svg.png)](RedHat.md "RHEL")
     
-    [RHEL](Octave_for_Red_Hat_Linux_systems.html "Octave for Red Hat Linux systems")
+    [RHEL](RedHat.md "Octave for Red Hat Linux systems")
 
 +   **Distribution independent**
 
@@ -88,19 +88,19 @@
     [Snap](linux.md#Snap "Octave for GNU/Linux")
     
 
-### [Other Unix systems](Octave_for_other_Unix_systems.html "Octave for other Unix systems")
+### [Other Unix systems](unix.md "Octave for other Unix systems")
 
-+   [![Android](../../assets/os/Android.svg.png)](Octave_for_Android.html "Android")
++   [![Android](../../assets/os/Android.svg.png)](Android.md "Android")
     
-    [Android](Octave_for_Android.html "Octave for Android")
+    [Android](Android.md "Octave for Android")
     
-+   [![FreeBSD](../../assets/os/FreeBSD.png)](Octave_for_other_Unix_systems.html "FreeBSD")
++   [![FreeBSD](../../assets/os/FreeBSD.png)](unix.md "FreeBSD")
     
-    [FreeBSD](Octave_for_other_Unix_systems.html "Octave for other Unix systems")
+    [FreeBSD](unix.md "Octave for other Unix systems")
     
-+   [![OpenBSD](../../assets/os/OpenBSD.svg.png)](Octave_for_other_Unix_systems.html "OpenBSD")
++   [![OpenBSD](../../assets/os/OpenBSD.svg.png)](unix.md "OpenBSD")
     
-    [OpenBSD](Octave_for_other_Unix_systems.html "Octave for other Unix systems")
+    [OpenBSD](unix.md "Octave for other Unix systems")
     
 
 ## Other
@@ -116,18 +116,16 @@ The following 10 pages are in this category, out of 10 total.
 
 ### O
 
-+   [Octave for Android](Octave_for_Android.html "Octave for Android")
-+   [Octave for Arch Linux](Octave_for_Arch_Linux.html "Octave for Arch Linux")
-+   [Octave for Debian systems](Octave_for_Debian_systems.html "Octave for Debian systems")
++   [Octave for Android](Android.md "Octave for Android")
++   [Octave for Arch Linux](ARchLinux.md "Octave for Arch Linux")
++   [Octave for Debian systems](Debian.md "Octave for Debian systems")
 +   [Octave for GNU/Linux](linux.md "Octave for GNU/Linux")
-+   [Octave for macOS](Octave_for_macOS.html "Octave for macOS")
-+   [Octave for Microsoft Windows](Octave_for_Microsoft_Windows.html "Octave for Microsoft Windows")
-+   [Octave for openSUSE](Octave_for_openSUSE.html "Octave for openSUSE")
-+   [Octave for other Unix systems](Octave_for_other_Unix_systems.html "Octave for other Unix systems")
-+   [Octave for Red Hat Linux systems](Octave_for_Red_Hat_Linux_systems.html "Octave for Red Hat Linux systems")
-+   [Octave for Slackware](Octave_for_Slackware.html "Octave for Slackware")
-
-Retrieved from "[https://wiki.octave.org/wiki/index.php?title=Category:Installation&oldid=15302](https://wiki.octave.org/wiki/index.php?title=Category:Installation&oldid=15302)"
++   [Octave for macOS](macOS.md "Octave for macOS")
++   [Octave for Microsoft Windows](Windows.md "Octave for Microsoft Windows")
++   [Octave for openSUSE](openSUSE.md "Octave for openSUSE")
++   [Octave for other Unix systems](unix.md "Octave for other Unix systems")
++   [Octave for Red Hat Linux systems](RedHat.md "Octave for Red Hat Linux systems")
++   [Octave for Slackware](Slackware.md "Octave for Slackware")
 
 [Category](Special%253ACategories.html "Special:Categories"):
 

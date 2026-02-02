@@ -13,12 +13,12 @@
 +   [7 🎓 Academia](#🎓_Academia)
 +   [8 🌐 External Links](#🌐_External_Links)
 
-## ⚙️ Installing
+## [⚙️ Installing](install)
 
 Installation instructions for:
 
 +   [GNU/Linux](install/Linux.md "Octave for GNU/Linux"), [Android](Octave_for_Android.html "Octave for Android"), and [other Unix systems](Octave_for_other_Unix_systems.html "Octave for other Unix systems")
-+   [macOS](Octave_for_macOS.html "Octave for macOS")
++   [macOS](install/macOS.md "Octave for macOS")
 +   [Microsoft Windows](install/Windows.md "Octave for Microsoft Windows")
 
 Get installers and sources from [https://www.octave.org/download](https://www.octave.org/download).

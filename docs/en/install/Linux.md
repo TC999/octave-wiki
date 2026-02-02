@@ -29,53 +29,53 @@ The recommended way for installing Octave on GNU/Linux systems is via each distr
 
 ## Arch Linux
 
-*Main article: [Octave for Arch Linux](../Octave_for_Arch_ "Octave for Arch Linux")*
+*Main article: [Octave for Arch Linux](ArchLinux.md "Octave for Arch Linux")*
 
-```
-pacman -S octave
+```bash
+  pacman -S octave
 ```
 
 ## Debian and Debian-based (such as Ubuntu)
 
-*Main article: [Octave for Debian systems](../Octave_for_Debian_systems.html "Octave for Debian systems")*
+*Main article: [Octave for Debian systems](Debian.md "Octave for Debian systems")*
 
-```
-apt install octave
-apt install octave-dev  # development files; liboctave-dev in older releases
+```bash
+  apt install octave
+  apt install octave-dev  # development files; liboctave-dev in older releases
 ```
 
 ## Fedora
 
-*Main article: [Octave for Red Hat Linux systems](../Octave_for_Red_Hat_Linux_systems.html "Octave for Red Hat Linux systems")*
+*Main article: [Octave for Red Hat Linux systems](RedHat.md "Octave for Red Hat Linux systems")*
 
-```
-dnf install octave
-dnf install octave-devel  # development files
+```bash
+  dnf install octave
+  dnf install octave-devel  # development files
 ```
 
 ## Gentoo
 
-```
-emerge --ask sci-mathematics/octave
+```bash
+  emerge --ask sci-mathematics/octave
 ```
 
 ## openSUSE and SUSE Linux Enterprise
 
-*Main article: [Octave for openSUSE](../Octave_for_openSUSE.html "Octave for openSUSE")*
+*Main article: [Octave for openSUSE](OpenSUSE.md "Octave for openSUSE")*
 
-```
-zypper install octave
-zypper install octave-devel  # development files
+```bash
+  zypper install octave
+  zypper install octave-devel  # development files
 ```
 
 ## Red Hat Enterprise/CentOS
 
 *Main article: [Octave for Red Hat Linux systems](../Octave_for_Red_Hat_Linux_systems.html "Octave for Red Hat Linux systems")*
 
-```
-yum install epel-release
-yum install octave
-yum install octave-devel  # development files
+```bash
+  yum install epel-release
+  yum install octave
+  yum install octave-devel  # development files
 ```
 
 If the above does not work, follow [these instructions](https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F) to set up your system to install packages from EPEL.
@@ -92,10 +92,10 @@ Using a distribution independent approach is particularly useful if you have an 
 
 +   More info: [https://anaconda.org/conda-forge/octave](https://anaconda.org/conda-forge/octave)
 
-```
- conda create --name octave
- conda activate octave
- conda install -c conda-forge octave
+```bash
+  conda create --name octave
+  conda activate octave
+  conda install -c conda-forge octave
 ```
 
 ## Docker / Podman / Singularity
@@ -103,9 +103,9 @@ Using a distribution independent approach is particularly useful if you have an 
 +   More info: [https://hub.docker.com/r/gnuoctave/octave](https://hub.docker.com/r/gnuoctave/octave)
 +   Development: [https://github.com/gnu-octave/docker](https://github.com/gnu-octave/docker)
 
-```
-docker pull docker.io/gnuoctave/octave:10.3.0
-podman pull docker.io/gnuoctave/octave:10.3.0
+```bash
+  docker pull docker.io/gnuoctave/octave:10.3.0
+  podman pull docker.io/gnuoctave/octave:10.3.0
 ```
 
 ```
@@ -126,16 +126,16 @@ docker pull docker.io/mtmiller/octave
 +   More info: [https://flathub.org/apps/details/org.octave.Octave](https://flathub.org/apps/details/org.octave.Octave)
 +   Development: [https://github.com/flathub/org.octave.Octave](https://github.com/flathub/org.octave.Octave)
 
-```
-flatpak install flathub org.octave.Octave
+```bash
+  flatpak install flathub org.octave.Octave
 ```
 
 ## Guix
 
 +   More info: [https://packages.guix.gnu.org/packages/octave/9.1.0/](https://packages.guix.gnu.org/packages/octave/9.1.0/)
 
-```
-guix install octave
+```bash
+  guix install octave
 ```
 
 ## Homebrew on Linux
@@ -145,8 +145,8 @@ guix install octave
 +   More info: [https://docs.brew.sh/Homebrew-on-Linux](https://docs.brew.sh/Homebrew-on-Linux)
 +   Development: [https://formulae.brew.sh/formula/octave](https://formulae.brew.sh/formula/octave)
 
-```
-brew install octave
+```bash
+  brew install octave
 ```
 
 ## MXE
@@ -159,14 +159,14 @@ brew install octave
 +   More info: [https://snapcraft.io/octave](https://snapcraft.io/octave)
 +   Development: [https://github.com/octave-snap/octave-snap](https://github.com/octave-snap/octave-snap)
 
-```
-snap install octave
+```bash
+  snap install octave
 ```
 
 If you want to use a nightly snapshot build of the development branch of Octave, install from the *edge* channel
 
-```
-snap install --edge octave
+```bash
+  snap install --edge octave
 ```
 
 ## Spack
