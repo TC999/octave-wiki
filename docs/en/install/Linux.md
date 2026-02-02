@@ -117,8 +117,8 @@ singularity pull docker://gnuoctave/octave:10.3.0
 +   More info: [https://hub.docker.com/r/mtmiller/octave](https://hub.docker.com/r/mtmiller/octave)
 +   Development: [https://gitlab.com/mtmiller/docker-octave](https://gitlab.com/mtmiller/docker-octave)
 
-```
-docker pull docker.io/mtmiller/octave
+```bash
+  docker pull docker.io/mtmiller/octave
 ```
 
 ## Flatpak
@@ -174,13 +174,13 @@ If you want to use a nightly snapshot build of the development branch of Octave,
 +   More info: [https://spack.readthedocs.io/](https://spack.readthedocs.io/)
 +   Development: [https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/octave/package.py](https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/octave/package.py)
 
-```
-spack install octave
+```bash
+  spack install octave
 ```
 
 # Building from source
 
-*Main article: [Building](../Building.html "Building")*
+*Main article: [Building](../development/build/building.md "Building")*
 
 ## See also
 
