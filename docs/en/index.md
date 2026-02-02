@@ -38,7 +38,7 @@ Are you using an old version of Octave? Check the [Release History](Release_Hist
 +   [Octave Discourse](https://octave.discourse.group) - Forum for Octave users and developers.
 +   [Other support options](https://octave.org/support)
 
-## 💡 [Getting started](Category%253AResources.html "Category:Resources") 🔰
+## 💡 [Getting started](resource "Category:Resources") 🔰
 
 +   [Books](Publications_using_Octave.html#Books "Publications using Octave")
 +   [Videos](Video_tutorials.html "Video tutorials")
