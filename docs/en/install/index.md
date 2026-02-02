@@ -33,7 +33,7 @@
     
     [Ubuntu](Debian.md "Octave for Debian systems")
     
-+   [![Arch Linux](../../assets/os/Archlinux.svg)](ArchLinux.md "Arch Linux")
++   [![Arch Linux](../../assets/os/ArchLinux.svg)](ArchLinux.md "Arch Linux")
     
     [Arch Linux](ArchLinux.md "Octave for Arch Linux")
     

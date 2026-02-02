@@ -33,7 +33,7 @@
     
     [Ubuntu](Debian.md "适用于 Debian 系统的 Octave")
     
-+   [![Arch Linux](../../assets/os/Archlinux.svg)](ArchLinux.md "Arch Linux")
++   [![Arch Linux](../../assets/os/ArchLinux.svg)](ArchLinux.md "Arch Linux")
     
     [Arch Linux](ArchLinux.md "适用于 Arch Linux 的 Octave")
     
