@@ -129,8 +129,6 @@ length(rowVec)
 ans =  3
 ```
 
-  
-
 # Linear Algebra
 
 Many common linear algebra operations are simple to program using Octave’s matrix syntax. Read more [about linear algebra](https://www.gnu.org/software/octave/doc/interpreter/Linear-Algebra.html).
@@ -291,8 +289,6 @@ i=19:
 i=20: Buzz
 ```
 
-  
-
 # Getting Help
 
 The [help](https://www.gnu.org/software/octave/doc/interpreter/XREFhelp.html) and [doc](https://www.gnu.org/software/octave/doc/interpreter/XREFdoc.html) commands can be invoked at the Octave prompt to print documentation for any function.
@@ -301,8 +297,6 @@ The [help](https://www.gnu.org/software/octave/doc/interpreter/XREFhelp.html) an
 help plot
 doc plot
 ```
-
-  
 
 # Octave packages
 
