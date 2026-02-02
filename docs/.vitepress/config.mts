@@ -5,6 +5,9 @@ export default defineConfig({
   title: "GNU Octave Wiki mirror",
   description: "GNU Octave Wiki mirror",
   ignoreDeadLinks: true, // 临时解决方案，等待修复
+  srcDir: "./",
+  base: "/octave-wiki/",
+  srcExclude: ["node_modules/**/*"],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     //nav: [
