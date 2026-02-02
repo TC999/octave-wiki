@@ -26,8 +26,9 @@ export default defineConfig({
           {
             text: 'Examples',
             items: [
-              { text: 'Install', link: '/en/install' },
-              { text: 'Runtime API Examples', link: '/en/api-examples' }
+              { text: '🏠 GNU Octave Wiki', link: '/en' },
+              { text: '⚙️ Install', link: '/en/install' },
+              { text: '🔬 Development', link: '/en/development' }
             ]
           }
         ]
@@ -42,8 +43,9 @@ export default defineConfig({
           {
             text: '示例',
             items: [
-              { text: '安装', link: '/zh_CN/install' },
-              { text: '运行时 API 示例', link: '/zh_CN/api-examples' }
+              { text: '🏠 GNU Octave Wiki', link: '/zh_CN' },
+              { text: '⚙️ 安装', link: '/zh_CN/install' },
+              { text: '🛠️ 运行时 API 示例', link: '/zh_CN/api-examples' }
             ]
           }
         ]

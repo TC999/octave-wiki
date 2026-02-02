@@ -33,8 +33,6 @@ For graphical plots, [install](https://wiki.termux.com/wiki/Graphical_Environmen
 
 GNU Octave running directly in Termux
 
-  
-
 ### Via some GNU/Linux distribution
 
 Inside Termux in Android, you can install a GNU/Linux distribution like Debian, Ubuntu, Arch or Alpine. Note that Alpine consumes relatively less disk space. Octave can be installed as described in [Octave for GNU/Linux](Octave_for_GNU/Linux.html "Octave for GNU/Linux") from the distribution's respective package manager.

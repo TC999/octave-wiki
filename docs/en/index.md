@@ -44,11 +44,11 @@ Are you using an old version of Octave? Check the [Release History](Release_Hist
 +   [Videos](Video_tutorials.html "Video tutorials")
 +   [Tutorials and Examples](Category%253AResources.html "Category:Resources")
 
-## 🔬 [Development](Category%253ADevelopment.html "Category:Development")
+## 🔬 [Development](development "Category:Development")
 
 We always need more help improving Octave and there are many ways [you can contribute](https://www.gnu.org/software/octave/get-involved.html) (fixing bugs, developing new features, answering questions on [Octave Discourse](https://octave.discourse.group/), ...).
 
-+   Get an overview about the [GNU Octave development](Category%253ADevelopment.html "Category:Development").
++   Get an overview about the [GNU Octave development](development "Category:Development").
 +   Take a look at our [project ideas](Projects.html "Projects") and [Summer of Code project ideas](Summer_of_Code_-_Getting_Started.html "Summer of Code - Getting Started").
 
 ## 📦 [Packages](Category%253APackages.html "Category:Packages")
