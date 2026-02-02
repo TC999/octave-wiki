@@ -6,10 +6,10 @@ export default defineConfig({
   description: "GNU Octave Wiki mirror",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
+    //nav: [
+    //  { text: 'Home', link: '/' },
+    //  { text: 'Examples', link: '/markdown-examples' }
+    //],
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
@@ -42,8 +42,8 @@ export default defineConfig({
           {
             text: '示例',
             items: [
-              { text: 'Markdown 示例', link: '/markdown-examples' },
-              { text: '运行时 API 示例', link: '/api-examples' }
+              { text: '安装', link: '/zh_CN/install' },
+              { text: '运行时 API 示例', link: '/zh_CN/api-examples' }
             ]
           }
         ]
