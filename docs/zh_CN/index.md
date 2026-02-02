@@ -38,11 +38,11 @@
 +   [Octave 论坛](https://octave.discourse.group) - Octave 用户和开发者的论坛。
 +   [其他支持选项](https://octave.org/support)
 
-## 💡 [入门](Category%253AResources.html "资源类别") 🔰
+## 💡 [入门](resource "资源类别") 🔰
 
 +   [书籍](Publications_using_Octave.html#Books "使用 Octave 的出版物")
-+   [视频](Video_tutorials.html "视频教程")
-+   [教程和示例](Category%253AResources.html "资源类别")
++   [视频](resource/videos.md "视频教程")
++   [教程和示例](resource "资源类别")
 
 ## 🔬 [开发](Category%253ADevelopment.html "开发类别")
 
