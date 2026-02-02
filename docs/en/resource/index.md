@@ -30,6 +30,7 @@ The GNU Octave graphical user interface (GUI).
 +   [BASH and Octave](BASH_and_Octave.html "BASH and Octave") - Make Octave history an executable script.
 +   [Optimizing Fourier transforms](Optimizing_Fourier_transforms.html "Optimizing Fourier transforms") - Use the FFTW "wisdom".
 
+<!--
 ## Subcategories
 
 This category has the following 3 subcategories, out of 3 total.
@@ -46,3 +47,4 @@ This category has the following 3 subcategories, out of 3 total.
 [Category](Special%253ACategories.html "Special:Categories"):
 
 +   [Contents](Category%253AContents.html "Category:Contents")
+-->
