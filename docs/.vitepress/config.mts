@@ -45,7 +45,7 @@ export default defineConfig({
             items: [
               { text: '🏠 GNU Octave Wiki', link: '/zh_CN' },
               { text: '⚙️ 安装', link: '/zh_CN/install' },
-              { text: '🛠️ 运行时 API 示例', link: '/zh_CN/api-examples' }
+              { text: '🔬 开发', link: '/zh_CN/development' }
             ]
           }
         ]
