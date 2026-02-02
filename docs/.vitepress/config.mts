@@ -11,16 +11,6 @@ export default defineConfig({
       { text: 'Examples', link: '/markdown-examples' }
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ],
@@ -29,12 +19,35 @@ export default defineConfig({
   locales: {
     root: {
       label: 'English',
-      lang: 'en'
+      lang: 'en',
+      link: '/en/',
+      themeConfig: {
+        sidebar: [
+          {
+            text: 'Examples',
+            items: [
+              { text: 'Markdown Examples', link: '/markdown-examples' },
+              { text: 'Runtime API Examples', link: '/api-examples' }
+            ]
+          }
+        ]
+      }
     },
     zh_CN: {
       label: '简体中文',
       lang: 'zh-CN',
-      link: '/zh_CN/'
+      link: '/zh_CN/',
+      themeConfig: {
+        sidebar: [
+          {
+            text: '示例',
+            items: [
+              { text: 'Markdown 示例', link: '/markdown-examples' },
+              { text: '运行时 API 示例', link: '/api-examples' }
+            ]
+          }
+        ]
+      }
     }
   }
 })
