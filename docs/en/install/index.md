@@ -83,7 +83,7 @@
     
     [MXE](MXE.html "MXE")
     
-+   [![Snap](../../assets/distro/Snap.svg.png)](linux.md#Snap "Snap")
++   [![Snap](../../assets/distro/120px-Snapcraft.png)](linux.md#Snap "Snap")
     
     [Snap](linux.md#Snap "Octave for GNU/Linux")
     
