@@ -17,7 +17,7 @@
 
 Installation instructions for:
 
-+   [GNU/Linux](install/Linux.md "Octave for GNU/Linux"), [Android](Octave_for_Android.html "Octave for Android"), and [other Unix systems](Octave_for_other_Unix_systems.html "Octave for other Unix systems")
++   [GNU/Linux](install/Linux.md "Octave for GNU/Linux"), [Android](install/Android.md "Octave for Android"), and [other Unix systems](install/unix.md "Octave for other Unix systems")
 +   [macOS](install/macOS.md "Octave for macOS")
 +   [Microsoft Windows](install/Windows.md "Octave for Microsoft Windows")
 

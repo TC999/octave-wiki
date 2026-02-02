@@ -17,8 +17,8 @@
 
 安装说明：
 
-+   [GNU/Linux](install/Linux.md "适用于 GNU/Linux 的 Octave"), [Android](Octave_for_Android.html "适用于 Android 的 Octave") 和 [其他 Unix 系统](Octave_for_other_Unix_systems.html "适用于其他 Unix 系统的 Octave")
-+   [macOS](Octave_for_macOS.html "适用于 macOS 的 Octave")
++   [GNU/Linux](install/Linux.md "适用于 GNU/Linux 的 Octave"), [Android](install/Android.md "适用于 Android 的 Octave") 和 [其他 Unix 系统](install/unix.md "适用于其他 Unix 系统的 Octave")
++   [macOS](install/macOS.md "适用于 macOS 的 Octave")
 +   [Microsoft Windows](install/Windows.md "适用于 Microsoft Windows 的 Octave")
 
 从 [https://www.octave.org/download](https://www.octave.org/download) 获取安装程序和源代码。
