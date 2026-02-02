@@ -71,7 +71,7 @@
     
     [Flatpak](linux.md#Flatpak "Octave for GNU/Linux")
     
-+   [![Guix](https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Guix_logo.svg/120px-Guix_logo.svg.png)](linux.md#Guix "Guix")
++   [![Guix](../../assets/distro/Guix.svg.png)](linux.md#Guix "Guix")
     
     [Guix](linux.md#Guix "Octave for GNU/Linux")
     

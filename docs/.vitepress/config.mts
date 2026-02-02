@@ -24,7 +24,7 @@ export default defineConfig({
       themeConfig: {
         sidebar: [
           {
-            text: 'Examples',
+            text: 'Categories',
             items: [
               { text: '🏠 GNU Octave Wiki', link: '/en' },
               { text: '⚙️ Install', link: '/en/install' },
@@ -41,7 +41,7 @@ export default defineConfig({
       themeConfig: {
         sidebar: [
           {
-            text: '示例',
+            text: '类别',
             items: [
               { text: '🏠 GNU Octave Wiki', link: '/zh_CN' },
               { text: '⚙️ 安装', link: '/zh_CN/install' },
