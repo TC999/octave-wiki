@@ -51,7 +51,7 @@ Use Octave's [`which`](https://www.octave.org/doc/interpreter/XREFwhich.html) co
 
 ### m-file functions
 
-```octave
+```matlab
 >> which help
 ```
 
@@ -61,7 +61,7 @@ Use Octave's [`which`](https://www.octave.org/doc/interpreter/XREFwhich.html) co
 
 In this case, the desired function is a m-file, one can simply edit it inside the GUI, just type:
 
-```octave
+```matlab
 >> edit help
 ```
 
@@ -69,7 +69,7 @@ In this case, the desired function is a m-file, one can simply edit it inside th
 
 Some functions are already compiled (a.k.a. *built-in functions*), for example:
 
-```octave
+```matlab
 >> which addpath
 ```
 

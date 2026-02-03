@@ -36,7 +36,7 @@ The GNU Octave graphical user interface (GUI).
 
 Assign values to variables with `=` (Note: assignment is *pass-by-value*). Read more [about variables](https://www.gnu.org/software/octave/doc/interpreter/Variables.html).
 
-```octave
+```matlab
 a = 1;
 ```
 
@@ -48,7 +48,7 @@ a = 1;
 
 The output of every command is printed to the console unless terminated with a semicolon `;`. The [disp](https://www.gnu.org/software/octave/doc/interpreter/XREFdisp.html) command can be used to print output anywhere. Use [exit](https://www.gnu.org/software/octave/doc/interpreter/XREFquit.html) or [quit](https://www.gnu.org/software/octave/doc/interpreter/XREFquit.html) to quit the console. Read more [about command evaluation](https://www.gnu.org/software/octave/doc/interpreter/Simple-Examples.html).
 
-```octave
+```matlab
 t = 99 + 1  # prints 't = 100'
 ```
 
@@ -56,7 +56,7 @@ t = 99 + 1  # prints 't = 100'
 t =  100
 ```
 
-```octave
+```matlab
 t = 99 + 1; # nothing is printed
 disp(t);
 ```
@@ -69,7 +69,7 @@ disp(t);
 
 Many mathematical operators are available in addition to the standard arithmetic. Operations are floating-point. Read more [about elementary math](https://www.gnu.org/software/octave/doc/interpreter/Arithmetic.html).
 
-```octave
+```matlab
 x = 3/4 * pi;
 y = sin (x)
 ```
@@ -82,7 +82,7 @@ y =  0.70711
 
 Arrays in Octave are called matrices. One-dimensional matrices are referred to as vectors. Use a space or a comma `,` to separate elements in a row and semicolon `;` to start a new row. Read more [about matrices](https://www.gnu.org/software/octave/doc/interpreter/Linear-Algebra.html).
 
-```octave
+```matlab
 rowVec = [8 6 4]
 ```
 
@@ -91,7 +91,7 @@ rowVec =
    8   6   4
 ```
 
-```octave
+```matlab
 columnVec = [8; 6; 4]
 ```
 
@@ -102,7 +102,7 @@ columnVec =
    4
 ```
 
-```octave
+```matlab
 mat = [8 6 4; 2 0 -2]
 ```
 
@@ -112,7 +112,7 @@ mat =
    2   0  -2
 ```
 
-```octave
+```matlab
 size(mat)
 ```
 
@@ -121,7 +121,7 @@ ans =
    2   3
 ```
 
-```octave
+```matlab
 length(rowVec)
 ```
 
@@ -133,7 +133,7 @@ ans =  3
 
 Many common linear algebra operations are simple to program using Octave’s matrix syntax. Read more [about linear algebra](https://www.gnu.org/software/octave/doc/interpreter/Linear-Algebra.html).
 
-```octave
+```matlab
 columnVec * rowVec
 ```
 
@@ -144,7 +144,7 @@ ans =
    32   24   16
 ```
 
-```octave
+```matlab
 rowVec * columnVec
 ```
 
@@ -152,7 +152,7 @@ rowVec * columnVec
 ans =  116
 ```
 
-```octave
+```matlab
 columnVec'
 ```
 
@@ -165,7 +165,7 @@ ans =
 
 Octave is 1-indexed. Matrix elements are accessed as `matrix(rowNum, columnNum)`. Read more [about accessing elements](https://www.gnu.org/software/octave/doc/interpreter/Index-Expressions.html).
 
-```octave
+```matlab
 mat(2,3)
 ```
 
@@ -177,7 +177,7 @@ ans = -2
 
 Octave supports `for` and `while` loops, as well as other control flow structures. Read more [about control flow](https://www.gnu.org/software/octave/doc/interpreter/Statements.html).
 
-```octave
+```matlab
 x = zeros (50,1);
 for i = 1:2:100 # iterate from 1 to 100 with step size 2
   x(i) = i^2;
@@ -196,7 +196,7 @@ endwhile
 
 For-loops can often be replaced or simplified using vector syntax. The operators `*`, `/`, and `^` all support element-wise operations writing a dot `.` before the operators. Many other functions operate element-wise by default ([sin](https://www.gnu.org/software/octave/doc/interpreter/XREFsin.html), `+`, `-`, etc.). Read more [about vectorization](https://www.gnu.org/software/octave/doc/interpreter/Vectorization-and-Faster-Code-Execution.html).
 
-```octave
+```matlab
 i = 1:2:100;      # create an array with 50-elements
 x = i.^2;         # each element is squared
 y = x + 9;        # add 9 to each element
@@ -208,7 +208,7 @@ w = sin (i / 10); # take the sine of each element divided by 10
 
 The function [plot](https://www.gnu.org/software/octave/doc/interpreter/XREFplot.html) can be called with vector arguments to create 2D line and scatter plots. Read more [about plotting](https://www.gnu.org/software/octave/doc/interpreter/Two_002dDimensional-Plots.html).
 
-```octave
+```matlab
 plot (i / 10, w);
 title ('w = sin (i / 10)');
 xlabel ('i / 10');
@@ -223,7 +223,7 @@ ylabel ('w');
 
 Strings are simply arrays of characters. Strings can be composed using C-style formatting with [sprintf](https://www.gnu.org/software/octave/doc/interpreter/XREFsprintf.html) or [fprintf](https://www.gnu.org/software/octave/doc/interpreter/XREFfprintf.html). Read more [about strings](https://www.gnu.org/software/octave/doc/interpreter/Strings.html).
 
-```octave
+```matlab
 firstString = "hello world";
 secondString = "!";
 [firstString, secondString] # concatenate both strings
@@ -233,7 +233,7 @@ secondString = "!";
 ans = hello world!
 ```
 
-```octave
+```matlab
 fprintf ("%s %.10f \n", "The number is:", 10)
 ```
 
@@ -245,7 +245,7 @@ The number is: 10.0000000000
 
 Conditional statements can be used to create branching logic in your code. Read more [in the manual](https://www.gnu.org/software/octave/doc/interpreter/The-if-Statement.html).
 
-```octave
+```matlab
 # Print 'Foo'      if divisible by 7,
 #       'Fizz'     if divisible by 3,
 #       'Buzz'     if divisible by 5,
@@ -293,7 +293,7 @@ i=20: Buzz
 
 The [help](https://www.gnu.org/software/octave/doc/interpreter/XREFhelp.html) and [doc](https://www.gnu.org/software/octave/doc/interpreter/XREFdoc.html) commands can be invoked at the Octave prompt to print documentation for any function.
 
-```octave
+```matlab
 help plot
 doc plot
 ```
@@ -302,7 +302,7 @@ doc plot
 
 Community-developed packages can be added from the [Octave Packages](https://gnu-octave.github.io/packages/) website to extend the functionality of Octave’s core library. (Matlab users: Packages act similarly to Matlab’s toolboxes.) The [pkg](https://www.gnu.org/software/octave/doc/interpreter/XREFpkg.html) command is used to manage these packages. For example, to use the image processing library visit its [page on Octave Packages,](https://gnu-octave.github.io/packages/image/) copy the install command and run it in octave
 
-```octave
+```matlab
 pkg install "https://downloads.sourceforge.net/project/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases/image-2.14.0.tar.gz" # install package
 pkg load image           # load new functions into workspace
 ```

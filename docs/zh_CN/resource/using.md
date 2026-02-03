@@ -36,7 +36,7 @@ GNU Octave 图形用户界面（GUI）。
 
 使用 `=` 将值赋给变量（注意：赋值采用 *值传递* 方式）。更多关于变量的信息，请参阅 [变量说明](https://www.gnu.org/software/octave/doc/interpreter/Variables.html)。
 
-```octave
+```matlab
 a = 1;
 ```
 
@@ -48,7 +48,7 @@ a = 1;
 
 除非命令以分号 `;` 结尾，否则每条命令的输出都会打印到控制台。可以使用 [disp](https://www.gnu.org/software/octave/doc/interpreter/XREFdisp.html) 命令在任意位置打印输出。使用 [exit](https://www.gnu.org/software/octave/doc/interpreter/XREFquit.html) 或 [quit](https://www.gnu.org/software/octave/doc/interpreter/XREFquit.html) 退出控制台。更多关于命令求值的信息，请参阅 [简单示例](https://www.gnu.org/software/octave/doc/interpreter/Simple-Examples.html)。
 
-```octave
+```matlab
 t = 99 + 1  # 打印 't = 100'
 ```
 
@@ -56,7 +56,7 @@ t = 99 + 1  # 打印 't = 100'
 t =  100
 ```
 
-```octave
+```matlab
 t = 99 + 1; # 不会打印任何内容
 disp(t);
 ```
@@ -69,7 +69,7 @@ disp(t);
 
 除了标准算术运算外，Octave 还提供许多其他数学运算符。所有运算均为浮点运算。更多关于基本数学运算的信息，请参阅 [算术运算](https://www.gnu.org/software/octave/doc/interpreter/Arithmetic.html)。
 
-```octave
+```matlab
 x = 3/4 * pi;
 y = sin (x)
 ```
@@ -82,7 +82,7 @@ y =  0.70711
 
 Octave 中的数组被称为矩阵。一维矩阵称为向量。使用空格或逗号 `,` 分隔同一行中的元素，使用分号 `;` 开始新行。更多关于矩阵的信息，请参阅 [线性代数](https://www.gnu.org/software/octave/doc/interpreter/Linear-Algebra.html)。
 
-```octave
+```matlab
 rowVec = [8 6 4]
 ```
 
@@ -91,7 +91,7 @@ rowVec =
    8   6   4
 ```
 
-```octave
+```matlab
 columnVec = [8; 6; 4]
 ```
 
@@ -102,7 +102,7 @@ columnVec =
    4
 ```
 
-```octave
+```matlab
 mat = [8 6 4; 2 0 -2]
 ```
 
@@ -112,7 +112,7 @@ mat =
    2   0  -2
 ```
 
-```octave
+```matlab
 size(mat)
 ```
 
@@ -121,7 +121,7 @@ ans =
    2   3
 ```
 
-```octave
+```matlab
 length(rowVec)
 ```
 
@@ -133,7 +133,7 @@ ans =  3
 
 使用 Octave 的矩阵语法，可以轻松实现许多常见的线性代数运算。更多关于线性代数的信息，请参阅 [线性代数](https://www.gnu.org/software/octave/doc/interpreter/Linear-Algebra.html)。
 
-```octave
+```matlab
 columnVec * rowVec
 ```
 
@@ -144,7 +144,7 @@ ans =
    32   24   16
 ```
 
-```octave
+```matlab
 rowVec * columnVec
 ```
 
@@ -152,7 +152,7 @@ rowVec * columnVec
 ans =  116
 ```
 
-```octave
+```matlab
 columnVec'
 ```
 
@@ -165,7 +165,7 @@ ans =
 
 Octave 的索引从 1 开始。矩阵元素通过 `matrix(行号, 列号)` 访问。更多关于访问元素的信息，请参阅 [索引表达式](https://www.gnu.org/software/octave/doc/interpreter/Index-Expressions.html)。
 
-```octave
+```matlab
 mat(2,3)
 ```
 
@@ -177,7 +177,7 @@ ans = -2
 
 Octave 支持 `for` 和 `while` 循环，以及其他控制流结构。更多关于控制流的信息，请参阅 [语句](https://www.gnu.org/software/octave/doc/interpreter/Statements.html)。
 
-```octave
+```matlab
 x = zeros (50,1);
 for i = 1:2:100 # 从 1 到 100，步长为 2 进行迭代
   x(i) = i^2;
@@ -196,7 +196,7 @@ endwhile
 
 通常可以使用向量语法替代或简化 for 循环。在运算符 `*`、`/` 和 `^` 前加上点 `.`，即可执行逐元素运算。许多其他函数（如 [sin](https://www.gnu.org/software/octave/doc/interpreter/XREFsin.html)、`+`、`-` 等）默认即为逐元素操作。更多关于向量化的信息，请参阅 [向量化与加速代码执行](https://www.gnu.org/software/octave/doc/interpreter/Vectorization-and-Faster-Code-Execution.html)。
 
-```octave
+```matlab
 i = 1:2:100;      # 创建一个包含 50 个元素的数组
 x = i.^2;         # 对每个元素平方
 y = x + 9;        # 每个元素加 9
@@ -208,7 +208,7 @@ w = sin (i / 10); # 对每个元素除以 10 后取正弦值
 
 调用 [plot](https://www.gnu.org/software/octave/doc/interpreter/XREFplot.html) 函数并传入向量参数，即可创建二维折线图或散点图。更多关于绘图的信息，请参阅 [二维绘图](https://www.gnu.org/software/octave/doc/interpreter/Two_002dDimensional-Plots.html)。
 
-```octave
+```matlab
 plot (i / 10, w);
 title ('w = sin (i / 10)');
 xlabel ('i / 10');
@@ -223,7 +223,7 @@ ylabel ('w');
 
 字符串本质上是字符数组。可以使用 C 风格的格式化函数 [sprintf](https://www.gnu.org/software/octave/doc/interpreter/XREFsprintf.html) 或 [fprintf](https://www.gnu.org/software/octave/doc/interpreter/XREFfprintf.html) 构造字符串。更多关于字符串的信息，请参阅 [字符串](https://www.gnu.org/software/octave/doc/interpreter/Strings.html)。
 
-```octave
+```matlab
 firstString = "hello world";
 secondString = "!";
 [firstString, secondString] # 连接两个字符串
@@ -233,7 +233,7 @@ secondString = "!";
 ans = hello world!
 ```
 
-```octave
+```matlab
 fprintf ("%s %.10f \n", "The number is:", 10)
 ```
 
@@ -245,7 +245,7 @@ The number is: 10.0000000000
 
 条件语句可用于在代码中实现分支逻辑。更多详情请参阅手册中的 [if 语句](https://www.gnu.org/software/octave/doc/interpreter/The-if-Statement.html)。
 
-```octave
+```matlab
 # 若能被 7 整除，打印 'Foo'；
 # 若能被 3 整除，打印 'Fizz'；
 # 若能被 5 整除，打印 'Buzz'；
@@ -293,7 +293,7 @@ i=20: Buzz
 
 在 Octave 提示符下，可以使用 [help](https://www.gnu.org/software/octave/doc/interpreter/XREFhelp.html) 和 [doc](https://www.gnu.org/software/octave/doc/interpreter/XREFdoc.html) 命令打印任意函数的文档。
 
-```octave
+```matlab
 help plot
 doc plot
 ```
@@ -302,7 +302,7 @@ doc plot
 
 可以从 [Octave Packages](https://gnu-octave.github.io/packages/) 网站添加社区开发的软件包，以扩展 Octave 核心库的功能。（MATLAB 用户注意：这些软件包类似于 MATLAB 的工具箱。）使用 [pkg](https://www.gnu.org/software/octave/doc/interpreter/XREFpkg.html) 命令管理这些软件包。例如，若要使用图像处理库，请访问其在 [Octave Packages 上的页面](https://gnu-octave.github.io/packages/image/)，复制安装命令并在 Octave 中运行：
 
-```octave
+```matlab
 pkg install "https://downloads.sourceforge.net/project/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases/image-2.14.0.tar.gz" # 安装软件包
 pkg load image           # 将新函数加载到工作空间
 ```
