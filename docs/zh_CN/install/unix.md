@@ -1,4 +1,4 @@
-# FreeBSD
+# 其他 Unix 系统
 
 *您是在寻找 [GNU/Linux](Linux.md "Octave for GNU/Linux") 系统吗？*
 

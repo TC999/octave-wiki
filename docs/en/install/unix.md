@@ -1,4 +1,4 @@
-# FreeBSD
+# Other Unix systems
 
 *Are you looking for [GNU/Linux](Linux.md "Octave for GNU/Linux") systems?*
 
