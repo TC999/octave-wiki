@@ -2,9 +2,9 @@
 
 *This article provides general information about **building GNU Octave** from source (on Unix-like systems).*
 
-+   *If you just want to **install GNU Octave**, see [Category:Installation](../../install "Category:Installation").*
-+   *For **MS Windows**, read [Building on Microsoft Windows](On_Windows.md "Building on Microsoft Windows") and [Windows Installer](Windows_Installer.md "Windows Installer").*
-+   *For **macOS**, read [Octave for macOS](../../install/macOS.md "Octave for macOS").*
++   *If you just want to **install GNU Octave**, see [Category:Installation](../install "Category:Installation").*
++   *For **MS Windows**, read [Building on Microsoft Windows](build_on_Windows.md "Building on Microsoft Windows") and [Windows Installer](Windows_Installer.md "Windows Installer").*
++   *For **macOS**, read [Octave for macOS](../install/macOS.md "Octave for macOS").*
 
 ## Contents
 
@@ -56,13 +56,13 @@ make install
 
 Most of the dependencies given in this section can be very conveniently installed on many [GNU/Linux](Octave_for_GNU/Linux.html "Octave for GNU/Linux") systems.
 
-![Info icon.svg](../../../assets/info/26px-Info_icon.svg.png)
+![Info icon.svg](../../assets/info/26px-Info_icon.svg.png)
 
 For a quick way to install the required dependencies, see:
 
-+   [Debian / Ubuntu](../../install/debian.md#The_right_way "Octave for Debian systems")
-+   [Arch Linux](../../install/ArchLinux.md "Octave for Arch Linux")
-+   [Fedora / RedHat / CentOS](../../install/RedHat.md "Octave for Red Hat Linux systems")
++   [Debian / Ubuntu](../install/debian.md#The_right_way "Octave for Debian systems")
++   [Arch Linux](../install/ArchLinux.md "Octave for Arch Linux")
++   [Fedora / RedHat / CentOS](../install/RedHat.md "Octave for Red Hat Linux systems")
 
 Dependencies marked with green background are **required** for building Octave. All other tools and libraries are recommended/optional, but very useful features (like the GUI, plotting, etc.) are likely to be disabled.
 

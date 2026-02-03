@@ -36,8 +36,8 @@
 
 ## 🛠️ [Building](build "Category:Building")
 
-+   [Building](build/building.md "Building") -- General information how to build Octave from source.
-    +   [Building on Microsoft Windows](Building_on_Microsoft_Windows.html "Building on Microsoft Windows")
++   [Building](building.md "Building") -- General information how to build Octave from source.
+    +   [Building on Microsoft Windows](./build_on_Windows.md "Building on Microsoft Windows")
     +   [Building on Ubuntu Virtual Machine](Building_on_Ubuntu_Virtual_Machine.html "Building on Ubuntu Virtual Machine")
 +   [Continuous Build](Continuous_Build.html "Continuous Build") -- Check changes with [Buildbot](https://buildbot.net/).
 +   [MXE](MXE.html "MXE") -- Cross-compiling to MS Windows.
