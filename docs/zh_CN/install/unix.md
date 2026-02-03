@@ -21,7 +21,7 @@
 ```
 
 另一种方法是通过 Ports 从源码构建 Octave
-[1\]](#cite_note-1)。确保您的 Port 树已更新。有关如何更新，请查看 [FreeBSD 文档](https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/ports.html)。然后以 root 用户身份输入：
+[\[1\]](#cite_note-1)。确保您的 Port 树已更新。有关如何更新，请查看 [FreeBSD 文档](https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/ports.html)。然后以 root 用户身份输入：
 
 ```bash
   cd /usr/ports/math/octave 
@@ -35,7 +35,7 @@
 ```
 
 或通过 Ports
-[2\]](#cite_note-2)。
+[\[2\]](#cite_note-2)。
 
 ## OpenBSD
 
@@ -46,7 +46,7 @@
 ```
 
 另一种方法是通过 Ports 从源码构建 Octave
-[3\]](#cite_note-3)。
+[\[3\]](#cite_note-3)。
 
 ## Android
 
