@@ -11,7 +11,7 @@ GNU Octave 图形用户界面（GUI）。
 +   [视频教程](videos.md "Video tutorials")
 +   [使用 Octave](using.md "Using Octave") — 简短入门介绍。
 +   [Octave 基础](basics.md "Octave Basics") — 一张快速上手的参考卡片。
-+   [绘图元素层级结构回顾](Recap_of_the_hierarchy_of_each_plot_element.html "Recap of the hierarchy of each plot element") — 一些高级绘图教程。
++   [绘图元素层级结构回顾](Recap_of_the_hierarchy_of_each_plot_element.md "绘图元素层级结构回顾") — 一些高级绘图教程。
 +   [短期课程](https://bagustris.github.io/octave-tutorial)
 
 ### 示例
