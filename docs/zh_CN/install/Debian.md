@@ -148,10 +148,10 @@ sudo apt-get install gcc g++ gfortran make libopenblas-dev liblapack-dev libpcre
 
 ![Warning icon.svg](../../assets/warning/26px-Warning_icon.svg.png)
 
-+   The Debian repositoriy has several libraries for dealing with HDF data files. The recommended is `libhdf5-serial-dev`. However, the [msh package](https://octave.sourceforge.io/msh/index.html) requires [gmsh](http://www.geuz.org/gmsh/) which is incompatible with it.
-+   The GraphicsMagick++ library (libgraphicsmagick++1-dev) on the Debian repositories was compiled with quantum 8 which limits reading images to 8 bit. The solution is to recompile [GraphicsMagick](GraphicsMagick.html "GraphicsMagick") with quantum 16 or 32 before building Octave.
-+   For debian9 using openjdk-9-jdk (even providing `JAVA_HOME`) could \*not\* be used for the java interface! Use openjdk-8-jdk instead.
-+   When configure decides to use QT5 instead of QT4, make might fail because lrelease is missing (see [bug 50580](https://savannah.gnu.org/bugs/?50580)). It can be fixed by installing `qttools5-dev-tools`
++   Debian 软件仓库中提供了多个用于处理 HDF 数据文件的库，推荐使用 `libhdf5-serial-dev`。但请注意，[msh 包](https://octave.sourceforge.io/msh/index.html) 所需的 [gmsh](http://www.geuz.org/gmsh/) 与此库不兼容。
++   Debian 仓库中的 GraphicsMagick++ 库（libgraphicsmagick++1-dev）编译时采用了量子深度（quantum）为 8 的设置，这将图像读取限制在 8 位。解决方案是在编译 Octave 之前，先以量子深度 16 或 32 重新编译 [GraphicsMagick](GraphicsMagick.html "GraphicsMagick")。
++   对于 Debian 9，使用 openjdk-9-jdk（即使设置了 `JAVA_HOME`）*无法*用于 Java 接口！请改用 openjdk-8-jdk。
++   若配置过程决定使用 QT5 而非 QT4，make 可能会因缺少 lrelease 而失败（参见 [bug 50580](https://savannah.gnu.org/bugs/?50580)）。安装 `qttools5-dev-tools` 即可解决此问题。
 
 ### 配置
 
@@ -179,7 +179,7 @@ HDF5 library not found.  Octave will not be able to save or load HDF5 data files
 ./configure --with-hdf5-includedir=/usr/include/hdf5/serial --with-hdf5-libdir=/usr/lib/$(dpkg-architecture -qDEB_HOST_MULTIARCH)/hdf5/serial
 ```
 
-On older versions of Debian and Ubuntu, where only one flavor of the HDF5 library could be installed at a time, you may need to build Octave against one of the MPI-enabled flavors. On these older systems, configuring Octave like this may work:
+在旧版本的 Debian 和 Ubuntu 系统中，同一时间只能安装一种 HDF5 库变体，因此你可能需要基于支持 MPI 的变体之一来编译 Octave。在这些旧系统上，可以尝试使用以下配置命令来配置 Octave：
 
 ```bash
 ./configure CPPFLAGS="-I/usr/include/mpi -DMPICH_SKIP_MPICXX -DOMPI_SKIP_MPICXX"
@@ -187,7 +187,7 @@ On older versions of Debian and Ubuntu, where only one flavor of the HDF5 librar
 
 #### Sundials
 
-On recent Debian and Ubuntu releases whose Sundials version (in `libsundials-dev`) is 3.1, a configure flag needs to be passed for `ode15i` and `ode15s` to be compiled with support for sparse Jacobians (bug [#55937](https://savannah.gnu.org/bugs/?55937)), as follows:
+在 `libsundials-dev` 中 Sundials 版本为 3.1 的新近 Debian 和 Ubuntu 发行版中，为了使 `ode15i` 和 `ode15s` 能够编译并支持稀疏雅可比矩阵（参见 bug [#55937](https://savannah.gnu.org/bugs/?55937)），需要通过以下方式传递配置标志：
 
 ```bash
 ./configure CPPFLAGS="-I/usr/include/suitesparse"
