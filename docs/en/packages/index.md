@@ -1,9 +1,6 @@
 # Packages
-From Octave
 
-[Jump to navigation](#mw-head) [Jump to search](#searchInput)
-
-[![](wiki/images/thumb/c/c3/Octave-flower.svg/100px-Octave-flower.svg.png)](Category%253AOctave_Forge.html "Category:Octave Forge")
+[![](../../assets/100px-Octave-flower.svg.png)](Category%253AOctave_Forge.html "Category:Octave Forge")
 
 [Octave Forge](Category%253AOctave_Forge.html "Category:Octave Forge") logo.
 

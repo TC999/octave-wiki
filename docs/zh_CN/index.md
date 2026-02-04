@@ -51,7 +51,7 @@
 +   获取有关 [GNU Octave 开发](Category%253ADevelopment.html "开发类别") 的概述。
 +   查看我们的 [项目创意](Projects.html "项目") 和 [Summer of Code 项目创意](Summer_of_Code_-_Getting_Started.html "Summer of Code - 入门")。
 
-## 📦 [软件包](Category%253APackages.html "软件包类别")
+## 📦 [软件包](packages "软件包类别")
 
 +   [安装软件包](https://docs.octave.org/latest/Installing-and-Removing-Packages.html)
 +   [Octave 软件包](https://packages.octave.org) — 软件包和工具箱的集合
