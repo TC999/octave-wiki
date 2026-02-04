@@ -41,8 +41,8 @@ Are you using an old version of Octave? Check the [Release History](Release_Hist
 ## 💡 [Getting started](resource "Category:Resources") 🔰
 
 +   [Books](Publications_using_Octave.html#Books "Publications using Octave")
-+   [Videos](Video_tutorials.html "Video tutorials")
-+   [Tutorials and Examples](Category%253AResources.html "Category:Resources")
++   [Videos](./resource/videos.md "Video tutorials")
++   [Tutorials and Examples](resource "Category:Resources")
 
 ## 🔬 [Development](development "Category:Development")
 
@@ -51,7 +51,7 @@ We always need more help improving Octave and there are many ways [you can contr
 +   Get an overview about the [GNU Octave development](development "Category:Development").
 +   Take a look at our [project ideas](Projects.html "Projects") and [Summer of Code project ideas](Summer_of_Code_-_Getting_Started.html "Summer of Code - Getting Started").
 
-## 📦 [Packages](Category%253APackages.html "Category:Packages")
+## 📦 [Packages](packages "Category:Packages")
 
 +   [Installing packages](https://docs.octave.org/latest/Installing-and-Removing-Packages.html)
 +   [Octave Packages](https://packages.octave.org) — collection of packages and toolboxes
