@@ -7,6 +7,7 @@ export default defineConfig({
   ignoreDeadLinks: true, // 临时解决方案，等待修复
   srcDir: "./",
   base: "/octave-wiki/",
+  head: [['link', { rel: 'icon', href: '/octave-wiki/assets/favicon.ico' }]],
   srcExclude: ["node_modules/**/*"],
   rewrites: {
     'en/:rest*': ':rest*'
