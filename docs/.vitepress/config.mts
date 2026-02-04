@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "GNU Octave Wiki mirror",
-  description: "GNU Octave Wiki mirror",
+  title: "Octave",
+  description: "Octave Wiki mirror",
   ignoreDeadLinks: true, // 临时解决方案，等待修复
   srcDir: "./",
   base: "/octave-wiki/",
