@@ -40,7 +40,7 @@
     +   [Building on Microsoft Windows](./build_on_Windows.md "Building on Microsoft Windows")
     +   [Building on Ubuntu Virtual Machine](./build_on_ubuntu-vm.md "Building on Ubuntu Virtual Machine")
 +   [Continuous Build](continuous_build.md "Continuous Build") -- Check changes with [Buildbot](https://buildbot.net/).
-+   [MXE](MXE.md "MXE") -- Cross-compiling to MS Windows.
++   [MXE](mxe.md "MXE") -- Cross-compiling to MS Windows.
 +   [Large array support](Enable_large_arrays%253A_Build_octave_such_that_it_can_use_arrays_larger_than_2Gb..html "Enable large arrays: Build octave such that it can use arrays larger than 2Gb.")
 
 ### 🔧 Tools

@@ -6,9 +6,9 @@
 2.  Building Octave on outdated Linux systems (e.g. only an old GCC version is available).
 3.  Building Octave without root permission.
 
-[![Warning icon.svg](wiki/images/thumb/2/24/Warning_icon.svg/26px-Warning_icon.svg.png)](File%253AWarning_icon.svg.html)
+![Warning icon.svg](../../assets/warning/26px-Warning_icon.svg.png)
 
-MXE-Octave is **not** the best choice for building Octave, if your system already provides recent versions of GCC and other required build dependencies. See [Category:Installation](Category%253AInstallation.html "Category:Installation") for other install options.
+MXE-Octave is **not** the best choice for building Octave, if your system already provides recent versions of GCC and other required build dependencies. See [Category:Installation](../install "Category:Installation") for other install options.
 
 ## Contents
 
@@ -94,8 +94,6 @@ On some older systems, it might be useful to consider adding the configuration o
 +   `--disable-java`
 
 in case of building errors.
-
-  
 
 ### References
 
