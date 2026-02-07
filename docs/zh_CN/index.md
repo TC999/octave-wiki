@@ -44,11 +44,11 @@
 +   [视频](resource/videos.md "视频教程")
 +   [教程和示例](resource "资源类别")
 
-## 🔬 [开发](Category%253ADevelopment.html "开发类别")
+## 🔬 [开发](development "开发类别")
 
 我们始终需要更多的帮助来改进 Octave，并且有许多方式[您可以贡献](https://www.gnu.org/software/octave/get-involved.html)（修复错误、开发新功能、在 [Octave 论坛](https://octave.discourse.group/)上回答问题等）。
 
-+   获取有关 [GNU Octave 开发](Category%253ADevelopment.html "开发类别") 的概述。
++   获取有关 [GNU Octave 开发](development "开发类别") 的概述。
 +   查看我们的 [项目创意](Projects.html "项目") 和 [Summer of Code 项目创意](Summer_of_Code_-_Getting_Started.html "Summer of Code - 入门")。
 
 ## 📦 [软件包](packages "软件包类别")
