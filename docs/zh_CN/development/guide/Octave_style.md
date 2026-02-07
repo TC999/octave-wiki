@@ -51,13 +51,13 @@ Absolutely **do not use tabs** in your code. You should probably set your editor
 
 When calling functions, put spaces after commas and before the calling parentheses, like this:
 
-```
+```matlab
 x = max (sin (y + 3), 2);
 ```
 
 An exception are matrix or cell constructors:
 
-```
+```matlab
 [sin(x), cos(x)]
 {sin(x), cos(x)}
 ```

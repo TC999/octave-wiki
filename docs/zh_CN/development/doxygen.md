@@ -1,33 +1,33 @@
 # Doxygen
 
-## Contents
+## 目录
 
-+   [1 What is Doxygen ?](#What_is_Doxygen_?)
-+   [2 Generating the Doxygen documentation for Octave](#Generating_the_Doxygen_documentation_for_Octave)
-+   [3 Where can I browse the Doxygen documentation for Octave ?](#Where_can_I_browse_the_Doxygen_documentation_for_Octave_?)
-+   [4 What is the current status of Octave's Doxygen documentation ?](#What_is_the_current_status_of_Octave's_Doxygen_documentation_?)
-+   [5 Doxygen Style Guide](#Doxygen_Style_Guide)
++   [1 什么是 Doxygen？](#什么是-doxygen？)
++   [2 为 Octave 生成 Doxygen 文档](#为-octave-生成-doxygen-文档)
++   [3 在哪里可以浏览 Octave 的 Doxygen 文档？](#在哪里可以浏览-octave-的-doxygen-文档？)
++   [4 Octave 的 Doxygen 文档现状如何？](#octave-的-doxygen-文档现状如何？)
++   [5 Doxygen 风格指南](#doxygen-风格指南)
 
-#### What is Doxygen ?
+#### 什么是 Doxygen？
 
-[Doxygen](https://www.doxygen.nl/) is the de facto standard tool for generating documentation from annotated C++ sources.
+[Doxygen](https://www.doxygen.nl/) 是从带注释的 C++ 源代码生成文档的事实标准工具。
 
-#### Generating the Doxygen documentation for Octave
+#### 为 Octave 生成 Doxygen 文档
 
-Doxygen documentation for Octave is easily generated from Octave sources. Instructions can be found in [doc/doxyhtml/README](https://hg.savannah.gnu.org/hgweb/octave/file/tip/doc/doxyhtml/README).
+Octave 的 Doxygen 文档可以轻松地从 Octave 源代码生成。相关说明可以在 [doc/doxyhtml/README](https://hg.savannah.gnu.org/hgweb/octave/file/tip/doc/doxyhtml/README) 中找到。
 
-#### Where can I browse the Doxygen documentation for Octave ?
+#### 在哪里可以浏览 Octave 的 Doxygen 文档？
 
-*See: [Publications about Octave#Doxygen](Publications_about_Octave.html#Doxygen "Publications about Octave")*
+*参见：[关于 Octave 的出版物#Doxygen](Publications_about_Octave.html#Doxygen "Publications about Octave")*
 
-#### What is the current status of Octave's Doxygen documentation ?
+#### Octave 的 Doxygen 文档现状如何？
 
-Very little Doxygen documentation is currently available in Octave's source code. Which is why "Doxygen documentation for the C++ classes" is listed in the [Projects](Projects.html#Documentation_and_On-Line_Help "Projects") page of this wiki.
+目前 Octave 源代码中可用的 Doxygen 文档非常少。这就是为什么本维基的[项目](Projects.html#Documentation_and_On-Line_Help "Projects")页面中列出了“C++ 类的 Doxygen 文档”这一项。
 
-#### Doxygen Style Guide
+#### Doxygen 风格指南
 
-For the Doxygen Style Guide look at [C++\_style\_guide#Doxygen](guide/C++_style_guide.md#Doxygen "C++ style guide").
+关于 Doxygen 风格指南，请查看 [C++\_style\_guide#Doxygen](guide/C++_style_guide.md#Doxygen "C++ style guide")。
 
-[Category](Special%253ACategories.html "Special:Categories"):
+[分类](Special%253ACategories.html "Special:Categories")：
 
-+   [Development](Category%253ADevelopment.html "Category:Development")
++   [开发](Category%253ADevelopment.html "Category:Development")

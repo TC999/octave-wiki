@@ -1,74 +1,74 @@
-# Contribute
+# 贡献指南
 
-## Contents
+## 目录
 
-+   [1 Bug reports and patch submission](build/building.md#Bug_reports_and_patch_submission)
-    +   [1.1 Contributor Agreement](build/building.md#Contributor_Agreement)
-+   [2 Building from development sources](build/building.md#Building_from_development_sources)
-+   [3 Coding style](build/building.md#Coding_style)
-    +   [3.1 C/C++ guide](build/building.md#C/C++_guide)
-    +   [3.2 Octave guide](build/building.md#Octave_guide)
-    +   [3.3 Help text style](build/building.md#Help_text_style)
-    +   [3.4 Fortran guide](build/building.md#Fortran_guide)
-    +   [3.5 M4 guide](build/building.md#M4_guide)
-    +   [3.6 Wiki guide](build/building.md#Wiki_guide)
++   [1 错误报告与补丁提交](building.md#错误报告与补丁提交)
+    +   [1.1 贡献者协议](building.md#贡献者协议)
++   [2 从开发源代码构建](building.md#从开发源代码构建)
++   [3 编码风格](building.md#编码风格)
+    +   [3.1 C/C++ 指南](building.md#c/c++-指南)
+    +   [3.2 Octave 指南](building.md#octave-指南)
+    +   [3.3 帮助文本风格](building.md#帮助文本风格)
+    +   [3.4 Fortran 指南](building.md#fortran-指南)
+    +   [3.5 M4 指南](building.md#m4-指南)
+    +   [3.6 维基指南](building.md#维基指南)
 
-## Bug reports and patch submission
+## 错误报告与补丁提交
 
-+   Bugs and patches should be submitted to Octave's [bug](https://savannah.gnu.org/bugs/?func=additem&group=octave) and [patch](https://savannah.gnu.org/patch/?func=additem&group=octave) trackers respectively.
++   错误和补丁应分别提交至 Octave 的[错误](https://savannah.gnu.org/bugs/?func=additem&group=octave)跟踪器和[补丁](https://savannah.gnu.org/patch/?func=additem&group=octave)跟踪器。
 
-+   The best way to contribute patches is to create a Mercurial changeset.
-    +   Learn how to use [Mercurial](Mercurial.html "Mercurial").
-    +   [Commit message guidelines](Commit_message_guidelines.html "Commit message guidelines").
++   贡献补丁的最佳方式是创建一个 Mercurial 变更集。
+    +   学习如何使用 [Mercurial](../mercurial.md "Mercurial")。
+    +   [提交信息指南](./contribute.md "Commit message guidelines")。
 
-### Contributor Agreement
+### 贡献者协议
 
-By submitting patches to this project, you agree to the following conditions:
+通过向本项目提交补丁，即表示您同意以下条件：
 
-+   Your contribution will be released under the terms of the GNU GPL, version 3 or any later version.
++   您的贡献将根据 GNU GPL 第 3 版或任何后续版本的条款发布。
 
-+   Your contribution must be an independent work or derived from code that may be released under the terms of the GPL. **Under no circumstances may it be based on code from Matlab or other non-free code that you may have access to view**.
++   您的贡献必须是独立作品，或衍生自可以根据 GPL 条款发布的代码。**在任何情况下，都不得基于来自 Matlab 或其他您可能有权查看的非自由代码**。
 
-+   In the Octave source code, all files are marked with a copyright statement that says "Copyright (C) YYYY-YYYY The Octave Project Developers". This copyright notice is used to ease the burden of maintaining copyright information in the source files, not to diminish or remove credit for contributions. Detailed information about what changes have been made and who has made them is maintained in the revision history of the Octave sources.
++   在 Octave 源代码中，所有文件都标有版权声明，内容为“Copyright (C) YYYY-YYYY The Octave Project Developers”。此版权声明用于减轻维护源文件中版权信息的负担，而非减少或抹去对贡献者的认可。关于已进行的更改和做出更改者的详细信息，保存在 Octave 源代码的修订历史中。
 
-+   If you wish, you will be credited as a contributor in the Octave documentation.
++   如果您希望，您将被列为 Octave 文档中的贡献者。
 
-## Building from development sources
+## 从开发源代码构建
 
-*See [Building](../build/building.md "Building").*
+*参见 [构建](../building.md "Building")。*
 
-## Coding style
+## 编码风格
 
-Apart from C++ and Octave language (m-files), Octave's sources include files written in C, Fortran, M4, Perl, Unix shell, AWK, Texinfo, and TeX. There are not many rules to follow when using these other languages; some of them are summarized below. In any case, the golden rule is: if you modify a source file, try to follow any conventions you can detect in the file or other similar files.
+除了 C++ 和 Octave 语言（m 文件）外，Octave 的源代码还包括用 C、Fortran、M4、Perl、Unix shell、AWK、Texinfo 和 TeX 编写的文件。使用这些其他语言时没有太多规则需要遵循；其中一些规则总结如下。无论如何，黄金法则是：如果您修改源文件，请尽量遵循您在该文件或其他类似文件中可以发现的约定。
 
-### C/C++ guide
+### C/C++ 指南
 
-*See [C++ style guide](C++_style.md "C++ style guide"). For C, you should follow all C++ rules that can apply.*
+*参见 [C++ 风格指南](C++_style.md "C++ style guide")。对于 C 语言，您应遵循所有适用的 C++ 规则。*
 
-### Octave guide
+### Octave 指南
 
-*See [Octave style guide](Octave_style.md "Octave style guide").*
+*参见 [Octave 风格指南](Octave_style.md "Octave style guide")。*
 
-### Help text style
+### 帮助文本风格
 
-*See [Help text style guide](Help_text_style.md "Help text style guide").*
+*参见 [帮助文本风格指南](Help_text_style.md "Help text style guide")。*
 
-### Fortran guide
+### Fortran 指南
 
-If you modify a Fortran file, you should stay within Fortran 77 with common extensions like `END DO`. Currently, we want ensure that it is possible to compile all sources with the gfortran compiler, without special flags if possible. This usually means that non-legacy compilers also accept the sources.
+如果您修改 Fortran 文件，您应保持在 Fortran 77 范围内，并允许使用常见的扩展，如 `END DO`。目前，我们希望确保能够使用 gfortran 编译器编译所有源代码，并且尽可能不使用特殊标志。这通常意味着非传统编译器也能接受这些源代码。
 
-### M4 guide
+### M4 指南
 
-The M4 macro language is mainly used for Autoconf configuration files. You should follow normal M4 rules when contributing to these files. Some M4 files come from external source, namely the [Autoconf archive](https://www.gnu.org/software/autoconf-archive/).
+M4 宏语言主要用于 Autoconf 配置文件。在贡献这些文件时，您应遵循正常的 M4 规则。一些 M4 文件来自外部来源，即 [Autoconf 存档](https://www.gnu.org/software/autoconf-archive/)。
 
-### Wiki guide
+### 维基指南
 
-+   Please try to fit a new page into the already existing category tree.
-+   If you have to create a new category, choose the name and place wisely (try to stay close to Wikipedia's categorization scheme).
-+   Instead of creating a new page and redirect it to another for link aliases, choose piped links instead. See [here](https://www.mediawiki.org/wiki/Help:Links) for more infos about piped links.
-+   The one and only root category is [Category:Contents](Category%253AContents.html "Category:Contents"). All other categories have to point to it (over one or more subcategories).
-+   Start a new page title with a capital letter, the rest is written in lower case (except for names, cities, etc.).
++   请尽量将新页面归入已有的分类树中。
++   如果您必须创建新分类，请明智地选择名称和位置（尽量靠近 Wikipedia 的分类方案）。
++   对于链接别名，不要创建新页面然后重定向到另一个页面，而是使用管道链接。有关管道链接的更多信息，请参见[此处](https://www.mediawiki.org/wiki/Help:Links)。
++   唯一且只有一个根分类是 [Category:Contents](Category%253AContents.html "Category:Contents")。所有其他分类都必须指向它（通过一个或多个子分类）。
++   新页面标题以大写字母开头，其余部分小写（专有名词、城市名等除外）。
 
-[Category](Special%253ACategories.html "Special:Categories"):
+[分类](Special%253ACategories.html "Special:Categories"):
 
-+   [Development](Category%253ADevelopment.html "Category:Development")
++   [开发](Category%253ADevelopment.html "Category:Development")

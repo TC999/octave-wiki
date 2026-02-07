@@ -1,12 +1,12 @@
-# Enable large arrays: Build octave such that it can use arrays larger than 2Gb.
+# 启用大数组支持：构建能够使用超过 2GB 数组的 Octave
 
-![Info icon.svg](../../assets/info/26px-Info_icon.svg.png)
+![信息图标](../../assets/info/26px-Info_icon.svg.png)
 
-The following only applies to systems that have 64-bit pointers (64bit architecture).
+以下内容仅适用于具有 64 位指针的系统（64 位架构）。
 
-Starting with Octave 4.4.0, 64-bit indexing is the default for targets with 64-bit pointers. You can override that default by specifying `--disable-64` when configuring Octave.
+从 Octave 4.4.0 开始，对于具有 64 位指针的目标平台，64 位索引是默认设置。您可以在配置 Octave 时通过指定 `--disable-64` 来覆盖此默认设置。
 
-However, if the configure script determines that the BLAS library uses 32-bit integers, then operations using the following libraries are limited to arrays with dimensions that are smaller than 2^31 elements:
+但是，如果配置脚本确定 BLAS 库使用 32 位整数，那么使用以下库的操作将受限于维度小于 2^31 个元素的数组：
 
 +   BLAS
 +   LAPACK
@@ -14,60 +14,60 @@ However, if the configure script determines that the BLAS library uses 32-bit in
 +   SuiteSparse
 +   ARPACK
 
-Additionally, the following libraries use "int" internally, so maximum problem sizes are always limited:
+此外，以下库在内部使用 "int"，因此最大问题规模始终受限：
 
 +   glpk
 +   Qhull
 
-Useful information and projects are listed below in the [See also](#See_also) section.
+有用的信息和项目列在下面的[另请参阅](#另请参阅)部分。
 
-To determine the integer size of the BLAS library used by Octave, the following code can be executed:
+要确定 Octave 使用的 BLAS 库的整数大小，可以执行以下代码：
 
 ```matlab
 clear all;
 N = 2^31;
-## The following line requires about 8 GB of RAM!
+## 下面这行代码大约需要 8 GB 内存！
 a = b = ones (N, 1, "single");
 c = a' * b
 ```
 
-If the BLAS library uses **32-bit integers**, an error will be thrown:
+如果 BLAS 库使用**32 位整数**，将抛出错误：
 
 ```bash
 error: integer dimension or index out of range for Fortran INTEGER type
 ```
 
-Otherwise, if the BLAS library uses **64-bit integers**, the result is:
+否则，如果 BLAS 库使用**64 位整数**，结果是：
 
 ```matlab
 c = 2^31 = 2147483648
 ```
 
-Note that the test case above usually requires twice the memory, if `a` and `b` are not assigned by `a = b = ...`. Note further, that the data type "single" has a precision of about 23 binary bits. In this particular example no rounding errors occur.
+请注意，如果 `a` 和 `b` 不是通过 `a = b = ...` 赋值，上述测试用例通常需要两倍内存。还要注意，"single" 数据类型的精度约为 23 个二进制位。在这个特定示例中不会出现舍入误差。
 
-### Versions prior to Octave 4.4
+### Octave 4.4 之前的版本
 
-On previous versions of Octave, the default is that the size of a single Octave array cannot have more than approximately 2^31 elements, even on systems that use 64-bit pointers. This is because array indices were limited to 32-bit signed integers by default. Trying to create one will produce the following error:
+在早期版本的 Octave 上，默认情况下，即使在使用 64 位指针的系统上，单个 Octave 数组的大小也不能超过大约 2^31 个元素。这是因为默认情况下数组索引被限制为 32 位有符号整数。尝试创建一个更大的数组会产生以下错误：
 
 ```bash
 >> a = zeros (1024*1024*1024*3, 1, 'int8');
 error: out of memory or dimension too large for Octave's index type
 ```
 
-You will obtain this error even if your system has enough RAM to create this array (3 GB in the above case).
+即使您的系统有足够的 RAM 来创建这个数组（上述情况需要 3 GB），您也会得到此错误。
 
-To use arrays with more than (approximately) 2 31 {\\displaystyle 2^{31}} ![{\displaystyle 2^{31}}](https://wikimedia.org/api/rest_v1/media/math/render/svg/65fb13d646608c3de85493707c2dfdfb06345198) elements, Octave has to be configured with the option `--enable-64`. This option is experimental and you are (as always) encouraged to submit bug reports if you find a problem. With this option, Octave will use internally 64-bit integers for array dimensions and indexing. However, **all numerical libraries** used by Octave will need to use also 64-bit integers for array dimensions and indexing, and in most cases they need to be compiled from source.
+要使用超过（大约）2^31 个元素的数组，必须使用 `--enable-64` 选项配置 Octave。此选项是实验性的，我们（一如既往地）鼓励您在发现问题时提交错误报告。启用此选项后，Octave 将在内部使用 64 位整数作为数组维度和索引。但是，Octave 使用的**所有数值库**也需要使用 64 位整数作为数组维度和索引，并且在大多数情况下需要从源代码编译。
 
-### See also
+### 另请参阅
 
-+   [GNU Octave manual](https://octave.org/doc/interpreter/Compiling-Octave-with-64_002dbit-Indexing.html) -- Details on how to compile some of Octave's library dependencies for 64-bit indices.
-+   [MXE](MXE.html "MXE") (M Cross Environment) which takes care to compile Octave's library dependencies for 64-bit indices.
++   [GNU Octave 手册](https://octave.org/doc/interpreter/Compiling-Octave-with-64_002dbit-Indexing.html) -- 关于如何为 64 位索引编译 Octave 部分库依赖项的详细信息。
++   [MXE](mxe.md "MXE")（M 交叉环境），它负责为 64 位索引编译 Octave 的库依赖项。
 
-Two more lightweight solutions compared to [MXE](MXE.html "MXE") to compile Octave's library dependencies for 64-bit indices.
+与 [MXE](mxe.md "MXE") 相比，以下是两个更轻量级的解决方案，用于为 64 位索引编译 Octave 的库依赖项。
 
 +   [https://gitlab.com/mtmiller/octave-blas64-builder](https://gitlab.com/mtmiller/octave-blas64-builder)
 +   [https://github.com/octave-de/GNU-Octave-enable-64](https://github.com/octave-de/GNU-Octave-enable-64)
 
-[Category](Special%253ACategories.html "Special:Categories"):
+[分类](Special%253ACategories.html "Special:Categories")：
 
-+   [Building](Category%253ABuilding.html "Category:Building")
++   [构建](Category%253ABuilding.html "Category:Building")

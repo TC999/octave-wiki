@@ -1,77 +1,77 @@
-# Continuous Build
+# 持续构建
 
-GNU Octave uses [Buildbot](https://buildbot.net/) to build and test the current development version on multiple systems in a number of different configurations.
+GNU Octave 使用 [Buildbot](https://buildbot.net/) 在多个系统上以多种不同配置构建和测试当前的开发版本。
 
-![Info icon.svg](../../assets/info/26px-Info_icon.svg.png)
+![信息图标](../../assets/info/26px-Info_icon.svg.png)
 
-The current status of the builds may be found at [https://buildbot.octave.org/#/waterfall](https://buildbot.octave.org/#/waterfall).
+当前的构建状态可通过 [https://buildbot.octave.org/#/waterfall](https://buildbot.octave.org/#/waterfall) 查看。
 
-## Contents
+## 目录
 
-+   [1 Systems and Configurations](#Systems_and_Configurations)
-+   [2 Setup and run a Buildbot Worker](#Setup_and_run_a_Buildbot_Worker)
++   [1 系统与配置](#系统与配置)
++   [2 设置并运行 Buildbot 工作节点](#设置并运行-buildbot-工作节点)
     +   [2.1 ccache](#ccache)
-    +   [2.2 Space Requirements](#Space_Requirements)
-+   [3 Continuous Deployment of Octave for Linux](#Continuous_Deployment_of_Octave_for_Linux)
-    +   [3.1 Edge channel of Octave Snap App](#Edge_channel_of_Octave_Snap_App)
-+   [4 Continuous Deployment of Octave for Windows](#Continuous_Deployment_of_Octave_for_Windows)
-    +   [4.1 Freshly brewed Octave](#Freshly_brewed_Octave)
-    +   [4.2 GitHub build artifacts](#GitHub_build_artifacts)
-+   [5 External links](#External_links)
+    +   [2.2 空间要求](#空间要求)
++   [3 面向 Linux 的 Octave 持续部署](#面向-linux-的-octave-持续部署)
+    +   [3.1 Octave Snap 应用的 Edge 频道](#octave-snap-应用的-edge-频道)
++   [4 面向 Windows 的 Octave 持续部署](#面向-windows-的-octave-持续部署)
+    +   [4.1 新鲜构建的 Octave](#新鲜构建的-octave)
+    +   [4.2 GitHub 构建产物](#github-构建产物)
++   [5 外部链接](#外部链接)
 
-# Systems and Configurations
+# 系统与配置
 
-The following systems and configurations are currently covered for Octave builds:
+当前 Octave 构建涵盖以下系统和配置：
 
-| Builder ID | Hg Version | System | Compiler | Build Options | Frequency |
+| 构建器 ID | Hg 版本 | 系统 | 编译器 | 构建选项 | 触发频率 |
 | --- | --- | --- | --- | --- | --- |
-| clang-4.0-debian | default | Debian Testing | Clang 4.0 |  | Any Change |
-| stable-clang-4.0-debian | stable | Debian Testing | Clang 4.0 |  | Any Change |
-| clang-5.0-debian | default | Debian Testing | Clang 5.0 |  | Any Change |
-| stable-clang-5.0-debian | stable | Debian Testing | Clang 5.0 |  | Any Change |
-| clang-fedora | default | Fedora (current release) | Clang (system default) |  | Any Change |
-| stable-clang-fedora | stable | Fedora (current release) | Clang (system default) |  | Any Change |
-| clang-osx (currently inactive) | default | OS X | Clang |  | Any Change |
-| gcc-7-debian | default | Debian Testing | GCC 7 |  | Any Change |
-| gcc-7-lto-debian | default | Debian Testing | GCC 7 | Enable link time optimization | Any Change |
-| gcc-fedora | default | Fedora (current release) | GCC (system default) |  | Any Change |
-| gcc-lto-fedora | default | Fedora (current release) | GCC (system default) | Enable link time optimization | Any Change |
-| no-extras-debian | default | Debian Testing | GCC (system default) | Disable all optional dependencies | Any Change |
-| stable-no-extras-debian | stable | Debian Testing | GCC (system default) | Disable all optional dependencies | Any Change |
+| clang-4.0-debian | default | Debian Testing | Clang 4.0 | | 任何更改 |
+| stable-clang-4.0-debian | stable | Debian Testing | Clang 4.0 | | 任何更改 |
+| clang-5.0-debian | default | Debian Testing | Clang 5.0 | | 任何更改 |
+| stable-clang-5.0-debian | stable | Debian Testing | Clang 5.0 | | 任何更改 |
+| clang-fedora | default | Fedora (当前发行版) | Clang (系统默认) | | 任何更改 |
+| stable-clang-fedora | stable | Fedora (当前发行版) | Clang (系统默认) | | 任何更改 |
+| clang-osx (当前未激活) | default | OS X | Clang | | 任何更改 |
+| gcc-7-debian | default | Debian Testing | GCC 7 | | 任何更改 |
+| gcc-7-lto-debian | default | Debian Testing | GCC 7 | 启用链接时优化 | 任何更改 |
+| gcc-fedora | default | Fedora (当前发行版) | GCC (系统默认) | | 任何更改 |
+| gcc-lto-fedora | default | Fedora (当前发行版) | GCC (系统默认) | 启用链接时优化 | 任何更改 |
+| no-extras-debian | default | Debian Testing | GCC (系统默认) | 禁用所有可选依赖项 | 任何更改 |
+| stable-no-extras-debian | stable | Debian Testing | GCC (系统默认) | 禁用所有可选依赖项 | 任何更改 |
 
-And for mxe-octave:
+以及针对 mxe-octave 的构建：
 
-| Builder ID | Hg Version | Build System | Host System | Compiler | Build Options | Frequency |
+| 构建器 ID | Hg 版本 | 构建系统 | 目标系统 | 编译器 | 构建选项 | 触发频率 |
 | --- | --- | --- | --- | --- | --- | --- |
-| mxe-native-all-on-debian | default | Debian Testing | Debian | GCC (mxe-octave default) | GNU Linux, build all dependencies | Daily |
-| mxe-native-on-debian | default | Debian Testing | Debian | GCC (system default) | GNU Linux, use system compiler, fontconfig, and X11 libraries | Daily |
-| w32-on-debian | default | Debian Testing | Windows | GCC (mxe-octave default) | Windows 32 | Daily |
-| w32-stable-on-debian | stable | Debian Testing | Windows | GCC (mxe-octave default) | Windows 32 | Daily |
-| w32-release-on-debian | release (tarball) | Debian Testing | Windows | GCC (mxe-octave default) | Windows 32 | Daily |
-| w64-32-on-debian | default | Debian Testing | Windows | GCC (mxe-octave default) | Windows 64 | Daily |
-| w64-32-stable-on-debian | stable | Debian Testing | Windows | GCC (mxe-octave default) | Windows 64 | Daily |
-| w64-32-release-on-debian | release (tarball) | Debian Testing | Windows | GCC (mxe-octave default) | Windows 64 | Daily |
-| w64-64-on-debian | default | Debian Testing | Windows | GCC (mxe-octave default) | Windows 64, 64-bit indexing | Daily |
-| w64-64-stable-on-debian | stable | Debian Testing | Windows | GCC (mxe-octave default) | Windows 64, 64-bit indexing | Daily |
-| w64-64-release-on-debian | release (tarball) | Debian Testing | Windows | GCC (mxe-octave default) | Windows 64, 64-bit indexing | Daily |
+| mxe-native-all-on-debian | default | Debian Testing | Debian | GCC (mxe-octave 默认) | GNU Linux，构建所有依赖项 | 每日 |
+| mxe-native-on-debian | default | Debian Testing | Debian | GCC (系统默认) | GNU Linux，使用系统编译器、fontconfig 和 X11 库 | 每日 |
+| w32-on-debian | default | Debian Testing | Windows | GCC (mxe-octave 默认) | Windows 32 位 | 每日 |
+| w32-stable-on-debian | stable | Debian Testing | Windows | GCC (mxe-octave 默认) | Windows 32 位 | 每日 |
+| w32-release-on-debian | release (源码包) | Debian Testing | Windows | GCC (mxe-octave 默认) | Windows 32 位 | 每日 |
+| w64-32-on-debian | default | Debian Testing | Windows | GCC (mxe-octave 默认) | Windows 64 位 | 每日 |
+| w64-32-stable-on-debian | stable | Debian Testing | Windows | GCC (mxe-octave 默认) | Windows 64 位 | 每日 |
+| w64-32-release-on-debian | release (源码包) | Debian Testing | Windows | GCC (mxe-octave 默认) | Windows 64 位 | 每日 |
+| w64-64-on-debian | default | Debian Testing | Windows | GCC (mxe-octave 默认) | Windows 64 位，64 位索引 | 每日 |
+| w64-64-stable-on-debian | stable | Debian Testing | Windows | GCC (mxe-octave 默认) | Windows 64 位，64 位索引 | 每日 |
+| w64-64-release-on-debian | release (源码包) | Debian Testing | Windows | GCC (mxe-octave 默认) | Windows 64 位，64 位索引 | 每日 |
 
-# Setup and run a Buildbot Worker
+# 设置并运行 Buildbot 工作节点
 
-Your system may be behind a firewall. It does not have to have a distinct public IP address.
+您的系统可能位于防火墙后，并且不需要拥有独立的公网 IP 地址。
 
-To support Octave development and run a Buildbot Worker, you must do the following:
+为了支持 Octave 开发并运行一个 Buildbot 工作节点，您需要执行以下操作：
 
-+   Contact the [Octave Maintainers on Discourse](https://octave.discourse.group/c/maintainers/7) to let us know that you wish to provide a system to use as a Buildbot Worker. We will give you a `WORKERNAME` and a **secret** `PASSWORD` to configure your Buildbot Worker.
-+   Install buildbot. Packages exist for most distributions. See the buildbot docs for other options. You should create a separate user account with no special privileges that will run buildbot.
-+   Decide for a `BASEDIR`. For example, if the home directory for the buildbot user is /var/lib/buildbot and your `WORKERNAME` is set to `'debian-x86_64'` , then `BASEDIR` might be /var/lib/buildbot/worker/debian-x86\_64.
-+   `MASTERHOST` is `buildbot.octave.org` and `PORT` is `9989`.
-+   Create the configuration
++   联系 [Discourse 上的 Octave 维护者](https://octave.discourse.group/c/maintainers/7)，告知我们您希望提供一个系统用作 Buildbot 工作节点。我们将为您提供一个 `WORKERNAME` 和一个用于配置您的 Buildbot 工作节点的 **密钥** `PASSWORD`。
++   安装 buildbot。大多数发行版都有对应的软件包。其他安装选项请参阅 buildbot 文档。您应该创建一个没有特殊权限的单独用户账户来运行 buildbot。
++   确定一个 `BASEDIR`。例如，如果 buildbot 用户的主目录是 /var/lib/buildbot，且您的 `WORKERNAME` 被设置为 `'debian-x86_64'`，那么 `BASEDIR` 可以是 /var/lib/buildbot/worker/debian-x86\_64。
++   `MASTERHOST` 是 `buildbot.octave.org`，`PORT` 是 `9989`。
++   创建配置
     
     ```bash
     buildbot-worker create-worker BASEDIR MASTERHOST:PORT WORKERNAME PASSWORD
     ```
     
-+   Run buildbot on the worker system, preferably by starting it automatically when your system boots. It should be running with the buildbot user ID.
++   在工作节点系统上运行 buildbot，最好在系统启动时自动启动。它应该使用 buildbot 用户身份运行。
     
     ```bash
     buildbot-worker start BASEDIR
@@ -80,7 +80,7 @@ To support Octave development and run a Buildbot Worker, you must do the followi
 
 ## ccache
 
-You may also want to set up **ccache** to work with buildbot (strongly recommended to speed up builds). If you create a directory ~/buildbot/bin, it will be added to the execution PATH when the Buildbot Master runs commands on the Buildbot Worker. This directory can have symbolic links like the following:
+您可能还想设置 **ccache** 以便与 buildbot 一起工作（强烈建议以加快构建速度）。如果您创建目录 ~/buildbot/bin，当 Buildbot 主服务器在 Buildbot 工作节点上执行命令时，该目录会被添加到执行路径 PATH 中。此目录可以包含类似以下符号链接：
 
 ```bash
 cc       -> /usr/bin/ccache
@@ -89,71 +89,71 @@ gcc      -> /usr/bin/ccache
 gfortran -> /usr/bin/ccache
 ```
 
-They should point to the actual location of ccache if it is not in /usr/bin.
+如果 ccache 的实际位置不在 /usr/bin，则应指向其实际路径。
 
-## Space Requirements
+## 空间要求
 
-Building Octave takes a significant amount of disk space. With debugging symbols, you may need several GB for each build, plus room for ccache (possibly 50GB) if you use it. If you use a cache size that is larger than the default, you'll need to specify that in the .ccache/ccache.conf file using a line like
+构建 Octave 需要大量的磁盘空间。包含调试符号时，每次构建可能需要数 GB 的空间，如果使用 ccache，可能还需要额外的空间（可能 50GB）。如果您使用的缓存大小大于默认值，则需要在 .ccache/ccache.conf 文件中通过如下行指定：
 
 ```bash
 max_size = 50G
 ```
 
-If the directory containing the build and ccache directories doesn't have sufficient space, then these directory names may point to a separate partition that does have enough space available.
+如果包含构建目录和 ccache 目录的分区空间不足，那么可以设置这些目录指向拥有足够可用空间的单独分区。
 
-# Continuous Deployment of Octave for Linux
+# 面向 Linux 的 Octave 持续部署
 
-## Edge channel of Octave Snap App
+## Octave Snap 应用的 Edge 频道
 
-The "edge" channel of Octave's Snap App is built from the current version of the stable branch. That means it contains changes that are likely to be included in the next minor release of Octave.
+Octave Snap 应用的 "edge" 频道是基于 Octave 稳定分支的当前版本构建的。这意味着它包含了可能包含在下一个 Octave 次要版本中的更改。
 
-It can be download from the [Snap Store](https://snapcraft.io/octave) selecting "latest/edge" from the dropdown menu.
+可以从 [Snap Store](https://snapcraft.io/octave) 下载，并从下拉菜单中选择 "latest/edge"。
 
-# Continuous Deployment of Octave for Windows
+# 面向 Windows 的 Octave 持续部署
 
-## Freshly brewed Octave
+## 新鲜构建的 Octave
 
-Unreleased versions of Octave for Windows are available from [nightly.octave.org](https://nightly.octave.org/#/download). These are installers built with MXE Octave very similarly how the "official" Octave for Windows is built. They can be installed just like the "official" versions of Octave for Windows.
+可通过 [nightly.octave.org](https://nightly.octave.org/#/download) 获取 Windows 版 Octave 的未发布版本。这些是使用 MXE Octave 构建的安装程序，构建方式与 "官方" Windows 版 Octave 非常相似。它们可以像 "官方" 的 Windows 版 Octave 一样安装。
 
-Available variants include versions built from the release branch of MXE Octave built for Windows 64-bit (with 32-bit or 64-bit Fortran indexing size). Additionally, one variant is built from the default branch of MXE Octave (more up-to-date dependencies).
+可用的变体包括从 MXE Octave 的发布分支构建的 Windows 64 位版本（包含 32 位或 64 位 Fortran 索引大小）。此外，还有一个变体是从 MXE Octave 的默认分支构建的（依赖项更前沿）。
 
-All of these versions are built from the stable branch of Octave. That means they contain changes that are likely to be included in the next minor release of Octave.
+所有这些版本都是从 Octave 的稳定分支构建的。这意味着它们包含了可能包含在下一个 Octave 次要版本中的更改。
 
-Unreleased versions might be more unstable than released versions. But they might also contain fixes for bugs that haven't been released yet.
+未发布版本可能比已发布版本更不稳定，但也可能包含尚未发布版本的错误修复。
 
-## GitHub build artifacts
+## GitHub 构建产物
 
-Build artifacts are available for versions of Octave for MINGW64 from the CI running on the mirror of Octave on GitHub. These artefacts can be downloaded from the bottom of the [workflow logs](https://github.com/gnu-octave/octave/actions) for builds from the default branch of Octave. After downloading the build artifact, extract the `.zip` file to an empty folder (e.g., `C:\Octave\test`).
+MINGW64 版本的 Octave 构建产物可从 GitHub 上的 Octave 镜像仓库的持续集成（CI）运行中获取。可以从 Octave 默认分支构建的 [工作流日志](https://github.com/gnu-octave/octave/actions) 底部下载这些产物。下载构建产物后，将 `.zip` 文件解压到一个空文件夹（例如 `C:\Octave\test`）。
 
-The default branch of Octave contains changes that are likely to be included in the next major release of Octave. Some functionality of Octave on the default branch might be broken. But it will likely contain new features that aren't yet included in the newest released version of Octave.
+Octave 的默认分支包含了可能包含在下一个 Octave 主要版本中的更改。默认分支上的 Octave 部分功能可能存在问题，但它很可能包含尚未包含在最新发布版本中的新功能。
 
-These artifacts are built with MSYS2. So, MSYS2 must be installed to be able to run the artifact. MSYS2 can be downloaded from their [website](https://www.msys2.org/). After installing MSYS2, open a MINGW64 shell (the blue icon), update MSYS2 and install the necessary dependencies with (the second command must be executed in one single line):
+这些产物是使用 MSYS2 构建的。因此，必须安装 MSYS2 才能运行该产物。MSYS2 可从其 [官方网站](https://www.msys2.org/) 下载。安装 MSYS2 后，打开一个 MINGW64 终端（蓝色图标），更新 MSYS2 并安装必要的依赖项（第二条命令必须在一行内执行）：
 
 ```bash
  pacman -Syu
  pacman -S --needed mingw-w64-x86_64-gcc-libgfortran mingw-w64-x86_64-arpack mingw-w64-x86_64-curl mingw-w64-x86_64-fftw mingw-w64-x86_64-fltk mingw-w64-x86_64-ghostscript mingw-w64-x86_64-gl2ps mingw-w64-x86_64-glpk mingw-w64-x86_64-gnuplot mingw-w64-x86_64-graphicsmagick mingw-w64-x86_64-hdf5 mingw-w64-x86_64-libsndfile mingw-w64-x86_64-portaudio mingw-w64-x86_64-qhull mingw-w64-x86_64-qrupdate mingw-w64-x86_64-qscintilla mingw-w64-x86_64-qt5-tools mingw-w64-x86_64-sundials mingw-w64-x86_64-suitesparse
 ```
 
-After that, `cd` to the directory with the extracted content of the `.zip` file. (It should be one single file named `octave.tar.gz`.) For the exemplary folder from above, that would be:
+之后，使用 `cd` 命令切换到包含已解压的 `.zip` 文件内容的目录。（应该是一个名为 `octave.tar.gz` 的单独文件。）以上面的示例文件夹为例，命令如下：
 
 ```bash
  cd /c/Octave/test
 ```
 
-Extract the tarball and add the `bin` directory to the system search PATH:
+解压 tarball 并将 `bin` 目录添加到系统搜索路径 PATH 中：
 
 ```bash
  tar -xvzf octave.tar.gz
  export PATH=/c/Octave/test/mingw64/bin:$PATH
 ```
 
-After that, it should be possible to start that "nightly" version with the command `octave --gui` from the same shell.
+之后，应该可以从同一个终端通过命令 `octave --gui` 启动这个 "夜间" 版本。
 
-# External links
+# 外部链接
 
-+   [Buildbot configuration repository](https://hg.octave.org/octave-buildbot/) for [https://buildbot.octave.org/](https://buildbot.octave.org/)
-+   [Buildbot configuration](https://github.com/gnu-octave/octave-buildbot) for [https://nightly.octave.org/](https://nightly.octave.org/)
++   [https://buildbot.octave.org/](https://buildbot.octave.org/) 的 [Buildbot 配置仓库](https://hg.octave.org/octave-buildbot/)
++   [https://nightly.octave.org/](https://nightly.octave.org/) 的 [Buildbot 配置](https://github.com/gnu-octave/octave-buildbot)
 
-[Category](Special%253ACategories.html "Special:Categories"):
+[分类](Special%253ACategories.html "Special:Categories")：
 
-+   [Building](Category%253ABuilding.html "Category:Building")
++   [构建](Category%253ABuilding.html "Category:Building")

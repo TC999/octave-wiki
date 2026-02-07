@@ -1,85 +1,85 @@
-# FAQ
+# 常见问题解答
 
-## Contents
+## 目录
 
-+   [1 How can I get involved in Octave development?](#How_can_I_get_involved_in_Octave_development?)
-+   [2 How can I contribute code to Octave?](#How_can_I_contribute_code_to_Octave?)
-+   [3 How can I find which source file implements a given command?](#How_can_I_find_which_source_file_implements_a_given_command?)
-    +   [3.1 m-file functions](#m-file_functions)
-    +   [3.2 built-in functions](#built-in_functions)
++   [1 我如何参与 Octave 开发？](#我如何参与-octave-开发？)
++   [2 我如何向 Octave 贡献代码？](#我如何向-octave-贡献代码？)
++   [3 如何找到实现某个命令的源文件？](#如何找到实现某个命令的源文件？)
+    +   [3.1 m 文件函数](#m-文件函数)
+    +   [3.2 内置函数](#内置函数)
 
-## How can I get involved in Octave development?
+## 我如何参与 Octave 开发？
 
-+   **Be around. Be social.**
++   **保持关注，积极交流。**
     
-    Participate in our [Discourse Forum](https://octave.discourse.group/). Find things about Octave you don't like, and start thinking about how to fix them. **Please do not just send a message listing your skills and offering to help.**
+    参与我们的 [Discourse 论坛](https://octave.discourse.group/)。找出您认为 Octave 中不尽如人意的地方，并开始思考如何修复它们。**请不要仅仅发送一条信息列出您的技能并表示愿意提供帮助。**
     
-    Many people who now contribute to Octave first spent some time observing the community communication before they started to delve into the code. A good way to learn Octave is to understand the problems other people are having with it, so being helpful in Discourse not only helps Octave as a whole, but it also prepares you to become a better Octave contributor.
-    
-
-+   **Kill the bugs.**
-    
-    Accurate bug reporting is also very useful. Find and report [bugs](http://bugs.octave.org/), making an attempt to diagnose them. Eventually, you will also know how to fix them. If you want to help with bug reports or patches, subscribe to the [bug tracker mailing list](https://lists.gnu.org/mailman/listinfo/octave-bug-tracker). You'll get updates on all bug activity, and you can jump in when you see something you can help with.
+    许多现在为 Octave 做出贡献的人，最初都花了一些时间观察社区的交流，然后才开始深入研究代码。学习 Octave 的一个好方法是理解其他人遇到的问题，因此在 Discourse 上提供帮助不仅有助于整个 Octave 社区，也能让您为成为更好的 Octave 贡献者做好准备。
     
 
-+   **Getting hands dirty.**
++   **消灭错误。**
     
-    See [#How can I contribute code to Octave?](#How_can_I_contribute_code_to_Octave?) below. We lack volunteers and **we do need your help**, but because of that, we also lack the time to provide good guidance and mentoring. If there is a specific short-term project you would like to work on, say so, and **just do it**. Then ask for help or advice when you're doing it. It is a lot more important that you do something that you're actually interested on than something we suggested because it only matches your skills.
-    
-
-+   **Octave needs more documentation.**
-    
-    If you like documenting software or have great ideas for Octave, please get in contact with us. Additionally, see [Project - Documentation](Project_-_Documentation.html "Project - Documentation") for details.
+    准确的错误报告也非常有用。查找并报告[错误](http://bugs.octave.org/)，并尝试诊断它们。最终，您也会知道如何修复它们。如果您想帮助处理错误报告或补丁，请订阅[错误跟踪器邮件列表](https://lists.gnu.org/mailman/listinfo/octave-bug-tracker)。您将获得所有错误活动的更新，并且当您看到可以帮忙的事情时，可以随时加入。
     
 
-+   **Need inspiration?**
++   **动手实践。**
     
-    Look at our [projects](Projects.html "Projects"), [short projects](Short_projects.html "Short projects"), and [Summer of Code - Getting Started](Summer_of_Code_-_Getting_Started.html "Summer of Code - Getting Started") if you need specific inspiration for coding tasks that we would like to get done.
+    请参阅下面的 [#我如何向 Octave 贡献代码？](#我如何向-octave-贡献代码？)。我们缺乏志愿者，**我们确实需要您的帮助**，但正因为如此，我们也缺乏时间提供良好的指导和辅导。如果您有一个想参与的特定短期项目，请说出来，然后**直接去做**。在做的时候寻求帮助或建议。重要的是您做自己真正感兴趣的事情，而不是仅仅因为符合您的技能而去做我们建议的事情。
     
 
-## How can I contribute code to Octave?
++   **Octave 需要更多文档。**
+    
+    如果您喜欢编写软件文档或对 Octave 有很好的想法，请与我们联系。此外，详情请参见[项目 - 文档](Project_-_Documentation.html "Project - Documentation")。
+    
 
-In general you can contribute code to Octave in form of **patches (changesets)**. Those have to be uploaded to the [bug](https://savannah.gnu.org/bugs/?group=octave) or [patch](https://savannah.gnu.org/patch/?group=octave) tracker.
++   **需要灵感？**
+    
+    如果您需要具体的编码任务灵感，可以看看我们的[项目](Projects.html "Projects")、[短期项目](Short_projects.html "Short projects")和[夏季编程 - 入门指南](Summer_of_Code_-_Getting_Started.html "Summer of Code - Getting Started")。
+    
 
-+   In [Building](Building.html "Building") is described, how you get and build the latest Octave source code on your system.
-+   In [Mercurial](Mercurial.html "Mercurial") we describe, how you create a patch (changeset) from your modifications.
-+   Our [Contribution guidelines](Contribution_guidelines.html "Contribution guidelines") should be read and followed as well, to ensure acceptance of your contribution.
+## 我如何向 Octave 贡献代码？
 
-## How can I find which source file implements a given command?
+通常，您可以以**补丁（变更集）** 的形式向 Octave 贡献代码。这些需要上传到[错误](https://savannah.gnu.org/bugs/?group=octave)或[补丁](https://savannah.gnu.org/patch/?group=octave)跟踪器。
 
-Use Octave's [`which`](https://www.octave.org/doc/interpreter/XREFwhich.html) command.
++   [构建](Building.html "Building")部分描述了如何在您的系统上获取和构建最新的 Octave 源代码。
++   在 [Mercurial](Mercurial.html "Mercurial") 中，我们描述了如何从您的修改中创建补丁（变更集）。
++   我们的[贡献指南](Contribution_guidelines.html "Contribution guidelines")也应该阅读并遵守，以确保您的贡献被接受。
 
-### m-file functions
+## 如何找到实现某个命令的源文件？
+
+使用 Octave 的 [`which`](https://www.octave.org/doc/interpreter/XREFwhich.html) 命令。
+
+### m 文件函数
 
 ```matlab
 >> which help
 ```
 
-```
- 'help' is a function from the file /some/path/m/help/help.m
+```bash
+'help' 是一个来自 /some/path/m/help/help.m 文件的函数
 ```
 
-In this case, the desired function is a m-file, one can simply edit it inside the GUI, just type:
+在这种情况下，所需的函数是一个 m 文件，用户可以直接在 GUI 中编辑它，只需键入：
 
 ```matlab
 >> edit help
 ```
 
-### built-in functions
+### 内置函数
 
-Some functions are already compiled (a.k.a. *built-in functions*), for example:
+有些函数是已经编译好的（也称为*内置函数*），例如：
 
 ```matlab
 >> which addpath
 ```
 
+```bash
+'addpath' 是一个来自 libinterp/corefcn/load-path.cc 文件的内置函数
 ```
- 'addpath' is a built-in function from the file libinterp/corefcn/load-path.cc
-```
 
-This function is to be found in Octave's source code, in this case at [libinterp/corefcn/load-path.cc](https://hg.savannah.gnu.org/hgweb/octave/file/b33d4fbce33e/libinterp/corefcn/load-path.cc#l2355). Open the respective file with an editor of your choice and search for the pattern " `(addpath,`".
+这个函数可以在 Octave 的源代码中找到，在这个例子中位于 [libinterp/corefcn/load-path.cc](https://hg.savannah.gnu.org/hgweb/octave/file/b33d4fbce33e/libinterp/corefcn/load-path.cc#l2355)。用您选择的编辑器打开相应的文件，并搜索模式 " `(addpath,`"。
 
-[Categories](Special%253ACategories.html "Special:Categories"):
+[分类](Special%253ACategories.html "Special:Categories"):
 
-+   [Development](. "Category:Development")
++   [开发](. "Category:Development")
 +   [FAQ](Category%253AFAQ.html "Category:FAQ")

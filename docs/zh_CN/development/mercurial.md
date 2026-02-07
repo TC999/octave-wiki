@@ -1,175 +1,175 @@
 # Mercurial
 
-[Mercurial](https://www.mercurial-scm.org) (sometimes referred to as `hg`) is the source code management system used for Octave development.
+[Mercurial](https://www.mercurial-scm.org)（有时称为 `hg`）是用于 Octave 开发的源代码管理系统。
 
-Everybody is free to **run, copy, distribute, study, change and improve**[\[1\]](#cite_note-1) Octave's source code, given in the main repository at [https://www.octave.org/hg/octave](https://www.octave.org/hg/octave). Use Mercurial to get the latest version of Octave
+任何人都可以**运行、复制、分发、研究、修改和改进**[\[1\]](#cite_note-1) 位于主仓库 [https://www.octave.org/hg/octave](https://www.octave.org/hg/octave) 中的 Octave 源代码。使用 Mercurial 获取 Octave 的最新版本：
 
-```
+```bash
 hg clone https://www.octave.org/hg/octave
 ```
 
-## Contents
+## 目录
 
-+   [1 Workflow reference](#Workflow_reference)
-+   [2 Tutorials](#Tutorials)
-+   [3 Creating and submitting patches (changesets)](#Creating_and_submitting_patches_\(changesets\))
-+   [4 Mercurial Tips for SoC students](#Mercurial_Tips_for_SoC_students)
-    +   [4.1 Using bookmarks](#Using_bookmarks)
-    +   [4.2 Staying up-to-date with the main repository](#Staying_up-to-date_with_the_main_repository)
-    +   [4.3 Preparing for code reviews](#Preparing_for_code_reviews)
-+   [5 Example Mercurial configuration](#Example_Mercurial_configuration)
-+   [6 Tips for working with TortoiseHg](#Tips_for_working_with_TortoiseHg)
-    +   [6.1 Activate the "mq" extension](#Activate_the_"mq"_extension)
-    +   [6.2 Rebase a change to a current tip](#Rebase_a_change_to_a_current_tip)
-+   [7 Footnotes](#Footnotes)
-+   [8 External links](#External_links)
++   [1 工作流程参考](#工作流程参考)
++   [2 教程](#教程)
++   [3 创建并提交补丁（变更集）](#创建并提交补丁（变更集）)
++   [4 给 SoC 学生的 Mercurial 技巧](#给-soc-学生的-mercurial-技巧)
+    +   [4.1 使用书签](#使用书签)
+    +   [4.2 与主仓库保持同步](#与主仓库保持同步)
+    +   [4.3 准备代码审查](#准备代码审查)
++   [5 Mercurial 配置示例](#mercurial-配置示例)
++   [6 使用 TortoiseHg 的技巧](#使用-tortoisehg-的技巧)
+    +   [6.1 启用 "mq" 扩展](#启用-"mq"-扩展)
+    +   [6.2 将变更重新设置到当前最新提交](#将变更重新设置到当前最新提交)
++   [7 脚注](#脚注)
++   [8 外部链接](#外部链接)
 
-## Workflow reference
+## 工作流程参考
 
-This section gives several frequently used Mercurial commands and sequences.
+本节提供几个常用的 Mercurial 命令和操作序列。
 
-+   Initial clone:
++   初始克隆：
     
     ```bash
     hg clone https://hg.savannah.gnu.org/hgweb/octave/
     ```
     
 
-You can then bootstrap, configure, make, and maybe make check, make install.
+然后您可以运行 bootstrap、configure、make，可能还需要运行 make check 和 make install。
 
-+   To update on a regular basis, you can do
++   要定期更新，可以执行：
     
     ```bash
     hg pull -u
     ```
     
-    or
+    或者
     
     ```bash
     hg pull && hg update
     ```
     
 
-+   To make a *local clone*, you can clone from your main Octave repository on your computer to another directory like this:
++   要创建*本地克隆*，可以从您计算机上的主 Octave 仓库克隆到另一个目录，像这样：
     
     ```bash
     hg clone octave myfeature
     ```
     
-    which will clone the Octave directory into a new directory called "myfeature". You will need to cd to the correct directory first. Then you can cd into the new directory and run bootstrap, configure, make. To prevent a fresh download of gnulib, you can specify the path to the first Octave directory's gnulib if you wish using the configure option `--with-gnulib-prefix=DIR`.
+    这会将 Octave 目录克隆到一个名为 "myfeature" 的新目录中。您需要先 cd 到正确的目录。然后您可以 cd 到新目录并运行 bootstrap、configure、make。为了防止重新下载 gnulib，如果需要，您可以使用 configure 选项 `--with-gnulib-prefix=DIR` 来指定第一个 Octave 目录的 gnulib 路径。
 
-x It is best practice to make a new clone directory for each feature or bugfix you work on, or use [Mercurial Queues](https://hgbook.red-bean.com/read/managing-change-with-mercurial-queues.html). Both approaches make recovery from mistakes much easier.
+x 最佳实践是为您处理的每个功能或错误修复创建一个新的克隆目录，或者使用 [Mercurial Queues](https://hgbook.red-bean.com/read/managing-change-with-mercurial-queues.html)。这两种方法都使从错误中恢复变得更容易。
 
-+   To work on the stable branch instead of the default branch, make a local clone called "stable", then cd to it and
++   要在稳定分支上工作而不是默认分支，请创建一个名为 "stable" 的本地克隆，然后 cd 进入其中并执行：
     
     ```bash
     hg update stable
     ```
     
 
-+   To circulate work-in-progress bugfixes: first cd to the relevant local clone, then edit the relevant files, verify that it builds, then
++   要传阅进行中的错误修复：首先 cd 到相关的本地克隆，然后编辑相关文件，验证它能构建，然后执行：
     
     ```bash
     hg diff > /tmp/my.wip.patch
     ```
     
-    and then upload that file to the bug tracker discussion. You can also copy-paste it into a bug discussion using `+verbatim+`...`-verbatim-` tags if the patch is small enough. Accept feedback from the bug discussion and iterate your patch.
+    然后将该文件上传到错误跟踪器的讨论中。如果补丁足够小，您也可以使用 `+verbatim+`...`-verbatim-` 标签将其复制粘贴到错误讨论中。接受错误讨论中的反馈并迭代您的补丁。
 
-+   When you're ready to commit your fix, first pull and update your main Octave directory from Savannah, then pull and update your local clones. Then build again to make sure things haven't broken. Then
++   当您准备好提交修复时，首先从 Savannah 拉取并更新您的主 Octave 目录，然后拉取并更新您的本地克隆。然后再次构建以确保没有破坏任何东西。然后执行：
     
     ```bash
     hg commit
     ```
     
-    and type a summary and context for your change. Exit the editor, saving when it prompts. Build again so your build gets the latest hg id. Type
+    并为您的更改输入摘要和说明。退出编辑器，在提示时保存。再次构建，以便您的构建获得最新的 hg id。键入：
     
     ```bash
     hg export > /tmp/my.patch
     ```
     
-    and upload that file into the bug discussion. Wait for a maintainer to apply it with your name, then if you do
+    并将该文件上传到错误讨论中。等待维护者以您的名义应用它，然后如果您在您的主 Octave 目录中执行：
     
     ```bash
     hg in
     ```
     
-    in your main Octave directory it'll show up as an incoming change. Do a pull and up to get that, then do a pull and up in your individual clone directories to get it there.
+    它会显示为传入的更改。执行 pull 和 up 来获取它，然后在您各个克隆目录中执行 pull 和 up 以在那里获取它。
 
-+   To merge changes from stable to default
++   要将更改从稳定分支合并到默认分支：
     
     ```bash
     hg merge stable
     ```
     
-    It's best to run this only in local clones that are already on the default branch. That way, local clones on stable don't have to switch branches before merging.
+    最好仅在已经位于默认分支上的本地克隆中运行此命令。这样，位于稳定分支上的本地克隆就不必在合并前切换分支。
 
-+   To push to a repository, if you have push rights to that repository, you can see what's going out with
++   要推送到仓库，如果您对该仓库有推送权限，您可以使用以下命令查看将要推送的内容：
     
     ```bash
     hg out
     ```
     
-    and then if you're happy with it you can
+    然后如果您满意，您可以执行：
     
     ```bash
     hg push
     ```
     
 
-## Tutorials
+## 教程
 
-Joel Spolsky's Mercurial tutorial: [https://hginit.github.io/01.html](https://hginit.github.io/01.html)
+Joel Spolsky 的 Mercurial 教程：[https://hginit.github.io/01.html](https://hginit.github.io/01.html)
 
-[![Info icon.svg](../../assets/info/26px-Info_icon.svg.png)](File%253AInfo_icon.svg.html)
+[![信息图标](../../assets/info/26px-Info_icon.svg.png)](File%253AInfo_icon.svg.html)
 
-[TortoiseHg](https://tortoisehg.bitbucket.io/) is a GUI for Mercurial and it is especially recommended for users doing their first steps with source code management systems. Linux, macOS, and MS Windows are supported.
+[TortoiseHg](https://tortoisehg.bitbucket.io/) 是 Mercurial 的图形用户界面，特别推荐给初次使用源代码管理系统的用户。支持 Linux、macOS 和 MS Windows。
 
-## Creating and submitting patches (changesets)
+## 创建并提交补丁（变更集）
 
-If you want to share your modifications, for example to fix a nasty **bug #42424**, you cannot just submit your changes to Octave's main repository. You have to generate a **patch (or changeset)** so other Octave developers can include them into Octave's source code.
+如果您想分享您的修改，例如修复一个讨厌的**错误 #42424**，您不能直接将您的更改提交到 Octave 的主仓库。您必须生成一个**补丁（或变更集）**，以便其他 Octave 开发者可以将其包含到 Octave 的源代码中。
 
-1.  Get the latest version of Octave (or some Octave package)
+1.  获取 Octave（或某个 Octave 包）的最新版本
     
     ```bash
     hg clone https://www.octave.org/hg/octave
     ```
     
-    or when already cloned
+    或者如果已经克隆过
     
     ```bash
     hg pull && hg update
     ```
     
-2.  Make your changes (fix bug #42424) and save them. **Make sure that your changes don't introduce new bugs!** Thus it is recommended to [build Octave](Building.html "Building") and to [run Octave's test suite](Tests.html "Tests") before proceeding.  
+2.  进行您的更改（修复错误 #42424）并保存。**确保您的更改不会引入新的错误！** 因此，建议在继续之前[构建 Octave](Building.html "Building")并[运行 Octave 的测试套件](Tests.html "Tests")。  
     
-    [![Warning icon.svg](../../assets/warning/26px-Warning_icon.svg.png)](File%253AWarning_icon.svg.html)
+    [![警告图标](../../assets/warning/26px-Warning_icon.svg.png)](File%253AWarning_icon.svg.html)
     
-    Please follow the [Contribution guidelines](Contribution_guidelines.html "Contribution guidelines") for C/C++ or Octave code files!
+    请遵循 C/C++ 或 Octave 代码文件的[贡献指南](Contribution_guidelines.html "Contribution guidelines")！
     
-3.  Commit your changes
+3.  提交您的更改
     
     ```bash
     hg commit
     ```
     
-    Mercurial will open your default editor[\[2\]](#cite_note-2) and ask you for a commit message. Please follow the [commit message guidelines](Commit_message_guidelines.html "Commit message guidelines"), e.g.
+    Mercurial 将打开您的默认编辑器[\[2\]](#cite_note-2)并要求您输入提交信息。请遵循[提交信息指南](Commit_message_guidelines.html "Commit message guidelines")，例如：
     
     ```text
-    help.m: Display relevant topics first (bug #42424)
+    help.m: 优先显示相关主题（错误 #42424）
     
-    * scripts/help/help.m: Describe what you changed to display relevant topics
-      first.  The maximal line width is 80 characters.
+    * scripts/help/help.m: 描述您所做的更改以优先显示相关主题。
+      最大行宽为 80 个字符。
     ```
     
-4.  Export the changes
+4.  导出更改
     
     ```bash
     hg export -r tip -o bug42424.patch
     ```
     
-    The final patch for submission will look like this
+    最终用于提交的补丁将如下所示
     
-    **File:** bug42424.patch
+    **文件:** bug42424.patch
     
     ```diff
     # HG changeset patch
@@ -179,10 +179,10 @@ If you want to share your modifications, for example to fix a nasty **bug #42424
     # Node ID 68c698c4f2fd98bf2d48234bd1da99e91763114f
     # Parent  f5c9bb5955e7c9fddef5c3c3f115201e11b43b79
     
-    help.m: Display relevant topics first (bug #42424)
+    help.m: 优先显示相关主题（错误 #42424）
     
-    * scripts/help/help.m: Describe what you changed to display relevant topics
-      first.  The maximal line width is 80 characters.
+    * scripts/help/help.m: 描述您所做的更改以优先显示相关主题。
+      最大行宽为 80 个字符。
     
     diff -r f5c9bb5955e7 -r 68c698c4f2fd scripts/help/help.m
     --- a/scripts/help/help.m	Tue Jun 09 14:11:13 2020 -0700
@@ -190,84 +190,84 @@ If you want to share your modifications, for example to fix a nasty **bug #42424
     @@ -99,7 +99,7 @@ function retval = help (name)
          endif
      
-         ## Get help text
+         ## 获取帮助文本
     -    [text, format] = get_help_text (name);
     +    [text, format] = get_better_help_text (name);
      
-         ## Take action depending on help text format
+         ## 根据帮助文本格式采取相应操作
          switch (lower (format))
     ```
     
-5.  Upload bug42424.patch to the [bug](https://savannah.gnu.org/bugs/?group=octave) or [patch](https://savannah.gnu.org/patch/?group=octave) tracker. If your patch file is larger than the upload limit, you can compress it before uploading. Please use a free format!
+5.  将 bug42424.patch 上传到[错误](https://savannah.gnu.org/bugs/?group=octave)或[补丁](https://savannah.gnu.org/patch/?group=octave)跟踪器。如果您的补丁文件大于上传限制，您可以在上传前压缩它。请使用自由格式！
 
-## Mercurial Tips for SoC students
+## 给 SoC 学生的 Mercurial 技巧
 
-This section is meant to provide tips for [Summer of Code](Summer_of_Code.html "Summer of Code") students working on new Octave features.
+本节旨在为从事新 Octave 功能开发的[夏季编程](Summer_of_Code.html "Summer of Code")学生提供一些技巧。
 
-Students should publish their work as it progresses in a public repository. In this section we use for example `public.server.org/octave`.
+学生应随着工作进展在公共仓库中发布他们的成果。在本节中，我们以 `public.server.org/octave` 为例。
 
-### Using bookmarks
+### 使用书签
 
-[Bookmarks](https://www.mercurial-scm.org/wiki/Bookmarks) are useful for identifying a series of commits. They are a "lightweight" solution to [named branches](https://www.mercurial-scm.org/wiki/NamedBranches), which are not automatically updated for example. To create a bookmark `my-gsoc` use
+[书签](https://www.mercurial-scm.org/wiki/Bookmarks)对于标识一系列提交很有用。它们是[命名分支](https://www.mercurial-scm.org/wiki/NamedBranches)的一种"轻量级"解决方案，例如，命名分支不会自动更新。要创建书签 `my-gsoc`，请使用：
 
 ```bash
 hg clone https://www.octave.org/hg/octave
 hg bookmark my-gsoc
 ```
 
-To make the bookmark visible in the public repository use
+要使书签在公共仓库中可见，请使用：
 
 ```bash
 hg push --bookmark ssh://student@public.server.org/octave
 ```
 
-### Staying up-to-date with the main repository
+### 与主仓库保持同步
 
-Octave development does not stand still while the students development proceeds. Octave's main repository gets updated, too. The following commands can be used to get these updated to the students clone of the main repository:
+在学生开发进行的同时，Octave 的开发并未停滞。Octave 的主仓库也在更新。可以使用以下命令将这些更新获取到学生克隆的主仓库中：
 
 ```bash
-hg pull https://www.octave.org/hg/octave   # Get latest remote "tip"
-hg update -r my-gsoc                       # Activate bookmark "my-gsoc"
-hg merge tip                               # Merge  "tip" into "my-gsoc"
+hg pull https://www.octave.org/hg/octave   # 获取最新的远程 "tip"
+hg update -r my-gsoc                       # 激活书签 "my-gsoc"
+hg merge tip                               # 将 "tip" 合并到 "my-gsoc" 中
 hg commit -m "maint: merge default to my-gsoc"
 hg push ssh://student@public.server.org/octave
 ```
 
-### Preparing for code reviews
+### 准备代码审查
 
-At the time of the mid-term or final review (or whenever the mentor requires it) students should prepare their code for review and possibly inclusion into the main repository.
+在中期或最终审查时（或导师要求时），学生应准备他们的代码以供审查，并可能包含到主仓库中。
 
-1.  Create a full log of changes
+1.  创建完整的更改日志
     
     ```bash
     hg log --template=changelog --no-merges --user student-name
     ```
     
-    If students have been following the [Commit message guidelines](Commit_message_guidelines.html "Commit message guidelines") the output is a good starting point for the commit message in the next step. Some manual post-processing might be necessary:
-    +   Each touched file should appear only once.
-    +   Do not mention backed-out commits.
-2.  Prepare a singe patch (changeset) including all code that should be submitted for review
+    如果学生遵循了[提交信息指南](Commit_message_guidelines.html "Commit message guidelines")，那么输出将是下一步提交信息的一个良好起点。可能需要进行一些手动后处理：
+    +   每个被修改的文件应仅出现一次。
+    +   不要提及已撤销的提交。
+2.  准备一个包含所有应提交审查的代码的单一补丁（变更集）
     
     ```bash
-    hg pull https://www.octave.org/hg/octave   # Get remote "tip" and "@"
-    hg update -r @                             # Activate    bookmark "@"
-    hg merge my-gsoc                           # Merge "my-gsoc" into "@"
+    hg pull https://www.octave.org/hg/octave   # 获取远程 "tip" 和 "@"
+    hg update -r @                             # 激活书签 "@"
+    hg merge my-gsoc                           # 将 "my-gsoc" 合并到 "@"
     hg commit
     hg export -r tip -o mid-term-review.patch
     ```
     
-    The file mid-term-review.patch can uploaded to the [patch tracker](https://savannah.gnu.org/patch/?group=octave).  
-    Finally, there is a subtle difference between `"tip"`, which is a reference to the (local or remote) changeset added to the repository most recently and the bookmark `"@"` used by the Octave developers to point to the latest remote changeset. Often both refer to the very same changeset and they can used interchangeably.
+    文件 mid-term-review.patch 可以上传到[补丁跟踪器](https://savannah.gnu.org/patch/?group=octave)。  
+    最后，`"tip"` 和 Octave 开发者用来指向最新远程变更集的书签 `"@"` 之间存在细微差别。通常两者都指代完全相同的变更集，可以互换使用。
 
-## Example Mercurial configuration
+## Mercurial 配置示例
 
-Place the following file in your home directory, e.g. /home/username/.hgrc.
+将以下文件放在您的主目录中，例如 /home/username/.hgrc。
 
-**File:** .hgrc
+**文件:** .hgrc
 
 ```ini
 [ui]
-username = Your Name <your@email>
+username = 您的名字 <your@email>
 
 [extensions]
 color =
@@ -286,7 +286,7 @@ showfunc = True
 [color]
 mode = terminfo
 
-## Custom colors
+## 自定义颜色
 color.gray = 244
 color.orange = 202
 color.lightyellow = 191
@@ -300,7 +300,7 @@ status.deleted = cyan bold
 status.unknown = gray bold
 status.ignored = gray bold
 
-## Colors for each label
+## 每个标签的颜色
 log.branch = cyan
 log.summary = lightyellow
 log.description = lightyellow
@@ -308,7 +308,7 @@ log.bookmark = green
 log.tag = darkorange
 log.graph = blue
 
-## Colors for each phase
+## 每个阶段（phase）的颜色
 changeset.secret = blue bold
 changeset.draft  = red bold
 changeset.public = orange
@@ -323,58 +323,58 @@ glog = log --graph
 top  = log --graph -l
 ```
 
-## Tips for working with TortoiseHg
+## 使用 TortoiseHg 的技巧
 
-TortoiseHg is a multi-platform graphical user interface for Mercurial repositories. It allows to perform many hg operations using the context menu and toolbar buttons. That might make it easier to get used to working with Mercurial.
+TortoiseHg 是用于 Mercurial 仓库的多平台图形用户界面。它允许使用上下文菜单和工具栏按钮执行许多 hg 操作。这可能使习惯使用 Mercurial 变得更容易。
 
-### Activate the "mq" extension
+### 启用 "mq" 扩展
 
-The "mq" extension allows to modify (local) changesets after they have been committed. It also allows to rebase changes to a new parent or to strip changes completely. The "mq" extension does \*not\* allow to modify pushed changes.
+"mq" 扩展允许在（本地）变更集提交后对其进行修改。它还允许将变更重新设置到新的父节点或完全移除变更。"mq" 扩展*不*允许修改已推送的变更。
 
-To activate the "mq" extension in TortoiseSVN, open the settings, select "Extensions" on the global settings tab and activate the checkbox next to "mq".
+要在 TortoiseSVN 中激活 "mq" 扩展，请打开设置，在全局设置选项卡上选择"扩展"，并激活"mq"旁边的复选框。
 
-The most useful feature of that extension is probably to update an existing changeset. For this, select "Modify History" -> "Import to MQ" in the right click menu of the respective changeset. After updating some local files or changing the commit message, hit the "QRefresh" button. Finish the patch by selecting "Modify History" -> "Finish Patch" from the right click menu of the respective changeset.
+该扩展最有用的功能可能是更新现有的变更集。为此，在相应变更集的右键菜单中选择"修改历史" -> "导入到 MQ"。更新一些本地文件或更改提交信息后，点击"QRefresh"按钮。通过在相应变更集的右键菜单中选择"修改历史" -> "完成补丁"来完成补丁。
 
-### Rebase a change to a current tip
+### 将变更重新设置到当前最新提交
 
-Sometimes a change in the upstream repository might make it necessary to rebase a changeset to a new parent. There are several ways to achieve this. The ways described here might not be the most elegant ones. Any editor is welcome to add onto this.
+有时上游仓库的更改可能需要将变更集重新设置到新的父节点。有几种方法可以实现这一点。这里描述的方法可能不是最优雅的。欢迎任何编辑进行补充。
 
-Strip and commit:
+移除并提交：
 
-1.  Pull changes from the upstream repository.
-2.  Before updating to the new tip, strip the local changes by selecting "Modify History" -> "Strip..." from the right click menu. In the dialog, select "Do not modify working copy during strip (-k/--keep)".
-3.  Update to the new tip (maybe in incremental steps).
-4.  Commit the local changes in a "fresh" changeset. This has the drawback that any commit message might be lost. But it often works even if other approaches fail.
+1.  从上游仓库拉取更改。
+2.  在更新到新最新提交之前，通过右键菜单选择"修改历史" -> "移除..."来移除本地更改。在对话框中，选择"在移除期间不修改工作副本 (-k/--keep)"。
+3.  更新到新的最新提交（可能需要逐步进行）。
+4.  在"全新的"变更集中提交本地更改。这样做的缺点是可能会丢失任何提交信息。但它通常有效，即使其他方法失败。
 
-Un-apply and re-apply:
+取消应用并重新应用：
 
-1.  Pull changes from the upstream repository.
-2.  Before updating to the new tip, import the local changeset to mq by selecting "Modify History" -> "Import to MQ" in the right click menu.
-3.  You might want to refresh the changeset with local changes.
-4.  Un-apply the patch by selecting "Modify History" -> "Unapply Patch" from the right click menu. If there are other, un-committed changes in the local repository, you might want to select "Tolerate non-conflicting local changes (--keep-changes)" in the "Modify History" -> "MQ Options" dialog from the right click menu beforehand.
-5.  Update to the new tip.
-6.  Select the previously unapplied patch on top of the revision graph and re-apply it by using the "Reapply Patch" option in the right click menu. This has the advantage that a commit message will be retained. But re-applying the patch might fail if there were changes in the upstream repository that made the patch incompatible.
+1.  从上游仓库拉取更改。
+2.  在更新到新最新提交之前，通过在右键菜单中选择"修改历史" -> "导入到 MQ"将本地变更集导入到 mq。
+3.  您可能希望用本地更改刷新变更集。
+4.  通过右键菜单中选择"修改历史" -> "取消应用补丁"来取消应用补丁。如果本地仓库中有其他未提交的更改，您可能希望事先在右键菜单的"修改历史" -> "MQ 选项"对话框中选择"容忍无冲突的本地更改 (--keep-changes)"。
+5.  更新到新的最新提交。
+6.  在修订版本图上选择之前未应用的补丁，并使用右键菜单中的"重新应用补丁"选项重新应用它。这样做的好处是提交信息将被保留。但如果上游仓库的更改导致补丁不兼容，重新应用补丁可能会失败。
 
-Rebase:
+重新设置：
 
-1.  Pull changes from the upstream repository.
-2.  Select the local changeset that you'd like to rebase.
-3.  Hold down the Ctrl key and select the changeset that should be the new parent of the local changeset (probably the new tip).
-4.  Right-click the changeset of the new parent and select "Rebase...".
-5.  The default settings are often times fine. This process has the advantage that a commit message will be retained and it often times resolves conflicts automatically. But it doesn't work if there are any un-committed local changes.
+1.  从上游仓库拉取更改。
+2.  选择您想要重新设置的本地变更集。
+3.  按住 Ctrl 键并选择应作为本地变更集新父节点的变更集（可能是新的最新提交）。
+4.  右键单击新父节点的变更集并选择"重新设置..."。
+5.  默认设置通常是可以的。此过程的优点是提交信息将被保留，并且通常会自动解决冲突。但如果存在任何未提交的本地更改，则无效。
 
-## Footnotes
+## 脚注
 
 1.  [↑](#cite_ref-1) [https://www.gnu.org/philosophy/free-sw.en.html](https://www.gnu.org/philosophy/free-sw.en.html)
-2.  [↑](#cite_ref-2) To set your default Mercurial editor, read [https://www.mercurial-scm.org/wiki/editor](https://www.mercurial-scm.org/wiki/editor) .
+2.  [↑](#cite_ref-2) 要设置您的默认 Mercurial 编辑器，请阅读 [https://www.mercurial-scm.org/wiki/editor](https://www.mercurial-scm.org/wiki/editor)。
 
-## External links
+## 外部链接
 
-+   [https://hginit.com/](https://hginit.com/) -- Mercurial tutorial
-+   [https://www.mercurial-scm.org/wiki/Tutorial](https://www.mercurial-scm.org/wiki/Tutorial) -- Mercurial tutorial
-+   [https://www.mercurial-scm.org/wiki/QuickStart](https://www.mercurial-scm.org/wiki/QuickStart) -- Mercurial quick start
-+   [https://tortoisehg.bitbucket.io/](https://tortoisehg.bitbucket.io/) -- TortoiseHg is a GUI for Mercurial (Linux, macOS, MS Windows)
++   [https://hginit.com/](https://hginit.com/) -- Mercurial 教程
++   [https://www.mercurial-scm.org/wiki/Tutorial](https://www.mercurial-scm.org/wiki/Tutorial) -- Mercurial 教程
++   [https://www.mercurial-scm.org/wiki/QuickStart](https://www.mercurial-scm.org/wiki/QuickStart) -- Mercurial 快速入门
++   [https://tortoisehg.bitbucket.io/](https://tortoisehg.bitbucket.io/) -- TortoiseHg 是 Mercurial 的图形界面（Linux、macOS、MS Windows）
 
-[Category](Special%253ACategories.html "Special:Categories"):
+[分类](Special%253ACategories.html "Special:Categories")：
 
-+   [Development](Category%253ADevelopment.html "Category:Development")
++   [开发](Category%253ADevelopment.html "Category:Development")

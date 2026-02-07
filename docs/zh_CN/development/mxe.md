@@ -1,42 +1,42 @@
 # MXE
 
-[MXE-Octave](https://hg.octave.org/mxe-octave) was forked 2012 from the [MXE project](https://mxe.cc/) and is useful for building Octave in the following scenarios[\[1\]](#cite_note-1):
+[MXE-Octave](https://hg.octave.org/mxe-octave) 于 2012 年从 [MXE 项目](https://mxe.cc/) 分支出来，在以下场景中用于构建 Octave 非常有用[\[1\]](#cite_note-1)：
 
-1.  Cross-compilation for MS Windows (see also [Windows Installer](Windows_Installer.html "Windows Installer")) and other platforms.
-2.  Building Octave on outdated Linux systems (e.g. only an old GCC version is available).
-3.  Building Octave without root permission.
+1.  为 MS Windows（另请参阅 [Windows 安装程序](Windows_Installer.html "Windows Installer")）和其他平台进行交叉编译。
+2.  在过时的 Linux 系统上构建 Octave（例如，只有旧的 GCC 版本可用）。
+3.  在没有 root 权限的情况下构建 Octave。
 
-![Warning icon.svg](../../assets/warning/26px-Warning_icon.svg.png)
+![警告图标](../../assets/warning/26px-Warning_icon.svg.png)
 
-MXE-Octave is **not** the best choice for building Octave, if your system already provides recent versions of GCC and other required build dependencies. See [Category:Installation](../install "Category:Installation") for other install options.
+**如果您的系统已经提供了新版本的 GCC 和其他所需的构建依赖项，那么 MXE-Octave 就<u>不是</u>构建 Octave 的最佳选择。** 其他安装选项请参阅 [安装](../install "Category:Installation")。
 
-## Contents
+## 目录
 
-+   [1 Example of compiling MXE-Octave](#Example_of_compiling_MXE-Octave)
-    +   [1.1 Preparation](#Preparation)
-    +   [1.2 Configuration](#Configuration)
-    +   [1.3 Build](#Build)
-    +   [1.4 Replace reference BLAS by OpenBLAS](#Replace_reference_BLAS_by_OpenBLAS)
-    +   [1.5 Run](#Run)
-+   [2 Known issues](#Known_issues)
-    +   [2.1 gnuplot](#gnuplot)
-    +   [2.2 Build errors on older systems](#Build_errors_on_older_systems)
-+   [3 References](#References)
++   [1 编译 MXE-Octave 示例](#编译-mxe-octave-示例)
+    +   [1.1 准备](#准备)
+    +   [1.2 配置](#配置)
+    +   [1.3 构建](#构建)
+    +   [1.4 用 OpenBLAS 替换参考 BLAS 库](#用-openblas-替换参考-blas-库)
+    +   [1.5 运行](#运行)
++   [2 已知问题](#已知问题)
+    +   [2.1 gnuplot](#gnuplot-1)
+    +   [2.2 在旧系统上的构建错误](#在旧系统上的构建错误)
++   [3 参考文献](#参考文献)
 
-### Example of compiling MXE-Octave
+### 编译 MXE-Octave 示例
 
-#### Preparation
+#### 准备
 
-1.  [Install all requirements of MXE Octave](Windows_Installer.md#Installing_requirements_of_MXE_Octave "Windows Installer").
-2.  Decide for an installation directory (e.g. ~/mxe-octave).
+1.  [安装 MXE Octave 的所有依赖项](Windows_Installer.md#Installing_requirements_of_MXE_Octave "Windows Installer")。
+2.  确定安装目录（例如 ~/mxe-octave）。
 3.  `cd ~`
 4.  `hg clone [https://hg.octave.org/mxe-octave](https://hg.octave.org/mxe-octave) mxe-octave`
 5.  `cd mxe-octave`
 6.  `./bootstrap`
 
-#### Configuration
+#### 配置
 
-For a comprehensive list of configuration options with a short explanation, type `./configure --help`. See also the [known issues](#Known_issues) below.
+要获取配置选项的完整列表及其简短说明，请键入 `./configure --help`。另请参阅下面的[已知问题](#已知问题)。
 
 ```bash
 ./configure \
@@ -58,47 +58,45 @@ For a comprehensive list of configuration options with a short explanation, type
     gnu-linux
 ```
 
-#### Build
+#### 构建
 
-`make -j3 JOBS=2 all openblas` Adapt the values of the variables `-j` (parallel package builds) and `JOBS` (parallel build jobs) to your needs.
+`make -j3 JOBS=2 all openblas` 请根据您的需求调整变量 `-j`（并行包构建）和 `JOBS`（并行构建任务）的值。
 
-#### Replace reference BLAS by OpenBLAS
+#### 用 OpenBLAS 替换参考 BLAS 库
 
-In general using the [OpenBLAS](https://www.openblas.net/) library results in faster matrix-vector operations compared to the reference BLAS library.
+通常，与参考 BLAS 库相比，使用 [OpenBLAS](https://www.openblas.net/) 库可以获得更快的矩阵向量运算速度。
 
 1.  `cd ~/mxe-octave/usr/lib`
 2.  `mv libblas.so libblas.so.reference`
 3.  `ln -s libopenblas.so libblas.so`
 
-#### Run
+#### 运行
 
-1.  MXE-Octave will exist in ~/mxe-octave/usr/bin
-2.  Add the command `octave` as alias to your .bashrc file: `alias octave=~/mxe-octave/usr/bin/octave`
-3.  Start MXE-Octave by typing `octave`.
+1.  MXE-Octave 将位于 ~/mxe-octave/usr/bin
+2.  将命令 `octave` 作为别名添加到您的 .bashrc 文件中：`alias octave=~/mxe-octave/usr/bin/octave`
+3.  键入 `octave` 启动 MXE-Octave。
 
-### Known issues
+### 已知问题
 
 #### gnuplot
 
-The gnuplot built by MXE-Octave does not support cairo based terminals and lua/tikz terminals. If you want uses those features, prepare gnuplot with those features and type in the Octave command prompt
+MXE-Octave 构建的 gnuplot 不支持基于 cairo 的终端和 lua/tikz 终端。如果您想使用这些功能，请准备具有这些功能的 gnuplot，然后在 Octave 命令提示符下键入
 
 ```bash
  >> gnuplot_binary /usr/bin/gnuplot
 ```
 
-#### Build errors on older systems
+#### 在旧系统上的构建错误
 
-On some older systems, it might be useful to consider adding the configuration options
+在一些较旧的系统上，如果遇到构建错误，考虑添加以下配置选项可能会有所帮助：
 
 +   `--disable-docs`
 +   `--disable-java`
 
-in case of building errors.
+### 参考文献
 
-### References
+1.  [↑](#cite_ref-1) 由 [jwe](User%253AJwe.html "User:Jwe") 撰写的 [MXE-Octave README](https://hg.octave.org/mxe-octave/file/6836b2f08479/README) 文本。
 
-1.  [↑](#cite_ref-1) [MXE-Octave README](https://hg.octave.org/mxe-octave/file/6836b2f08479/README) text by [jwe](User%253AJwe.html "User:Jwe").
+[分类](Special%253ACategories.html "Special:Categories")：
 
-[Category](Special%253ACategories.html "Special:Categories"):
-
-+   [Building](Category%253ABuilding.html "Category:Building")
++   [构建](Category%253ABuilding.html "Category:Building")
