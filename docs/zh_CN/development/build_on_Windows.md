@@ -1,49 +1,49 @@
-# Building on Microsoft Windows
+# 在 Microsoft Windows 上构建
 
-*This page is directed towards new developers that are interested in contributing to Octave. If you just want to install Octave, see [Category:Installation](../../install "Category:Installation").*
+*本页面面向有兴趣为 Octave 贡献代码的新开发者。如果您只想安装 Octave，请参阅 [安装类别](../../install "Category:Installation")。*
 
-*For general Octave build instructions on Linux, read [Building](building.md "Building").*
+*有关在 Linux 上构建 Octave 的通用说明，请阅读 [构建](building.md "Building")。*
 
-## Contents
+## 目录
 
-+   [1 Contributing to Octave](#Contributing_to_Octave)
-+   [2 Building Octave](#Building_Octave)
-    +   [2.1 Virtual Machine](#Virtual_Machine)
++   [1 为 Octave 做贡献](#为_Octave_做贡献)
++   [2 构建 Octave](#构建_Octave)
+    +   [2.1 虚拟机](#虚拟机)
     +   [2.2 Windows Subsystem for Linux](#Windows_Subsystem_for_Linux)
-    +   [2.3 Building natively (MSYS2)](#Building_natively_\(MSYS2\))
-+   [3 Footnotes](#Footnotes)
+    +   [2.3 原生构建 (MSYS2)](#原生构建_\(MSYS2\))
++   [3 脚注](#脚注)
 
-# Contributing to Octave
+# 为 Octave 做贡献
 
-Octave development is done mainly on Linux. But if you are running Windows, you can contribute to Octave nevertheless.
+Octave 的开发主要在 Linux 上进行。但如果您运行的是 Windows，您仍然可以为 Octave 做贡献。
 
-The easiest way to contribute (not only from Windows) is probably by changing or adding .m files.
+（不仅限于 Windows）最简单的贡献方式可能是修改或添加 .m 文件。
 
-If you found something you'd like to fix or improve, check out the [bug tracker](https://savannah.gnu.org/bugs/?group=octave). It might have already been fixed in the development or (unreleased) stable version.
+如果您发现了一些想要修复或改进的地方，请查看 [bug 跟踪器](https://savannah.gnu.org/bugs/?group=octave)。它可能已经在开发版本或（未发布的）稳定版本中被修复。
 
-Octave is version controlled in a [Mercurial](Mercurial.html "Mercurial") repository at [https://www.octave.org/hg/octave](https://www.octave.org/hg/octave).
+Octave 的版本控制在位于 [https://www.octave.org/hg/octave](https://www.octave.org/hg/octave) 的 [Mercurial](Mercurial.html "Mercurial") 代码库中进行。
 
-There are several Mercurial clients for Windows. One that nicely integrates with the Windows Explorer and that offers an easy to learn user interface is [TortoiseHg](https://tortoisehg.bitbucket.io/download/index.html). It is also quite easy to create Mercurial patches with that software. Those are the preferred way of contributing to Octave.
+Windows 上有多个 Mercurial 客户端。其中 [TortoiseHg](https://tortoisehg.bitbucket.io/download/index.html) 能与 Windows 资源管理器良好集成，并提供易于学习的用户界面。使用该软件创建 Mercurial 补丁也相当容易。这是向 Octave 贡献代码的首选方式。
 
-# Building Octave
+# 构建 Octave
 
-If you want to contribute changes to C++ files or are interested in testing the latest development or (unreleased) stable release, you can build Octave from source.
+如果您想贡献 C++ 文件的更改，或者对测试最新的开发版本或（未发布的）稳定版本感兴趣，您可以从源代码构建 Octave。
 
-It seems to be possible to build Octave natively on Windows with the MSYS2 shell. (Be aware that this might take some time.) It is also possible to build Octave on Windows machines using virtual machines or Microsoft's Windows Subsystem for Linux. Using VM is the currently recommended way to build Octave on Windows machines.
+使用 MSYS2 shell 在 Windows 上原生构建 Octave 似乎是可能的。（请注意，这可能需要一些时间。）也可以使用虚拟机或微软的 Windows Subsystem for Linux 在 Windows 机器上构建 Octave。使用虚拟机是目前在 Windows 机器上构建 Octave 的推荐方式。
 
-Building Octave natively on Windows is experimental! The only supported way of creating Windows binaries of Octave is cross-building with MXE Octave ([Windows Installer](Windows_Installer.html "Windows Installer")).
+在 Windows 上原生构建 Octave 是实验性的！创建 Octave Windows 二进制文件的唯一受支持方式是使用 MXE Octave 进行交叉构建（[Windows 安装程序](Windows_Installer.html "Windows Installer")）。
 
-## Virtual Machine
+## 虚拟机
 
-Most of Octave's developers are running Debian or Ubuntu [\[1\]](#cite_note-1). So these are probably the Linux distributions for which you are most likely to get help if you should run into issues. The following focuses mainly on Ubuntu.
+大多数 Octave 的开发者运行的是 Debian 或 Ubuntu [\[1\]](#cite_note-1)。因此，如果您遇到问题，这些 Linux 发行版可能是您最有可能获得帮助的。以下主要关注 Ubuntu。
 
-[VMWare Player](https://www.vmware.com/products/workstation-player.html) is free (as in no costs) for non-commercial use.
+[VMWare Player](https://www.vmware.com/products/workstation-player.html) 对于非商业用途是免费的（无需费用）。
 
-There are several sources for free complete Linux VM images on the web. One of them is [osboxes.org](https://www.osboxes.org/). You can download an Ubuntu image for VMWare Player from [their side](https://www.osboxes.org/ubuntu/#ubuntu-20-04-vmware). After the download has finished, unzip the image.
+网络上有很多提供免费完整 Linux 虚拟机镜像的来源。其中之一是 [osboxes.org](https://www.osboxes.org/)。您可以从 [他们的网站](https://www.osboxes.org/ubuntu/#ubuntu-20-04-vmware) 下载适用于 VMWare Player 的 Ubuntu 镜像。下载完成后，解压镜像文件。
 
-You also need a .vmx file to be able to start the Virtual Machine with VMWare Player. To create a .vmx file with minimal settings, open a text editor and save the following to a file called Ubuntu.vmx next to the VM image you downloaded:
+您还需要一个 .vmx 文件才能使用 VMWare Player 启动虚拟机。要创建一个包含最小设置的 .vmx 文件，请打开一个文本编辑器，将以下内容保存为您下载的虚拟机镜像旁边的名为 Ubuntu.vmx 的文件：
 
-**File:** Ubuntu.vmx
+**文件：** Ubuntu.vmx
 
 ```bash
 .encoding = "windows-1252"
@@ -61,52 +61,52 @@ guestOS = "ubuntu-64"
 virtualHW.productCompatibility = "hosted"
 ```
 
-Change the line with Ubuntu.vmdk to the actual file name of the Ubuntu image you just downloaded.
+将带有 Ubuntu.vmdk 的那一行更改为您刚刚下载的 Ubuntu 镜像的实际文件名。
 
-You can start the VM by double-clicking on the .vmx file you just created.
+您可以双击刚刚创建的 .vmx 文件来启动虚拟机。
 
-Change the amount of memory or the number of processors you want to assign to the VM in the Virtual Machine settings in VMWare Player.
+在 VMWare Player 的虚拟机设置中更改要分配给虚拟机的内存量或处理器数量。
 
-The login data for VMs downloaded from osboxes is:  
-username: osboxes  
-password: osboxes.org
+从 osboxes 下载的虚拟机的登录数据是：  
+用户名：osboxes  
+密码：osboxes.org
 
-Once you started the VM and logged in, continue as if you would run [Ubuntu natively](Octave_for_Debian_systems.html#The_right_way "Octave for Debian systems").
+一旦您启动了虚拟机并登录，就可以继续操作，就像您 [原生运行 Ubuntu](Octave_for_Debian_systems.html#The_right_way "Octave for Debian systems") 一样。
 
 ## Windows Subsystem for Linux
 
-The Windows Subsystem for Linux (WSL) was not very interesting for serious development in its first version. Many of the shortcomings (like tediously slow "fork" and "stat") have been fixed in WSL2 which was released together with Windows 10 Update 2004.
+Windows Subsystem for Linux (WSL) 在其第一个版本中对于严肃的开发来说并不十分理想。许多缺点（如极其缓慢的"fork"和"stat"操作）已在与 Windows 10 Update 2004 一起发布的 WSL2 中得到修复。
 
-To install WSL2 on Windows, follow the [instructions by Microsoft](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+要在 Windows 上安装 WSL2，请遵循 [微软的说明](https://docs.microsoft.com/en-us/windows/wsl/install-win10)。
 
-WSL2 is basically a virtual machine running the Linux kernel that is more closely integrated into Windows. But it also has some limitations (see below).
+WSL2 基本上是一个运行 Linux 内核的虚拟机，但它与 Windows 集成得更紧密。不过它也有一些限制（见下文）。
 
-Again it is possible to choose from several different Linux distributions. But for reasons already mentioned, you should choose Ubuntu.
+同样，您可以从几种不同的 Linux 发行版中进行选择。但出于前面提到的原因，您应该选择 Ubuntu。
 
-Once you logged in to Ubuntu on WSL, continue as if you would run [Ubuntu natively](Octave_for_Debian_systems.html#The_right_way "Octave for Debian systems").
+一旦您登录到 WSL 上的 Ubuntu，就可以继续操作，就像您 [原生运行 Ubuntu](Octave_for_Debian_systems.html#The_right_way "Octave for Debian systems") 一样。
 
-WSL (or WSL2) does not contain an X server. The X server on Linux is necessary to present program windows to the users. So by default, WSL is only a command line interface. You can start that command line interface with the "Ubuntu" shortcut in the start menu.
+WSL（或 WSL2）不包含 X 服务器。Linux 上的 X 服务器对于向用户呈现程序窗口是必需的。因此，默认情况下，WSL 只是一个命令行界面。您可以通过开始菜单中的"Ubuntu"快捷方式启动该命令行界面。
 
-If you want to run the Octave GUI, you can install an X server. There are several you can choose from. One of them is [VcXsrv](https://sourceforge.net/projects/vcxsrv/files/latest/download). When you start VcXsrv, choose "Multiple Windows", "Start no client", deselect "Native opengl", and select "Disable access control" to be able to use the X server from WSL. Additionally, append the following lines to your .bashrc file in the home directory on the WSL Ubuntu:
+如果您想运行 Octave GUI，可以安装一个 X 服务器。有多个可供选择。其中之一是 [VcXsrv](https://sourceforge.net/projects/vcxsrv/files/latest/download)。启动 VcXsrv 时，选择"Multiple Windows"、"Start no client"，取消选中"Native opengl"，并选中"Disable access control"以便能够从 WSL 使用 X 服务器。此外，将以下行追加到 WSL Ubuntu 主目录中的 .bashrc 文件：
 
 ```bash
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 export LIBGL_ALWAYS_INDIRECT=1
 ```
 
-You can access that file via the share "\\\\wsl$\\Ubuntu\\home\\username\\.bashrc" (where "Ubuntu" is the name of the distribution you installed and "username" is your username on that distribution.
+您可以通过共享路径 "\\\\wsl$\\Ubuntu\\home\\用户名\\.bashrc" 访问该文件（其中"Ubuntu"是您安装的发行版名称，"用户名"是该发行版上的您的用户名）。
 
-Because of the basic lack of a graphical user interface (even if somewhat mitigated with the X server), using WSL(2) is not recommended for beginners.
+由于基本缺乏图形用户界面（即使通过 X 服务器有所缓解），不建议初学者使用 WSL(2)。
 
-## Building natively (MSYS2)
+## 原生构建 (MSYS2)
 
-Octave can also be compiled natively on Windows with the MSYS2 shell.
+Octave 也可以使用 MSYS2 shell 在 Windows 上原生编译。
 
-To set up a native build environment on Windows, download and install MSYS2 following the instructions on [their website](https://www.msys2.org/).
+要在 Windows 上设置原生构建环境，请按照 [其网站](https://www.msys2.org/) 上的说明下载并安装 MSYS2。
 
-Use the "MSYS2 MinGW 64bit" shell for building Octave.
+使用 "MSYS2 MinGW 64bit" shell 来构建 Octave。
 
-The following command can be used to install the necessary and optional build and run-time dependencies in MSYS2:
+以下命令可用于在 MSYS2 中安装必要和可选的构建及运行时依赖项：
 
 ```bash
 pacman -S base-devel mingw-w64-x86_64-autotools mingw-w64-x86_64-cc mingw-w64-x86_64-fc mingw-w64-x86_64-gperf mingw-w64-x86_64-openblas mingw-w64-x86_64-pcre2 \
@@ -115,21 +115,21 @@ pacman -S base-devel mingw-w64-x86_64-autotools mingw-w64-x86_64-cc mingw-w64-x8
   unzip zip
 ```
 
-Using ccache is optional. It speeds up compilation time but needs several GiB free disk space for its cache. If disk space is an issue, this step can be skipped. To prepend the path to the ccache helper scripts to the front of the PATH variable, add the following line near the end of the .bash\_profile file in your MSYS2 $HOME directory:
+使用 ccache 是可选的。它可以加快编译时间，但需要数 GiB 的可用磁盘空间来存储其缓存。如果磁盘空间有限，可以跳过此步骤。要将 ccache 辅助脚本的路径前置到 PATH 变量的前面，请在您的 MSYS2 $HOME 目录中的 .bash\_profile 文件末尾附近添加以下行：
 
 ```bash
 export PATH="/mingw64/lib/ccache/bin:$PATH"
 ```
 
-Additionally, add the following line to the .bash\_profile file in your MSYS2 $HOME directory to allow successfully calling programs from perl scripts:
+此外，在您的 MSYS2 $HOME 目录中的 .bash\_profile 文件中添加以下行，以允许从 perl 脚本成功调用程序：
 
 ```bash
 export PERL5SHELL="bash -l -c"
 ```
 
-Like installing the build dependencies, this has to be done only once.
+与安装构建依赖项一样，这只需要做一次。
 
-To build from the development sources, check out the Mercurial repository and run the bootstrap script:
+要从开发源代码构建，请检出 Mercurial 代码库并运行引导脚本：
 
 ```bash
 hg clone https://www.octave.org/hg/octave
@@ -137,14 +137,14 @@ cd octave
 ./bootstrap
 ```
 
-Create a sub-directory to avoid building in the source tree:
+创建一个子目录以避免在源代码树中构建：
 
 ```bash
 mkdir -p .build
 cd .build
 ```
 
-Configure with the following flags:
+使用以下标志进行配置：
 
 ```bash
 ../configure \
@@ -152,38 +152,38 @@ Configure with the following flags:
   gl_cv_have_weak=no
 ```
 
-And build with the following command:
+并使用以下命令构建：
 
 ```bash
 make all -j8
 ```
 
-Windows doesn't have a shebang mechanism to execute scripts with an arbitrary interpreter. But the `makeinfo` program in MSYS2 is implemented as a perl script. As a work-around, tell Octave to interpret that file with the `perl` interpreter. You could do that, e.g., by running the following command to append to the global startup file:
+Windows 没有 shebang 机制来使用任意解释器执行脚本。但是 MSYS2 中的 `makeinfo` 程序是作为 perl 脚本实现的。作为一种变通方法，告诉 Octave 使用 `perl` 解释器来解释该文件。例如，您可以运行以下命令将其追加到全局启动文件中：
 
 ```bash
 echo 'makeinfo_program (sprintf ("%s && cd %s/../usr/bin && perl makeinfo", OCTAVE_HOME ()(1:2), OCTAVE_HOME ()));' >> "${MINGW_PREFIX}/share/octave/site/m/startup/octaverc"
 ```
 
-This has to be done only once.
+这只需要做一次。
 
-A relocation issue with the graphicsmagick library in MSYS2 might cause Octave to crash on certain commands unless it is installed to the default location. To avoid these possible crashes, install Octave (from the MSYS2 shell in .build) before using it:
+MSYS2 中 graphicsmagick 库的一个重定位问题可能导致 Octave 在某些命令上崩溃，除非它被安装到默认位置。为避免这些可能的崩溃，请在使用 Octave 之前（在 .build 的 MSYS2 shell 中）安装它：
 
 ```bash
 make install
 ```
 
-Windows' library lookup mechanism requires that the following executables are installed in the same folder like the libraries they depend on. That can be achieved by creating symlinks to these executables in the "correct" location:
+Windows 的库查找机制要求以下可执行文件必须安装在与它们所依赖的库相同的文件夹中。这可以通过在"正确"的位置创建指向这些可执行文件的符号链接来实现：
 
 ```bash
 ln -sf /mingw64/libexec/octave/7.0.0/exec/x86_64-w64-mingw32/octave-gui.exe /mingw64/bin/octave-gui.exe
 ln -sf /mingw64/libexec/octave/7.0.0/exec/x86_64-w64-mingw32/octave-svgconvert.exe /mingw64/bin/octave-svgconvert.exe
 ```
 
-These symlinks are only needed when building the GUI (i.e., Qt is not disabled). This step is no longer necessary with Octave 7 or newer.
+这些符号链接仅在构建 GUI 时才需要（即未禁用 Qt）。对于 Octave 7 或更高版本，此步骤不再是必需的。
 
-At this point, Octave's GUI can be started with the command `octave --gui` at the MSYS2/MINGW64 shell.
+此时，可以在 MSYS2/MINGW64 shell 中使用命令 `octave --gui` 启动 Octave 的 GUI。
 
-If you'd like to start Octave from a CMD shell (or with a batch script), the following commands could be used (assuming MSYS2 was installed in its default location):
+如果您想从 CMD shell（或使用批处理脚本）启动 Octave，可以使用以下命令（假设 MSYS2 已安装在其默认位置）：
 
 ```batch
 set PATH=C:\msys64\mingw64\bin;C:\msys64\usr\bin;%PATH%
@@ -195,13 +195,13 @@ set PERL5SHELL=bash -l -c
 octave-gui --gui
 ```
 
-If Octave was built without GUI, there won't be an octave-gui executable. In that case, replace the last line with `octave-cli`.
+如果 Octave 是在没有 GUI 的情况下构建的，则不会有 octave-gui 可执行文件。在这种情况下，请将最后一行替换为 `octave-cli`。
 
-# Footnotes
+# 脚注
 
 1.  [↑](#cite_ref-1) [https://lists.gnu.org/archive/html/octave-maintainers/2020-02/msg00014.html](https://lists.gnu.org/archive/html/octave-maintainers/2020-02/msg00014.html)
 
-[Categories](Special%253ACategories.html "Special:Categories"):
+[分类](Special%253ACategories.html "Special:Categories"):
 
 +   [Microsoft Windows](Category%253AMicrosoft_Windows.html "Category:Microsoft Windows")
-+   [Building](Category%253ABuilding.html "Category:Building")
++   [构建](Category%253ABuilding.html "Category:Building")
