@@ -27,7 +27,7 @@ MXE-Octave is **not** the best choice for building Octave, if your system alread
 
 #### Preparation
 
-1.  [Install all requirements of MXE Octave](Windows_Installer.html#Installing_requirements_of_MXE_Octave "Windows Installer").
+1.  [Install all requirements of MXE Octave](Windows_Installer.md#Installing_requirements_of_MXE_Octave "Windows Installer").
 2.  Decide for an installation directory (e.g. ~/mxe-octave).
 3.  `cd ~`
 4.  `hg clone [https://hg.octave.org/mxe-octave](https://hg.octave.org/mxe-octave) mxe-octave`
