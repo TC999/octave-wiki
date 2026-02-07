@@ -45,8 +45,8 @@
 
 ### 🔧 Tools
 
-+   [Mercurial](Mercurial.html "Mercurial") -- How to use Octave's version control scheme, creating patches (changesets).
-+   [Doxygen](Doxygen.html "Doxygen") -- Documentation for C++ files
++   [Mercurial](mercurial.md "Mercurial") -- How to use Octave's version control scheme, creating patches (changesets).
++   [Doxygen](doxygen.md "Doxygen") -- Documentation for C++ files
 +   [ccache](https://ccache.samba.org/) -- How to compile Octave faster.
 +   [Editors](Category%253AEditors.html "Category:Editors") -- A list of editors supporting Octave syntax highlighting.
 
