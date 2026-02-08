@@ -37,38 +37,7 @@ The current Microsoft Windows installers are build in three "flavors": for commo
 
 | "w64" (recommended) | "w64-64" | "w32" |
 | --- | --- | --- |
-| 
-```bash
-./configure                        \
-  --enable-devel-tools             \
-  --enable-binary-packages         \
-  --with-ccache                    \
-  --enable-octave=<octave version>
-```
-
- | 
-
-```bash
-./configure                        \
-  --enable-devel-tools             \
-  --enable-binary-packages         \
-  --with-ccache                    \
-  --enable-octave=<octave version> \
-  --enable-fortran-int64
-```
-
- | 
-
-```bash
-./configure                        \
-  --enable-devel-tools             \
-  --enable-binary-packages         \
-  --with-ccache                    \
-  --enable-octave=<octave version> \
-  --disable-windows-64
-```
-
- |
+|`./configure                        \  --enable-devel-tools             \  --enable-binary-packages         \  --with-ccache                    \  --enable-octave=<octave_version>` | `./configure                        \  --enable-devel-tools             \  --enable-binary-packages         \  --with-ccache                    \  --enable-octave=<octave_version> \  --enable-fortran-int64` | `./configure                        \  --enable-devel-tools             \  --enable-binary-packages         \  --with-ccache                    \  --enable-octave=<octave_version> \  --disable-windows-64` |
 
 The individual options have the following meaning (see also `./configure --help`):
 
