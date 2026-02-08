@@ -1,8 +1,8 @@
 # Building on Microsoft Windows
 
-*This page is directed towards new developers that are interested in contributing to Octave. If you just want to install Octave, see [Category:Installation](../../install "Category:Installation").*
+> This page is directed towards new developers that are interested in contributing to Octave. If you just want to install Octave, see [Category:Installation](../../install "Category:Installation").
 
-*For general Octave build instructions on Linux, read [Building](building.md "Building").*
+> For general Octave build instructions on Linux, read [Building](building.md "Building").
 
 ## Contents
 
@@ -21,7 +21,7 @@ The easiest way to contribute (not only from Windows) is probably by changing or
 
 If you found something you'd like to fix or improve, check out the [bug tracker](https://savannah.gnu.org/bugs/?group=octave). It might have already been fixed in the development or (unreleased) stable version.
 
-Octave is version controlled in a [Mercurial](Mercurial.html "Mercurial") repository at [https://www.octave.org/hg/octave](https://www.octave.org/hg/octave).
+Octave is version controlled in a [Mercurial](mercurial.md "Mercurial") repository at https://www.octave.org/hg/octave.
 
 There are several Mercurial clients for Windows. One that nicely integrates with the Windows Explorer and that offers an easy to learn user interface is [TortoiseHg](https://tortoisehg.bitbucket.io/download/index.html). It is also quite easy to create Mercurial patches with that software. Those are the preferred way of contributing to Octave.
 
@@ -71,7 +71,7 @@ The login data for VMs downloaded from osboxes is:
 username: osboxes  
 password: osboxes.org
 
-Once you started the VM and logged in, continue as if you would run [Ubuntu natively](Octave_for_Debian_systems.html#The_right_way "Octave for Debian systems").
+Once you started the VM and logged in, continue as if you would run [Ubuntu natively](../install/Debian.md#The_right_way "Octave for Debian systems").
 
 ## Windows Subsystem for Linux
 
@@ -83,7 +83,7 @@ WSL2 is basically a virtual machine running the Linux kernel that is more closel
 
 Again it is possible to choose from several different Linux distributions. But for reasons already mentioned, you should choose Ubuntu.
 
-Once you logged in to Ubuntu on WSL, continue as if you would run [Ubuntu natively](Octave_for_Debian_systems.html#The_right_way "Octave for Debian systems").
+Once you logged in to Ubuntu on WSL, continue as if you would run [Ubuntu natively](../install/Debian.md#The_right_way "Octave for Debian systems").
 
 WSL (or WSL2) does not contain an X server. The X server on Linux is necessary to present program windows to the users. So by default, WSL is only a command line interface. You can start that command line interface with the "Ubuntu" shortcut in the start menu.
 
@@ -199,7 +199,7 @@ If Octave was built without GUI, there won't be an octave-gui executable. In tha
 
 # Footnotes
 
-1.  [↑](#cite_ref-1) [https://lists.gnu.org/archive/html/octave-maintainers/2020-02/msg00014.html](https://lists.gnu.org/archive/html/octave-maintainers/2020-02/msg00014.html)
+1.  [↑](#cite_ref-1) https://lists.gnu.org/archive/html/octave-maintainers/2020-02/msg00014.html
 
 [Categories](Special%253ACategories.html "Special:Categories"):
 

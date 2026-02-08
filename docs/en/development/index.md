@@ -1,6 +1,6 @@
 # Development
 
-*This page contains links to pages of interest to Octave developers.*
+> This page contains links to pages of interest to Octave developers.
 
 ## Contents
 

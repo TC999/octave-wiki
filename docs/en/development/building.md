@@ -1,6 +1,6 @@
 # Building
 
-*This article provides general information about **building GNU Octave** from source (on Unix-like systems).*
+> This article provides general information about **building GNU Octave** from source (on Unix-like systems).
 
 +   *If you just want to **install GNU Octave**, see [Category:Installation](../install "Category:Installation").*
 +   *For **MS Windows**, read [Building on Microsoft Windows](build_on_Windows.md "Building on Microsoft Windows") and [Windows Installer](windows_installer.md "Windows Installer").*
@@ -156,7 +156,7 @@ In any case, don't forget to remove any created *alias* entries in ~/.bashrc.
 
 +   [`README`](https://hg.savannah.gnu.org/hgweb/octave/file/tip/README) and [`/etc/HACKING.md`](https://hg.savannah.gnu.org/hgweb/octave/file/tip/etc/HACKING.md) in the development repository.
 +   [https://octave.org/doc/interpreter/Installation.html](https://octave.org/doc/interpreter/Installation.html)
-+   [MXE](MXE.html "MXE") -- a more customized Octave build including many self-compiled tools.
++   [MXE](mxe.md "MXE") -- a more customized Octave build including many self-compiled tools.
 
 ## Footnotes
 

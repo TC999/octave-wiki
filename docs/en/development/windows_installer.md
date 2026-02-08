@@ -1,8 +1,8 @@
 # Windows Installer
 
-> This article is about how to make the Microsoft Windows installer; if you'd like just to use the installer, see [Octave for Microsoft Windows](Octave_for_Microsoft_Windows.html "Octave for Microsoft Windows").
+> This article is about how to make the Microsoft Windows installer; if you'd like just to use the installer, see [Octave for Microsoft Windows](../install/Windows.md "Octave for Microsoft Windows").
 
-GNU Octave is primarily developed on GNU/Linux and other POSIX compliant systems. There have been many efforts in the past to build ports of GNU Octave for Microsoft Windows. This page contains instructions about creating a MS Windows installer using [mxe-octave](MXE.html "MXE") (a fork of [MXE](http://mxe.cc/)). This means, **the MS Windows installer is [cross-compiled](https://en.wikipedia.org/wiki/Cross_compiler) using a GNU/Linux system**.
+GNU Octave is primarily developed on GNU/Linux and other POSIX compliant systems. There have been many efforts in the past to build ports of GNU Octave for Microsoft Windows. This page contains instructions about creating a MS Windows installer using [mxe-octave](mxe.md "MXE") (a fork of [MXE](http://mxe.cc/)). This means, **the MS Windows installer is [cross-compiled](https://en.wikipedia.org/wiki/Cross_compiler) using a GNU/Linux system**.
 
 ## Contents
 
@@ -23,7 +23,7 @@ GNU Octave is primarily developed on GNU/Linux and other POSIX compliant systems
 
 1.  Reassure you have the package libffi-dev installed or the Python build will silently be incomplete
 2.  Install the MXE build requirements.[\[1\]](#cite_note-1)
-3.  `hg clone [https://hg.octave.org/mxe-octave](https://hg.octave.org/mxe-octave)`[\[2\]](#cite_note-2)
+3.  `hg clone https://hg.octave.org/mxe-octave`[\[2\]](#cite_note-2)
 4.  `cd mxe-octave`
 5.  `./bootstrap` (Among other things, the `bootstrap` script creates the `configure` script for the next step.)
 6.  `./configure`
@@ -62,7 +62,7 @@ The individual options have the following meaning (see also `./configure --help`
 
 ### Build installers for Octave development versions
 
-1.  Build the "stable" or "default" Octave development branch on Linux (in separate source and build trees) including your favorite modifications and patches. Octave must be configured with Java support. How to do this depends on your Linux distribution, see [Building](Building.html "Building").
+1.  Build the "stable" or "default" Octave development branch on Linux (in separate source and build trees) including your favorite modifications and patches. Octave must be configured with Java support. How to do this depends on your Linux distribution, see [Building](building.md "Building").
 2.  Verify that Octave runs fine in Linux (for example using `make check` and by trying to run your build `./run-octave --gui`).
 3.  Create a distribution archive called **`octave-<version>.tar.lz`** in the top build directory with `make dist-lzip DIST_IGNORE_HG_STATE=1`. `lzip` needs to be available for this step. (On Debian-like systems, it can be installed with `apt-get install lzip`).
 4.  Move or copy **`octave-<version>.tar.lz`** to the `<mxe-octave build>/pkg` folder (or create a symbolic link to it).
@@ -107,8 +107,8 @@ hg -v update
 
 Microsoft provides several virtual machine (e.g. VirtualBox) disk images of MS Windows for about one month of testing
 
-+   [https://developer.microsoft.com/en-us/windows/downloads/virtual-machines](https://developer.microsoft.com/en-us/windows/downloads/virtual-machines)
-+   [https://developer.microsoft.com/en-us/microsoft-edge/tools/vms](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms) (primarily meant for testing the MS-Edge browser)
++   https://developer.microsoft.com/en-us/windows/downloads/virtual-machines
++   https://developer.microsoft.com/en-us/microsoft-edge/tools/vms (primarily meant for testing the MS-Edge browser)
 
 The license (given on that page) for these images does not limit the use of these images. So it is perfectly possible to also test GNU Octave.
 
@@ -127,8 +127,8 @@ Hints:
 
 ## Footnotes
 
-1.  [↑](#cite_ref-1) The requirements for each system are listed in the repository [https://hg.octave.org/mxe-octave/file/tip/index.html](https://hg.octave.org/mxe-octave/file/tip/index.html). Start with the second step to read the index.html file on your local machine.
-2.  [↑](#cite_ref-2) Use `hg clone [https://hg.octave.org/mxe-octave](https://hg.octave.org/mxe-octave) <name of mxe-octave build dir>` to choose another directory.
+1.  [↑](#cite_ref-1) The requirements for each system are listed in the repository https://hg.octave.org/mxe-octave/file/tip/index.html. Start with the second step to read the index.html file on your local machine.
+2.  [↑](#cite_ref-2) Use `hg clone https://hg.octave.org/mxe-octave <name of mxe-octave build dir>` to choose another directory.
 
 [Categories](Special%253ACategories.html "Special:Categories"):
 
