@@ -25,7 +25,7 @@
 
 # 发行版
 
-在 GNU/Linux 系统上安装 Octave 的推荐方法是通过每个发行版的包安装系统。如果由于某些原因无法这样做，或者可用的 Octave 版本太旧，请考虑使用下面描述的[独立于发行版](#独立于发行版)的方法或[从源码构建 Octave](../Building.html "构建")。
+在 GNU/Linux 系统上安装 Octave 的推荐方法是通过每个发行版的包安装系统。如果由于某些原因无法这样做，或者可用的 Octave 版本太旧，请考虑使用下面描述的[独立于发行版](#独立于发行版)的方法或[从源码构建 Octave](../development/building.md "构建")。
 
 ## Arch Linux
 
@@ -70,7 +70,7 @@
 
 ## Red Hat Enterprise/CentOS
 
-*主条目: [适用于 Red Hat Linux 系统的 Octave](../Octave_for_Red_Hat_Linux_systems.html "适用于 Red Hat Linux 系统的 Octave")*
+*主条目: [适用于 Red Hat Linux 系统的 Octave](RedHat.md "适用于 Red Hat Linux 系统的 Octave")*
 
 ```bash
   yum install epel-release
@@ -82,7 +82,7 @@
 
 ## Slackware
 
-*主条目: [适用于 Slackware 的 Octave](../Octave_for_Slackware.html "适用于 Slackware 的 Octave")*
+*主条目: [适用于 Slackware 的 Octave](Slackware.md "适用于 Slackware 的 Octave")*
 
 # 独立于发行版
 
@@ -151,7 +151,7 @@
 
 ## MXE
 
-+   更多信息: [MXE](../MXE.html "MXE")
++   更多信息: [MXE](../development/mxe.md "MXE")
 +   开发: [https://hg.octave.org/mxe-octave](https://hg.octave.org/mxe-octave)
 
 ## Snap
@@ -184,7 +184,7 @@
 
 ## 另见
 
-+   [适用于其他类 Unix 系统的 Octave](../Octave_for_other_Unix_systems.html "适用于其他类 Unix 系统的 Octave")
++   [适用于其他类 Unix 系统的 Octave](unix.md "适用于其他类 Unix 系统的 Octave")
 
 [分类](../Special%253ACategories.html "特殊:分类")：
 

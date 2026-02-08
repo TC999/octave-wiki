@@ -36,7 +36,9 @@ export default defineConfig({
             items: [
               { text: '🏠 GNU Octave Wiki', link: '/en' },
               { text: '⚙️ Install', link: '/en/install' },
-              { text: '🔬 Development', link: '/en/development' }
+              { text: '📦 Packages', link: '/en/packages' },
+              { text: '🔬 Development', link: '/en/development' },
+              { text: '❓ FAQ', link: '/en/development/faq.md' }
             ]
           }
         ]
@@ -53,7 +55,9 @@ export default defineConfig({
             items: [
               { text: '🏠 GNU Octave Wiki', link: '/zh_CN' },
               { text: '⚙️ 安装', link: '/zh_CN/install' },
-              { text: '🔬 开发', link: '/zh_CN/development' }
+              { text: '📦 软件包', link: '/zh_CN/packages' },
+              { text: '🔬 开发', link: '/zh_CN/development' },
+              { text: '❓ 常见问题', link: '/zh_CN/development/faq.md' }
             ]
           }
         ],
