@@ -31,7 +31,7 @@ If you want to contribute changes to C++ files or are interested in testing the 
 
 It seems to be possible to build Octave natively on Windows with the MSYS2 shell. (Be aware that this might take some time.) It is also possible to build Octave on Windows machines using virtual machines or Microsoft's Windows Subsystem for Linux. Using VM is the currently recommended way to build Octave on Windows machines.
 
-Building Octave natively on Windows is experimental! The only supported way of creating Windows binaries of Octave is cross-building with MXE Octave ([Windows Installer](Windows_Installer.html "Windows Installer")).
+Building Octave natively on Windows is experimental! The only supported way of creating Windows binaries of Octave is cross-building with MXE Octave ([Windows Installer](windows_installer.md "Windows Installer")).
 
 ## Virtual Machine
 

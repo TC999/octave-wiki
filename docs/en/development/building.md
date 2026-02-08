@@ -3,7 +3,7 @@
 *This article provides general information about **building GNU Octave** from source (on Unix-like systems).*
 
 +   *If you just want to **install GNU Octave**, see [Category:Installation](../install "Category:Installation").*
-+   *For **MS Windows**, read [Building on Microsoft Windows](build_on_Windows.md "Building on Microsoft Windows") and [Windows Installer](Windows_Installer.md "Windows Installer").*
++   *For **MS Windows**, read [Building on Microsoft Windows](build_on_Windows.md "Building on Microsoft Windows") and [Windows Installer](windows_installer.md "Windows Installer").*
 +   *For **macOS**, read [Octave for macOS](../install/macOS.md "Octave for macOS").*
 
 ## Contents
@@ -54,7 +54,7 @@ make install
 
 ## Dependencies
 
-Most of the dependencies given in this section can be very conveniently installed on many [GNU/Linux](Octave_for_GNU/Linux.html "Octave for GNU/Linux") systems.
+Most of the dependencies given in this section can be very conveniently installed on many [GNU/Linux](../install/Linux.md "Octave for GNU/Linux") systems.
 
 ![Info icon.svg](../../assets/info/26px-Info_icon.svg.png)
 
