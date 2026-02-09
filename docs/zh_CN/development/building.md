@@ -54,13 +54,13 @@ make install
 
 ## 依赖项
 
-本节给出的大多数依赖项可以在许多 [GNU/Linux](Octave_for_GNU/Linux.html "Octave for GNU/Linux") 系统上非常方便地安装。
+本节给出的大多数依赖项可以在许多 [GNU/Linux](../install/Linux.md "Octave for GNU/Linux") 系统上非常方便地安装。
 
 ![信息图标.svg](../../assets/info/26px-Info_icon.svg.png)
 
 有关快速安装所需依赖项的方法，请参阅：
 
-+   [Debian / Ubuntu](../install/debian.md#The_right_way "Octave for Debian systems")
++   [Debian / Ubuntu](../install/Debian.md#The_right_way "Octave for Debian systems")
 +   [Arch Linux](../install/ArchLinux.md "Octave for Arch Linux")
 +   [Fedora / RedHat / CentOS](../install/RedHat.md "Octave for Red Hat Linux systems")
 
