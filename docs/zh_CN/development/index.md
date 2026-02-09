@@ -34,7 +34,7 @@
 
 **参加我们的下一场[线上开发者会议](Meet.html "Meet")** 🙂💬（参见[所有往期会议](Category%253AMeetings.html "Category:Meetings")）
 
-## 🛠️ [构建](build "Category:Building")
+## 🛠️ [构建](building.md "构建")
 
 +   [构建](building.md "Building") —— 从源代码构建 Octave 的通用说明。
     +   [在 Microsoft Windows 上构建](./build_on_Windows.md "Building on Microsoft Windows")
