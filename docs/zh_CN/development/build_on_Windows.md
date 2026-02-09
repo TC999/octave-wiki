@@ -1,8 +1,8 @@
 # 在 Microsoft Windows 上构建
 
-*本页面面向有兴趣为 Octave 贡献代码的新开发者。如果您只想安装 Octave，请参阅 [安装类别](../../install "Category:Installation")。*
+> 本页面面向有兴趣为 Octave 贡献代码的新开发者。如果您只想安装 Octave，请参阅 [安装类别](../../install "Category:Installation")。
 
-*有关在 Linux 上构建 Octave 的通用说明，请阅读 [构建](building.md "Building")。*
+> 有关在 Linux 上构建 Octave 的通用说明，请阅读 [构建](building.md "Building")。
 
 ## 目录
 
@@ -21,7 +21,7 @@ Octave 的开发主要在 Linux 上进行。但如果您运行的是 Windows，�
 
 如果您发现了一些想要修复或改进的地方，请查看 [bug 跟踪器](https://savannah.gnu.org/bugs/?group=octave)。它可能已经在开发版本或（未发布的）稳定版本中被修复。
 
-Octave 的版本控制在位于 [https://www.octave.org/hg/octave](https://www.octave.org/hg/octave) 的 [Mercurial](Mercurial.html "Mercurial") 代码库中进行。
+Octave 的版本控制在位于 [https://www.octave.org/hg/octave](https://www.octave.org/hg/octave) 的 [Mercurial](mercurial.md "Mercurial") 代码库中进行。
 
 Windows 上有多个 Mercurial 客户端。其中 [TortoiseHg](https://tortoisehg.bitbucket.io/download/index.html) 能与 Windows 资源管理器良好集成，并提供易于学习的用户界面。使用该软件创建 Mercurial 补丁也相当容易。这是向 Octave 贡献代码的首选方式。
 
@@ -31,7 +31,7 @@ Windows 上有多个 Mercurial 客户端。其中 [TortoiseHg](https://tortoiseh
 
 使用 MSYS2 shell 在 Windows 上原生构建 Octave 似乎是可能的。（请注意，这可能需要一些时间。）也可以使用虚拟机或微软的 Windows Subsystem for Linux 在 Windows 机器上构建 Octave。使用虚拟机是目前在 Windows 机器上构建 Octave 的推荐方式。
 
-在 Windows 上原生构建 Octave 是实验性的！创建 Octave Windows 二进制文件的唯一受支持方式是使用 MXE Octave 进行交叉构建（[Windows 安装程序](Windows_Installer.html "Windows Installer")）。
+在 Windows 上原生构建 Octave 是实验性的！创建 Octave Windows 二进制文件的唯一受支持方式是使用 MXE Octave 进行交叉构建（[Windows 安装程序](windows_installer.md "Windows Installer")）。
 
 ## 虚拟机
 
@@ -71,7 +71,7 @@ virtualHW.productCompatibility = "hosted"
 用户名：osboxes  
 密码：osboxes.org
 
-一旦您启动了虚拟机并登录，就可以继续操作，就像您 [原生运行 Ubuntu](Octave_for_Debian_systems.html#The_right_way "Octave for Debian systems") 一样。
+一旦您启动了虚拟机并登录，就可以继续操作，就像您 [原生运行 Ubuntu](../install/Debian.md#The_right_way "Octave for Debian systems") 一样。
 
 ## Windows Subsystem for Linux
 
@@ -83,7 +83,7 @@ WSL2 基本上是一个运行 Linux 内核的虚拟机，但它与 Windows 集�
 
 同样，您可以从几种不同的 Linux 发行版中进行选择。但出于前面提到的原因，您应该选择 Ubuntu。
 
-一旦您登录到 WSL 上的 Ubuntu，就可以继续操作，就像您 [原生运行 Ubuntu](Octave_for_Debian_systems.html#The_right_way "Octave for Debian systems") 一样。
+一旦您登录到 WSL 上的 Ubuntu，就可以继续操作，就像您 [原生运行 Ubuntu](../install/Debian.md#The_right_way "Octave for Debian systems") 一样。
 
 WSL（或 WSL2）不包含 X 服务器。Linux 上的 X 服务器对于向用户呈现程序窗口是必需的。因此，默认情况下，WSL 只是一个命令行界面。您可以通过开始菜单中的"Ubuntu"快捷方式启动该命令行界面。
 
@@ -199,7 +199,7 @@ octave-gui --gui
 
 # 脚注
 
-1.  [↑](#cite_ref-1) [https://lists.gnu.org/archive/html/octave-maintainers/2020-02/msg00014.html](https://lists.gnu.org/archive/html/octave-maintainers/2020-02/msg00014.html)
+1.  [↑](#cite_ref-1) https://lists.gnu.org/archive/html/octave-maintainers/2020-02/msg00014.html
 
 [分类](Special%253ACategories.html "Special:Categories"):
 
