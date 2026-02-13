@@ -133,11 +133,11 @@ Octave has a preliminary implementation of a Variable Editor: a spreadsheet-like
 
 With the knowledge gained, the second part of the project will be to implement a Property Inspector. This is a spreadsheet like interface to the many, many graphics properties that exist and are different on a per-object basis. The goal would be not only the concise-display of the existing properties, but a reasonable user interface to change them. As examples, Boolean properties should be able to be toggled with a double-click; Radio properties should have a drop-down list of only the supported options; Other properties that can be modified should have the constraints built-in (for example, Linewidth must be a scalar, while Position must be a 1x4 vector). It would also be important to have easy access to the documentation of a property.
 
-For reference, Matlab has a similar Property Inspector ([https://www.mathworks.com/help/matlab/ref/inspect.html](https://www.mathworks.com/help/matlab/ref/inspect.html)).
+For reference, Matlab has a similar Property Inspector (https://www.mathworks.com/help/matlab/ref/inspect.html).
 
 ## Sisotool. Create a graphical design tool for tuning closed loop control system ([Control package](Control_package.html "Control package"))
 
-When tuning a SISO feedback system it is very helpful to be able to grab a pole or a zero and move them by dragging them with the mouse. As they are moving the software must update all the plotted lines. There should be the ability to display various graphs rlocuse, bode, step, impulse etc. and have them all change dynamically as the mouse is moving. The parameters of the compensator must be displayed and updated. Recently, some implementation was done during [GSoC 2018](Summer_of_Code.html#GSoC_2018 "Summer of Code"), see [https://eriveltongualter.github.io/GSoC2018/final.html](https://eriveltongualter.github.io/GSoC2018/final.html) for details.
+When tuning a SISO feedback system it is very helpful to be able to grab a pole or a zero and move them by dragging them with the mouse. As they are moving the software must update all the plotted lines. There should be the ability to display various graphs rlocuse, bode, step, impulse etc. and have them all change dynamically as the mouse is moving. The parameters of the compensator must be displayed and updated. Recently, some implementation was done during [GSoC 2018](Summer_of_Code.html#GSoC_2018 "Summer of Code"), see https://eriveltongualter.github.io/GSoC2018/final.html for details.
 
 # Sparse Matrices
 
@@ -154,7 +154,7 @@ The paper by [Bateman & Adler](http://arxiv.org/abs/cs.MS/0604006) is good readi
 
 ## SPQR Interface
 
-Octave implements QR factorization for sparse matrices, but it does so with an older "CXSPARSE" library. This has caused fundamental issues, including segfaults as recorded here (bugs [#51950](https://savannah.gnu.org/bugs/?51950) and [#57033](https://savannah.gnu.org/bugs/?57033)). The goal of this project is to program an interface to the API for the SQPR library ([http://faculty.cse.tamu.edu/davis/suitesparse.html](http://faculty.cse.tamu.edu/davis/suitesparse.html)). This is the same library that Matlab uses for this purpose.
+Octave implements QR factorization for sparse matrices, but it does so with an older "CXSPARSE" library. This has caused fundamental issues, including segfaults as recorded here (bugs [#51950](https://savannah.gnu.org/bugs/?51950) and [#57033](https://savannah.gnu.org/bugs/?57033)). The goal of this project is to program an interface to the API for the SQPR library http://faculty.cse.tamu.edu/davis/suitesparse.html. This is the same library that Matlab uses for this purpose.
 
 +   Improve QR factorization functions, using idea based on CSPARSE cs\_dmsol.m
 
@@ -455,7 +455,7 @@ See also [Continuous Build#Coverage Report](Continuous_Build.html#Coverage_Repor
 
 +   Implement gdb extensions for Octave types. Octave has the `etc/gdbinit` file, which has some basic support for displaying the contents of Octave types. Add more extensions to make it easier to debug octave\_values and other Octave types.
 
-+   Add a definition to lgrind so that it supports Octave. (See [http://www.tex.ac.uk/tex-archive/support/lgrind/](http://www.tex.ac.uk/tex-archive/support/lgrind/) for more information about lgrind.)
++   Add a definition to lgrind so that it supports Octave. (See http://www.tex.ac.uk/tex-archive/support/lgrind/ for more information about lgrind.)
 
 +   Spatial statistics, including covariogram estimation and kriging -- perhaps via an interface to [gstat](http://www.gstat.org/)?
 
@@ -507,7 +507,7 @@ The planned improvements are:
 +   support for multiple Octave installs
 +   support for system-wide and user installed packages
 +   testing packages (`pkg test <package-name>`)
-+   improved metadata acquisition (`pkg list -forge`) from [https://octave.sourceforge.io/](https://octave.sourceforge.io/)
++   improved metadata acquisition (`pkg list -forge`) from https://octave.sourceforge.io/
 
 +   create a system that allows packages to deprecate functions as in core. Possibilities are:
     +   get pkg to accept a deprecated directory inside the package and add it to the search path. Functions in those directories would have to be treated the same as the ones inside the core deprecated
